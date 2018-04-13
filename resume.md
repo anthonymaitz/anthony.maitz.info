@@ -16,7 +16,7 @@ As the social and economic justice lead for San Francisco, I've organized office
 After a successful [Kickstarter campaign](https://www.kickstarter.com/projects/985647565/playsets-the-future-of-social-storytelling), playsets was selected to participate in the [Indie Megabooth](http://indiemegabooth.com/event/pax-prime-2015/) at PAX and has grown to tens of thousands of users in over 100 countries.
 
 **Co-Founder &amp; Designer** _2013 - Present_
-:[playsets, virtual tabletop for remote role-playing](http://anthony.maitz.work/playsets) - Product Manager, Designer
+:[playsets, virtual tabletop for remote role-playing](http://playsets.strikingly.com) - Product Manager, Designer
 
 ### [Discovery Communications](https://www.discovery.com/)
 I helped hire and manage a team of developers and designers to create an online "Social Knowledge" platform.
