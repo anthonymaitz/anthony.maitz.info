@@ -40,13 +40,13 @@ h1, ol, ul, dd, dt, dl, li
 }
 
 .fancybox-slide--iframe .fancybox-content {
-	width  : 1200px;
-	height : 900px;
+	margin: 0;
+  margin-right: auto;
+  margin-left: auto;
 	max-width  : 95%;
 	max-height : 80%;
-	margin: 0;
-  margin-left: auto;
-  margin-right: auto;
+	width  : 1200px;
+	height : 900px;
 }
 
 .hidden
@@ -57,7 +57,7 @@ h1, ol, ul, dd, dt, dl, li
 body
 {
 	margin: 0;
-	background: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.9) 2.25em,rgba(255,255,255,.9) 35em,rgba(255,255,255,.7) 45em), $backgroundURL;
+	background: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.9) 2em,rgba(255,255,255,.9) 36em,rgba(255,255,255,.8) 45em), $backgroundURL;
 	color: $black;
   word-wrap: break-word;
   font-weight: normal;
@@ -65,14 +65,12 @@ body
   font-stretch: normal;
 	font-size: 18px;
   font-family: "Libre Caslon Text", serif;
+
   -webkit-font-smoothing: antialiased;
-
   font-display: optional;
-
   text-rendering: optimizeLegibility;
   font-variant-caps: normal;
   line-break: after-white-space;
-
   @include respond-to(small-handhelds)
 	{
 		color: black;
@@ -93,6 +91,7 @@ a
 	&:hover
 	{
 		color: $linkHover;
+    text-decoration: underline;
 	}
 }
 
@@ -103,7 +102,7 @@ header
 	right: 0;
 	left: 0;
 	border-bottom: solid 1px #DDDDDD;
-	background: linear-gradient(to right, rgba(255,255,255,.7), rgba(255,255,255,.95) 2.25em,rgba(255,255,255,.95) 35em,rgba(255,255,255,.7) 45em);
+	background: linear-gradient(to right, rgba(255,255,255,.8), rgba(255,255,255,.95) 2.25em,rgba(255,255,255,.95) 35em,rgba(255,255,255,.7) 45em);
 
 	h1
 	{
@@ -125,13 +124,7 @@ header
 		a
 		{
 			margin-left: .25em;
-			color: $fadedLink;
 			line-height: 3em;
-
-			&:hover
-			{
-				color: $linkHover;
-			}
 		}
 	}
 
@@ -139,7 +132,6 @@ header
 	{
 		float: right;
 		margin-right: 1.5em;
-		color: $fadedLink;
 		font-size: 1.5em;
 		font-family: "social";
 		line-height: 3em;
@@ -197,10 +189,10 @@ section
 		padding-bottom: .25em;
 		width: 100%;
 		border-bottom: solid 1px #999;
+    letter-spacing: .5px;
 	  font-weight: 700;
 		font-size: 1.125em;
 		line-height: 1.125em;
-    letter-spacing: .5px;
 
     @include respond-to(small-handhelds)
   	{
@@ -223,7 +215,6 @@ section
     margin-bottom: .5em;
     font-weight: 700;
     font-size: .875em;
-    // color: darken($black,15%);
 
     em
     {
@@ -252,6 +243,11 @@ section
     margin-top: 0;
     margin-left: .75em;
 
+    @include respond-to(small-handhelds)
+    {
+        margin-left: 0em;
+    }
+
     a
     {
       color: $black;
@@ -260,11 +256,6 @@ section
       {
         color: $linkHover;
       }
-    }
-
-    @include respond-to(small-handhelds)
-    {
-        margin-left: 0em;
     }
   }
 
@@ -276,8 +267,8 @@ section
   p
   {
     margin-top: 1em;
-    font-size: .875em;
     margin-bottom: 0;
+    font-size: .875em;
   }
 
   ul
@@ -305,8 +296,8 @@ section
   li > ul,
   li > ul a
   {
-    font-size: 1em;
     margin-top: 0em;
+    font-size: 1em;
 
     &::before
     {

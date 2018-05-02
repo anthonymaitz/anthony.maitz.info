@@ -12,21 +12,21 @@ h1, ol, ul, dd, dt, dl, li {
   list-style: none; }
 
 .fancybox-slide--iframe .fancybox-content {
-  width: 1200px;
-  height: 900px;
+  margin: 0;
+  margin-right: auto;
+  margin-left: auto;
   max-width: 95%;
   max-height: 80%;
-  margin: 0;
-  margin-left: auto;
-  margin-right: auto; }
+  width: 1200px;
+  height: 900px; }
 
 .hidden {
   display: none; }
 
 body {
   margin: 0;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.5)), color-stop(2.25em, rgba(255, 255, 255, 0.9)), color-stop(35em, rgba(255, 255, 255, 0.9)), color-stop(45em, rgba(255, 255, 255, 0.7))), url("images/seamless_paper_texture.png");
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9) 2.25em, rgba(255, 255, 255, 0.9) 35em, rgba(255, 255, 255, 0.7) 45em), url("images/seamless_paper_texture.png");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.5)), color-stop(2em, rgba(255, 255, 255, 0.9)), color-stop(36em, rgba(255, 255, 255, 0.9)), color-stop(45em, rgba(255, 255, 255, 0.8))), url("images/seamless_paper_texture.png");
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9) 2em, rgba(255, 255, 255, 0.9) 36em, rgba(255, 255, 255, 0.8) 45em), url("images/seamless_paper_texture.png");
   color: #4b5866;
   word-wrap: break-word;
   font-weight: normal;
@@ -52,7 +52,8 @@ a {
   color: #4779ae;
   text-decoration: none; }
   a:hover {
-    color: #7eb5e5; }
+    color: #7eb5e5;
+    text-decoration: underline; }
 
 header {
   position: fixed;
@@ -60,8 +61,8 @@ header {
   right: 0;
   left: 0;
   border-bottom: solid 1px #DDDDDD;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.7)), color-stop(2.25em, rgba(255, 255, 255, 0.95)), color-stop(35em, rgba(255, 255, 255, 0.95)), color-stop(45em, rgba(255, 255, 255, 0.7)));
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.95) 2.25em, rgba(255, 255, 255, 0.95) 35em, rgba(255, 255, 255, 0.7) 45em); }
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.8)), color-stop(2.25em, rgba(255, 255, 255, 0.95)), color-stop(35em, rgba(255, 255, 255, 0.95)), color-stop(45em, rgba(255, 255, 255, 0.7)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95) 2.25em, rgba(255, 255, 255, 0.95) 35em, rgba(255, 255, 255, 0.7) 45em); }
   header h1 {
     display: inline-block;
     margin-left: 1.5em;
@@ -76,14 +77,10 @@ header {
         margin-left: .75em; } }
     header h1 a {
       margin-left: .25em;
-      color: #87709a;
       line-height: 3em; }
-      header h1 a:hover {
-        color: #7eb5e5; }
   header a.social {
     float: right;
     margin-right: 1.5em;
-    color: #87709a;
     font-size: 1.5em;
     font-family: "social";
     line-height: 3em; }
@@ -122,10 +119,10 @@ section {
     padding-bottom: .25em;
     width: 100%;
     border-bottom: solid 1px #999;
+    letter-spacing: .5px;
     font-weight: 700;
     font-size: 1.125em;
-    line-height: 1.125em;
-    letter-spacing: .5px; }
+    line-height: 1.125em; }
     @media only screen and (max-width: 380px) {
       #resume h2 {
         font-size: 1.125em; } }
@@ -154,19 +151,19 @@ section {
   #resume h3 + p {
     margin-top: 0;
     margin-left: .75em; }
+    @media only screen and (max-width: 380px) {
+      #resume h3 + p {
+        margin-left: 0em; } }
     #resume h3 + p a {
       color: #4b5866; }
       #resume h3 + p a:hover {
         color: #7eb5e5; }
-    @media only screen and (max-width: 380px) {
-      #resume h3 + p {
-        margin-left: 0em; } }
   #resume h3 + h3 {
     margin-top: -.5em; }
   #resume p {
     margin-top: 1em;
-    font-size: .875em;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    font-size: .875em; }
   #resume ul {
     margin-top: 1em;
     margin-left: .75em;
@@ -180,8 +177,8 @@ section {
       content: "• "; }
   #resume li > ul,
   #resume li > ul a {
-    font-size: 1em;
-    margin-top: 0em; }
+    margin-top: 0em;
+    font-size: 1em; }
     #resume li > ul::before,
     #resume li > ul a::before {
       content: none; }
