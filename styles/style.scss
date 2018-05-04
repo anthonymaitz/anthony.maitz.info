@@ -43,7 +43,7 @@ h1, ol, ul, dd, dt, dl, li
 	margin: 0;
   margin-right: auto;
   margin-left: auto;
-	max-width  : 95%;
+	max-width  : 90%;
 	max-height : 80%;
 	width  : 1200px;
 	height : 900px;
@@ -70,7 +70,7 @@ body
   font-display: optional;
   text-rendering: optimizeLegibility;
   font-variant-caps: normal;
-  line-break: after-white-space;
+
   @include respond-to(small-handhelds)
 	{
 		color: black;
@@ -101,6 +101,8 @@ header
 	top:0;
 	right: 0;
 	left: 0;
+  // padding-left: 1.5em;
+  padding-right: 1.5em;
 	border-bottom: solid 1px #DDDDDD;
 	background: linear-gradient(to right, rgba(255,255,255,.8), rgba(255,255,255,.95) 2.25em,rgba(255,255,255,.95) 35em,rgba(255,255,255,.7) 45em);
 
@@ -131,19 +133,19 @@ header
 	a.social
 	{
 		float: right;
-		margin-right: 1.5em;
 		font-size: 1.5em;
 		font-family: "social";
 		line-height: 3em;
 
+
     @include respond-to(small-handhelds)
     {
-      margin-right: .75em;
+      // margin-right: .75em;
       font-size: 1.25em;
     }
 		@include respond-to(handhelds)
 		{
-			margin-right: .75em;
+			// margin-right: .75em;
 		}
 
     span
@@ -162,8 +164,15 @@ section
 {
 	margin-top: 6em;
 	margin-left: 2.25em;
-	width: 90%;
+  margin-right: 2.25em;
 	line-height: 1.4em;
+  display: flex;
+  flex-direction: column-reverse;
+
+  // display: grid;
+  // grid-template-columns: 50% 50%;
+  // grid-gap: .25em;
+  // align-items: start;
 
   @include respond-to(small-handhelds)
 	{
@@ -218,24 +227,23 @@ section
 
     em
     {
-      white-space: pre;
+      white-space: nowrap;
       font-weight: 400;
       font-size: .875em;
 
       &:before
       {
         content:", ";
-
-        @include respond-to(small-handhelds)
-        {
-          content: "\A";
-        }
-        @include respond-to(handhelds)
-        {
-          content: "\A";
-        }
+        white-space: normal;
+        font-weight: 700;
+        font-size: 1.125em;
       }
     }
+  }
+
+  h3 + h3
+  {
+    margin-top: -.5em;
   }
 
   h3 + p
@@ -259,10 +267,7 @@ section
     }
   }
 
-  h3 + h3
-  {
-    margin-top: -.5em;
-  }
+
 
   p
   {
@@ -331,11 +336,30 @@ section
 	{
 		margin-left: 0;
     margin-left: .25em;
-    white-space: pre;
+
 
 		&:before
 		{
         content: "– ";
 		}
 	}
+}
+
+article#portfolio
+{
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: .25em;
+  object-fit: cover;
+  justify-content: space-between;
+  width: calc(100%+.75em);
+  // margin-right: -15em;
+  max-width: 45em;
+
+  img
+  {
+    max-width: 100%;
+    margin-bottom: -.25em;
+  }
 }

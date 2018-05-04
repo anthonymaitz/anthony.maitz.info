@@ -17,8 +17,8 @@ As the lead product strategist of the emerging technologies group, I have helped
 As the social and economic justice lead for San Francisco, I've organized office initiatives to help activists, non-profits, and a few radical librarians by developing tools and programs to increase their impact and protect vulnerable communities.
 
 - [UCSF Virtual Mentor] – Product Manager
-    - [Saving Lives at Birth Seed Grant], winner
-    - [Johnson & Johnson's GenH Challenge], winner
+    - Winner – [Saving Lives at Birth Seed Grant]
+    - Winner – [Johnson & Johnson's GenH Challenge]
 - [Response Innovation Lab, Matchmaker] – Product Strategist
 - [Hutton 2.0, digital storytelling and political education] – Organizer, Mentor
 
@@ -29,7 +29,7 @@ As the social and economic justice lead for San Francisco, I've organized office
 
 After successful [Kickstarter] and [Steam Greenlight] campaigns, playsets was selected to participate in the [Indie Megabooth] at PAX and has grown to tens of thousands of users in over 100 countries.
 
-- [playsets, virtual tabletop for remote role-playing] – Product Manager, Designer
+- [Playsets, virtual tabletop for remote role-playing] – Product Manager, Designer
 
 
 [Discovery Communications]
@@ -71,7 +71,7 @@ Production Design
 - ["Born free"] _M.I.A._
 - ["I Got A Lot (New New New)"] _Mika Miko_
 - ["The nature between Us"] _William Campbell_
-    - SXSW 200
+    - SXSW 2009
 - ["The execution of Solomon Harris"] _Wyatt Garfield + Ed Yonitis_
     - SXSW 2008
 
@@ -100,7 +100,7 @@ Education
 [Kickstarter]: https://www.kickstarter.com/projects/985647565/playsets-the-future-of-social-storytelling target="_window"
 [Steam Greenlight]: https://steamcommunity.com/sharedfiles/filedetails/?id=866256995 target="_window"
 [Indie Megabooth]: http://indiemegabooth.com/event/pax-prime-2015/ target="_window"
-[playsets, virtual tabletop for remote role-playing]: https://www.youtube.com/embed/mNgjgNSpVGA?list=PL5AjSG-LQwc6m96V_t2jgG_08UElFIhmi&autoplay=1&loop=1 data-fancybox=""
+[Playsets, virtual tabletop for remote role-playing]: https://www.youtube.com/embed/mNgjgNSpVGA?list=PL5AjSG-LQwc6m96V_t2jgG_08UElFIhmi&autoplay=1&loop=1 data-fancybox=""
 
 [Discovery Communications]: https://www.discovery.com/ target="_window"
 [Collagio]: ../media/collagio-1.jpg data-fancybox="collagio"

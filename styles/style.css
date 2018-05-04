@@ -15,7 +15,7 @@ h1, ol, ul, dd, dt, dl, li {
   margin: 0;
   margin-right: auto;
   margin-left: auto;
-  max-width: 95%;
+  max-width: 90%;
   max-height: 80%;
   width: 1200px;
   height: 900px; }
@@ -37,8 +37,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-display: optional;
   text-rendering: optimizeLegibility;
-  font-variant-caps: normal;
-  line-break: after-white-space; }
+  font-variant-caps: normal; }
   @media only screen and (max-width: 380px) {
     body {
       color: black;
@@ -60,6 +59,7 @@ header {
   top: 0;
   right: 0;
   left: 0;
+  padding-right: 1.5em;
   border-bottom: solid 1px #DDDDDD;
   background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.8)), color-stop(2.25em, rgba(255, 255, 255, 0.95)), color-stop(35em, rgba(255, 255, 255, 0.95)), color-stop(45em, rgba(255, 255, 255, 0.7)));
   background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95) 2.25em, rgba(255, 255, 255, 0.95) 35em, rgba(255, 255, 255, 0.7) 45em); }
@@ -80,17 +80,12 @@ header {
       line-height: 3em; }
   header a.social {
     float: right;
-    margin-right: 1.5em;
     font-size: 1.5em;
     font-family: "social";
     line-height: 3em; }
     @media only screen and (max-width: 380px) {
       header a.social {
-        margin-right: .75em;
         font-size: 1.25em; } }
-    @media only screen and (min-width: 381px) and (max-width: 45em) {
-      header a.social {
-        margin-right: .75em; } }
     header a.social span {
       display: none; }
     header a.social:hover {
@@ -99,8 +94,18 @@ header {
 section {
   margin-top: 6em;
   margin-left: 2.25em;
-  width: 90%;
-  line-height: 1.4em; }
+  margin-right: 2.25em;
+  line-height: 1.4em;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+     -moz-box-orient: vertical;
+     -moz-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse; }
   @media only screen and (max-width: 380px) {
     section {
       margin-left: 1em; } }
@@ -137,17 +142,16 @@ section {
     font-weight: 700;
     font-size: .875em; }
     #resume h3 em {
-      white-space: pre;
+      white-space: nowrap;
       font-weight: 400;
       font-size: .875em; }
       #resume h3 em:before {
-        content: ", "; }
-        @media only screen and (max-width: 380px) {
-          #resume h3 em:before {
-            content: "\A"; } }
-        @media only screen and (min-width: 381px) and (max-width: 45em) {
-          #resume h3 em:before {
-            content: "\A"; } }
+        content: ", ";
+        white-space: normal;
+        font-weight: 700;
+        font-size: 1.125em; }
+  #resume h3 + h3 {
+    margin-top: -.5em; }
   #resume h3 + p {
     margin-top: 0;
     margin-left: .75em; }
@@ -158,8 +162,6 @@ section {
       color: #4b5866; }
       #resume h3 + p a:hover {
         color: #7eb5e5; }
-  #resume h3 + h3 {
-    margin-top: -.5em; }
   #resume p {
     margin-top: 1em;
     margin-bottom: 0;
@@ -193,7 +195,23 @@ section {
       content: none; }
   #resume li > em {
     margin-left: 0;
-    margin-left: .25em;
-    white-space: pre; }
+    margin-left: .25em; }
     #resume li > em:before {
       content: "– "; }
+
+article#portfolio {
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: .25em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-pack: justify;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100%+.75em);
+  max-width: 45em; }
+  article#portfolio img {
+    max-width: 100%;
+    margin-bottom: -.25em; }
