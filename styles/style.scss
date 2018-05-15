@@ -135,12 +135,13 @@ header
 		float: right;
 		font-size: 1.5em;
 		font-family: "social";
-		line-height: 3em;
+		line-height: 2.8em;
 
 
     @include respond-to(small-handhelds)
     {
       // margin-right: .75em;
+      line-height: 2.95em;
       font-size: 1.25em;
     }
 		@include respond-to(handhelds)
@@ -177,10 +178,13 @@ section
   @include respond-to(small-handhelds)
 	{
 		margin-left: 1em;
+    margin-right: .75em;
 	}
 	@include respond-to(handhelds)
 	{
 		margin-left: 1.25em;
+    margin-right: .75em;
+    padding-right: 0;
 	}
 }
 
@@ -349,17 +353,26 @@ article#portfolio
 {
   margin-bottom: 1em;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: repeat(5, 20%);
   grid-gap: .25em;
   object-fit: cover;
   justify-content: space-between;
-  width: calc(100%+.75em);
+  width: calc(100% - .5em);
   // margin-right: -15em;
-  max-width: 45em;
+  max-width: 1500px;
+
+  @include respond-to(small-handhelds)
+	{
+	  width: calc(100% - 1.25em);
+	}
+	@include respond-to(handhelds)
+	{
+  	width: calc(100% - 1.75em);
+	}
 
   img
   {
     max-width: 100%;
-    margin-bottom: -.25em;
+    margin-bottom: -.33em;
   }
 }

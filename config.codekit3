@@ -559,8 +559,8 @@
 		"oA": 0,
 		"oAP": "\/media\/hutton-1.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -572,7 +572,7 @@
 		"oAP": "\/media\/hutton-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/media\/hutton-3.jpg": {
@@ -583,7 +583,7 @@
 		"oAP": "\/media\/hutton-3.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/media\/igotalot-0.jpg": {
@@ -1314,8 +1314,8 @@
 		"oA": 0,
 		"oAP": "\/styles\/images\/seamless_paper_texture.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -1338,19 +1338,9 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/styles\/print.css",
-		"oF": 2,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
-		},
-	"\/styles\/style.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/styles\/style-min.css",
-		"oF": 0,
-		"oS": 0
 		},
 	"\/styles\/style.scss": {
 		"aP": 1,
@@ -1361,7 +1351,7 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/styles\/style.css",
-		"oF": 3,
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		}
@@ -1376,7 +1366,7 @@
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-obama",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 545286063
+	"lastBuiltDate": 548068192
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -3288,12 +3278,12 @@
 		"autoOutputPathRelativePath": "..\/css",
 		"autoOutputPathReplace1": "sass",
 		"autoOutputPathReplace2": "css",
-		"autoOutputPathStyle": 2,
+		"autoOutputPathStyle": 3,
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 5,
 		"outputStyle": 0,
-		"shouldRunAutoprefixer": 0,
+		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 1
 		},

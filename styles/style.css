@@ -82,9 +82,10 @@ header {
     float: right;
     font-size: 1.5em;
     font-family: "social";
-    line-height: 3em; }
+    line-height: 2.8em; }
     @media only screen and (max-width: 380px) {
       header a.social {
+        line-height: 2.95em;
         font-size: 1.25em; } }
     header a.social span {
       display: none; }
@@ -108,10 +109,13 @@ section {
           flex-direction: column-reverse; }
   @media only screen and (max-width: 380px) {
     section {
-      margin-left: 1em; } }
+      margin-left: 1em;
+      margin-right: .75em; } }
   @media only screen and (min-width: 381px) and (max-width: 45em) {
     section {
-      margin-left: 1.25em; } }
+      margin-left: 1.25em;
+      margin-right: .75em;
+      padding-right: 0; } }
 
 #resume {
   padding-bottom: 4em;
@@ -202,7 +206,7 @@ section {
 article#portfolio {
   margin-bottom: 1em;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: repeat(5, 20%);
   grid-gap: .25em;
   -o-object-fit: cover;
      object-fit: cover;
@@ -210,8 +214,14 @@ article#portfolio {
      -moz-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: calc(100%+.75em);
-  max-width: 45em; }
+  width: calc(100% - .5em);
+  max-width: 1500px; }
+  @media only screen and (max-width: 380px) {
+    article#portfolio {
+      width: calc(100% - 1.25em); } }
+  @media only screen and (min-width: 381px) and (max-width: 45em) {
+    article#portfolio {
+      width: calc(100% - 1.75em); } }
   article#portfolio img {
     max-width: 100%;
-    margin-bottom: -.25em; }
+    margin-bottom: -.33em; }

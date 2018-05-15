@@ -3,7 +3,6 @@ I am a product manager with ten years of experience making consumer products, vi
 [ThoughtWorks]
 --------------
 ### Lead Product Strategist, Emerging Technologies _2013 - Present_
-
 As the lead product strategist of the emerging technologies group, I have helped leaders of start-ups and fortune 500 companies around the world deliver products that matter to their users; and to occasionally do the impossible.
 
 - [Digital Platform Strategy] – Head of Product
@@ -13,7 +12,6 @@ As the lead product strategist of the emerging technologies group, I have helped
 
 
 ### Social and Economic Justice Lead, San Francisco _2015 - Present_
-
 As the social and economic justice lead for San Francisco, I've organized office initiatives to help activists, non-profits, and a few radical librarians by developing tools and programs to increase their impact and protect vulnerable communities.
 
 - [UCSF Virtual Mentor] – Product Manager
@@ -24,9 +22,8 @@ As the social and economic justice lead for San Francisco, I've organized office
 
 
 [The Playsets Team, LLC]
-----------------------
+------------------------
 ### Co-Founder & Designer _2013 - Present_
-
 After successful [Kickstarter] and [Steam Greenlight] campaigns, playsets was selected to participate in the [Indie Megabooth] at PAX and has grown to tens of thousands of users in over 100 countries.
 
 - [Playsets, virtual tabletop for remote role-playing] – Product Manager, Designer
@@ -35,7 +32,6 @@ After successful [Kickstarter] and [Steam Greenlight] campaigns, playsets was se
 [Discovery Communications]
 --------------------------
 ### Director of Product, MyDiscovery _2011 - 2013_
-
 I helped hire and manage a team of developers and designers to create an online "Social Knowledge" platform.
 
 - [Collagio] – Product Manager
@@ -44,7 +40,6 @@ I helped hire and manage a team of developers and designers to create an online 
 [Eyeboogie Inc]
 ---------------
 ### Chief Operating Officer, Eyeboogie Labs _2010 - 2011_
-
 As COO of Eyeboogie Labs, I managed and led a new company to extend current relationships into new opportunities in social media and application development.
 
 - [Startraders], social mmo – Game Designer
@@ -78,11 +73,10 @@ Production Design
 
 Education
 ---------
-**Savannah College of Art and Design**
+### Savannah College of Art and Design _2002 – 2006_
 - BA Film and Television
 
 
-<!-- Here be dragons -->
 
 [ThoughtWorks]: https://www.thoughtworks.com/about-us
 [Digital Platform Strategy]: https://youtu.be/mHcTUrFy7vo target="_window" data-fancybox="thoughtworks"
@@ -116,6 +110,6 @@ Education
 ["You are a tourist"]: https://youtu.be/qkk5wViJo-I data-fancybox="youareatourist"
 ["Adidas all in"]: https://youtu.be/DCRihtIZZdM data-fancybox="adidasallin"
 ["Born free"]: https://vimeo.com/11219730 data-fancybox="bornfree"
-["I Got A Lot (New New New)"]: https://youtu.be/z9bzjhnGrCQ data-fancybox="igotalot" data-ratio="4/3"
+["I Got A Lot (New New New)"]: https://youtu.be/z9bzjhnGrCQ data-fancybox="igotalot"
 ["The nature between Us"]: https://youtu.be/S-VNUOl0GU4 data-fancybox="thenaturebetweenus"
 ["The execution of Solomon Harris"]: http://vimeo.com/20337358 data-fancybox="theexecutionofsolomonharris"
