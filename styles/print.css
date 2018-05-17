@@ -351,7 +351,7 @@ header {
     display: none; }
 
 section {
-  margin-top: 3em; }
+  margin-top: -1em; }
 
 h2, h3 {
   page-break-after: avoid; }

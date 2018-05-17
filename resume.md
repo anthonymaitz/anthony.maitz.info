@@ -3,7 +3,7 @@ I am a product manager with more than ten years of experience making consumer pr
 [ThoughtWorks]
 --------------
 ### Lead Product Strategist, Emerging Technologies _2013 - Present_
-I help leaders of start-ups and fortune 500 companies around the world deliver products that matter to their users; and occasionally we do the (almost) impossible.
+I help leaders of start-ups and fortune 500 companies around the world deliver products that matter to their users; occasionally we do the (almost) impossible.
 
 - [Digital Platform Strategy] – Head of Product
 - [QCon, conference feedback platform] – Product Manager
