@@ -1,6 +1,10 @@
 @import 'style.scss';
 
-#portfolio
+a{
+	color: rgb(31,81,134) !important;
+	}
+
+#portfolio *
 {
 	display: none;
 }
@@ -8,6 +12,7 @@
 body
 {
 	background: none;
+	font-size: 14px;
 }
 
 header
@@ -20,6 +25,13 @@ header
 	}
 
 	margin-bottom: none;
+
+	background: none;
+}
+
+section
+{
+	margin-top: 3em;
 }
 
 h2, h3 {
