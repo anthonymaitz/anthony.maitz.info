@@ -1,12 +1,14 @@
-@font-face {
-  font-weight: normal;
-  font-style: normal;
-  font-family: 'social';
-  src: url('fonts/social.eot?84141987');
-  src: url('fonts/social.eot?84141987#iefix') format('embedded-opentype'),
-       url('fonts/social.woff?84141987') format('woff'),
-       url('fonts/social.ttf?84141987') format('truetype'),
-       url('fonts/social.svg?84141987#social') format('svg');
+@font-face
+{
+	font-family: 'social';
+	font-weight: normal;
+	font-style: normal;
+
+	src: url('fonts/social.eot?84141987');
+	src: url('fonts/social.eot?84141987#iefix') format('embedded-opentype'),
+	url('fonts/social.woff?84141987') format('woff'),
+	url('fonts/social.ttf?84141987') format('truetype'),
+	url('fonts/social.svg?84141987#social') format('svg');
 }
 
 $fadedLink: rgb(135,112,154);
@@ -14,145 +16,206 @@ $link: rgb(71,121,174);
 $linkHover: rgb(126,181,229);
 $black: rgb(75,88,102);
 $header: rgb(85,98,112);
-$backgroundURL: url("images/seamless_paper_texture.png");
-
+$backgroundURL: url('images/seamless_paper_texture.png');
 $break-hand: 380px;
 $break-small: 45em;
 
 @mixin respond-to ( $media )
 {
-	@if $media == small-handhelds {
-		@media only screen and (max-width: $break-hand) { @content; }
+	@if $media == small-handhelds { @media only screen and (max-width: $break-hand) { @content; }}
+	@else if $media == handhelds { @media only screen and (min-width: $break-hand+1) and (max-width: $break-small) { @content; }}
+	@else if $media == screens { @media only screen and (min-width: $break-small + 1) { @content; }}
+}
+
+@mixin keyframes($animation-name)
+{
+	@-webkit-keyframes #{$animation-name}
+	{
+		@content;
 	}
-	@else if $media == handhelds {
-		@media only screen and (min-width: $break-hand+1) and (max-width: $break-small)  { @content; }
+	@-moz-keyframes #{$animation-name}
+	{
+		@content;
 	}
-	@else if $media == screens {
-		@media only screen and (min-width: $break-small + 1) { @content; }
+	@-ms-keyframes #{$animation-name}
+	{
+		@content;
+	}
+	@-o-keyframes #{$animation-name}
+	{
+		@content;
+	}
+	@keyframes #{$animation-name}
+	{
+		@content;
 	}
 }
 
-h1, ol, ul, dd, dt, dl, li
+
+@mixin animation($str)
+{
+	-webkit-animation: #{$str};
+	   -moz-animation: #{$str};
+	    -ms-animation: #{$str};
+	     -o-animation: #{$str};
+	        animation: #{$str};
+}
+
+
+@include keyframes(wave) {
+  0%
+  {
+  	filter: brightness(100%) hue-rotate(0deg);
+  }
+  90%
+  {
+  	filter: brightness(100%) hue-rotate(0deg);
+  	animation-timing-function: ease-in-out;
+  }
+  100%
+  {
+  	filter: brightness(150%) hue-rotate(180deg);
+  }
+}
+
+h1, h2, h3, h4, h5, ol, ul, dd, dt, dl, li, blockquote
 {
 	margin: 0;
 	padding: 0;
-  list-style: none;
-}
 
-.fancybox-slide--iframe .fancybox-content {
-	margin: 0;
-  margin-right: auto;
-  margin-left: auto;
-	max-width  : 90%;
-	max-height : 80%;
-	width  : 1200px;
-	height : 900px;
+	list-style: none;
 }
 
 .hidden
 {
-  display: none;
+	display: none;
 }
 
 body
 {
-	margin: 0;
-	background: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.9) 2em,rgba(255,255,255,.9) 36em,rgba(255,255,255,.8) 45em), $backgroundURL;
-	color: $black;
-  word-wrap: break-word;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
+	font-family: 'Libre Caslon Text', serif;
 	font-size: 18px;
-  font-family: "Libre Caslon Text", serif;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
 
-  -webkit-font-smoothing: antialiased;
-  font-display: optional;
-  text-rendering: optimizeLegibility;
-  font-variant-caps: normal;
+	margin: 0;
 
-  @include respond-to(small-handhelds)
+	word-wrap: break-word;
+
+	color: $black;
+	background: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.9) 2em,rgba(255,255,255,.9) 36em,rgba(255,255,255,.8) 45em), $backgroundURL;
+
+	-webkit-font-smoothing: antialiased;
+	font-display: optional;
+	text-rendering: optimizeLegibility;
+	font-variant-caps: normal;
+
+	@include respond-to(small-handhelds)
 	{
+		font-size: 14px;
+
 		color: black;
-    font-size: 14px;
 	}
-  @include respond-to(handhelds)
+	@include respond-to(handhelds)
 	{
+		font-size: 16px;
+
 		color: black;
-    font-size: 16px;
 	}
 }
 
 a
 {
-	color: $link;
 	text-decoration: none;
+
+	color: $link;
 
 	&:hover
 	{
+		text-decoration: underline;
+
 		color: $linkHover;
-    text-decoration: underline;
 	}
 }
 
 header
 {
-	position:fixed;
-	top:0;
+	position: sticky;
+	z-index: 1;
+	top: 0;
 	right: 0;
 	left: 0;
-  // padding-left: 1.5em;
-  padding-right: 1.5em;
-	border-bottom: solid 1px #DDDDDD;
+
+	padding-right: 1.5em;
+
+	border-bottom: solid 1px #dddddd;
 	background: linear-gradient(to right, rgba(255,255,255,.8), rgba(255,255,255,.95) 2.25em,rgba(255,255,255,.95) 35em,rgba(255,255,255,.7) 45em);
+
+	@include respond-to(small-handhelds)
+	{
+		padding-right: 1em;
+	}
+	@include respond-to(handhelds)
+	{
+		padding-right: 1.25em;
+	}
 
 	h1
 	{
-		display: inline-block;
-		margin-left: 1.5em;
-		font-weight: 300;
 		font-size: 1.5em;
+		font-weight: 400;
 
-    @include respond-to(small-handhelds)
+		display: inline-block;
+
+		margin-left: 1.25em;
+
+		@include respond-to(small-handhelds)
 		{
+			font-size: 1.25em;
+
 			margin-left: .75em;
-      font-size: 1.25em;
 		}
 		@include respond-to(handhelds)
 		{
+			font-size: 1.25em;
+
 			margin-left: .75em;
 		}
 
 		a
 		{
-			margin-left: .25em;
 			line-height: 3em;
+
+			margin-left: .25em;
 		}
 	}
 
 	a.social
 	{
-		float: right;
+		font-family: 'social';
 		font-size: 1.5em;
-		font-family: "social";
 		line-height: 2.8em;
 
+		float: right;
 
-    @include respond-to(small-handhelds)
-    {
-      // margin-right: .75em;
-      line-height: 2.95em;
-      font-size: 1.25em;
-    }
+		user-select: none;
+
+		@include respond-to(small-handhelds)
+		{
+			font-size: 1.25em;
+			line-height: 2.95em;
+		}
 		@include respond-to(handhelds)
 		{
-			// margin-right: .75em;
+			font-size: 1.25em;
+			line-height: 2.95em;
 		}
 
-    span
-    {
-      display: none;
-    }
+		span
+		{
+			display: none;
+		}
 
 		&:hover
 		{
@@ -161,218 +224,316 @@ header
 	}
 }
 
+
 section
 {
-	margin-top: 6em;
-	margin-left: 2.25em;
-  margin-right: 2.25em;
 	line-height: 1.4em;
-  display: flex;
-  flex-direction: column-reverse;
 
-  // display: grid;
-  // grid-template-columns: 50% 50%;
-  // grid-gap: .25em;
-  // align-items: start;
+	display: flex;
+	flex-direction: column-reverse;
 
-  @include respond-to(small-handhelds)
+	margin-top: 2em;
+	margin-right: 2em;
+	margin-left: 2em;
+
+	@include respond-to(small-handhelds)
 	{
+		margin-top: 1em;
+		margin-right: .75em;
 		margin-left: 1em;
-    margin-right: .75em;
+		padding-right: 0;
 	}
 	@include respond-to(handhelds)
 	{
+		margin-top: 1.5em;
+		margin-right: .75em;
 		margin-left: 1.25em;
-    margin-right: .75em;
-    padding-right: 0;
+		padding-right: 0;
 	}
 }
 
 #resume
 {
+	width: 37.5em;
+	max-width: 100%;
 	padding-bottom: 4em;
-  max-width: 100%;
-  width: 35em;
+
+	ul a,
+	p a
+	{
+		@include animation('wave 10s alternate infinite');
+	}
+
+	ul li:nth-of-type(6n + 0) { a {animation-delay: 0s}}
+	ul li:nth-of-type(6n + 1) { a {animation-delay: .25s}}
+	ul li:nth-of-type(6n + 2) { a {animation-delay: .5s}}
+	ul li:nth-of-type(6n + 3) { a {animation-delay: .75s}}
+	ul li:nth-of-type(6n + 4) { a {animation-delay: 1s}}
+	ul li:nth-of-type(6n + 5) { a {animation-delay: 1.25s}}
+	ul li:nth-of-type(6n + 6) { a {animation-delay: 1.5s}}
+
+	a
+	{
+		&:hover
+		{
+			animation: none;
+		}
+	}
 
 	h2
 	{
+		font-size: 1.125em;
+		font-weight: 700;
+		line-height: 1.125em;
+
 		display: inline-block;
+
+		width: 100%;
 		margin-top: 2em;
 		margin-bottom: 0;
 		padding-bottom: .25em;
-		width: 100%;
-		border-bottom: solid 1px #999;
-    letter-spacing: .5px;
-	  font-weight: 700;
-		font-size: 1.125em;
-		line-height: 1.125em;
 
-    @include respond-to(small-handhelds)
-  	{
-  		font-size: 1.125em;
-  	}
-  	@include respond-to(handhelds)
-  	{
-  		font-size: 1.25em;
-  	}
+		letter-spacing: .5px;
+
+		border-bottom: solid 1px #999999;
+
+		@include respond-to(small-handhelds)
+		{
+			font-size: 1.125em;
+		}
+		@include respond-to(handhelds)
+		{
+			font-size: 1.125em;
+		}
 	}
 
-  h2 + h3
-  {
-    margin-top: .75em;
-  }
+	h2 + h3
+	{
+		margin-top: .75em;
+	}
 
-  h3
-  {
-    margin-top: 2em;
-    margin-bottom: .5em;
-    font-weight: 700;
-    font-size: .875em;
+	h3
+	{
+		font-size: .875em;
+		font-weight: 700;
 
-    em
-    {
-      white-space: nowrap;
-      font-weight: 400;
-      font-size: .875em;
+		margin-top: 2em;
+		margin-bottom: .5em;
 
-      &:before
-      {
-        content:", ";
-        white-space: normal;
-        font-weight: 700;
-        font-size: 1.125em;
-      }
-    }
-  }
+		em
+		{
+			font-size: .875em;
+			font-weight: 400;
 
-  h3 + h3
-  {
-    margin-top: -.5em;
-  }
+			white-space: nowrap;
 
-  h3 + p
-  {
-    margin-top: 0;
-    margin-left: .75em;
+			&:before
+			{
+				font-size: 1.125em;
+				font-weight: 700;
 
-    @include respond-to(small-handhelds)
-    {
-        margin-left: 0em;
-    }
+				content: ', ';
+				white-space: normal;
+			}
+		}
+	}
 
-    a
-    {
-      color: $black;
+	h3 + h3
+	{
+		margin-top: -.5em;
+	}
 
-      &:hover
-      {
-        color: $linkHover;
-      }
-    }
-  }
+	h3 + p
+	{
+		margin-top: 0;
+		margin-left: .75em;
 
+		@include respond-to(small-handhelds)
+		{
+			margin-left: 0;
+		}
 
+		a
+		{
+			color: $black;
 
-  p
-  {
-    margin-top: 1em;
-    margin-bottom: 0;
-    font-size: .875em;
-  }
+			&:hover
+			{
+				color: $linkHover;
+			}
+		}
+	}
 
-  ul
-  {
-    margin-top: 1em;
-    margin-left: .75em;
-    font-size: .75em;
+	p
+	{
+		font-size: .875em;
 
-    @include respond-to(small-handhelds)
-    {
-        margin-left: 0em;
-    }
-  }
+		margin-top: 1em;
+		margin-bottom: 0;
+	}
 
-  li
-  {
-    line-height: 1.875em;
+	ul
+	{
+		font-size: .75em;
 
-    &:before
-    {
-      content: "• ";
-    }
-  }
+		margin-top: 1em;
+		margin-left: .75em;
 
-  li > ul,
-  li > ul a
-  {
-    margin-top: 0em;
-    font-size: 1em;
+		@include respond-to(small-handhelds)
+		{
+			margin-left: 0;
+		}
+	}
 
-    &::before
-    {
-      content: none;
-    }
-  }
+	li
+	{
+		line-height: 1.875em;
 
-  li > ul a
-  {
-    color: $black;
+		padding-left: .75em;
 
-    &:hover
-    {
-      color: $linkHover;
-    }
-  }
+		text-indent: -.75em;
+
+		&:before
+		{
+			content: '• ';
+		}
+	}
+
+	li > ul, li > ul a
+	{
+		font-size: 1em;
+
+		margin-top: 0;
+
+		&::before
+		{
+			content: none;
+		}
+	}
+
+	li > ul a
+	{
+		color: $black;
+
+		&:hover
+		{
+			color: $linkHover;
+		}
+	}
 
 	li > ul > li
 	{
-		padding-left: 1em;
-    list-style: none;
+		padding-left: 1.125em;
+
+		list-style: none;
 
 
-    &:before
-    {
-      content: none;
-    }
+		&:before
+		{
+			content: none;
+		}
 	}
 
 	li > em
 	{
 		margin-left: 0;
-    margin-left: .25em;
-
+		margin-left: .25em;
 
 		&:before
 		{
-        content: "– ";
+			content: ' – ';
 		}
 	}
+
+
+	blockquote
+	{
+		font-size: .875em;
+		line-height: 1.5em;
+
+		margin-top: 1.5em;
+		margin-left: .75em;
+		padding-left: .45em;
+
+		border-left: 2px solid lighten($black, 55%);
+
+		@include respond-to(small-handhelds)
+		{
+			margin-left: 0;
+		}
+
+		&:before
+		{
+			font-size: 3em;
+
+			float: left;
+
+			margin-left: -.66em;
+			padding-top: .3em;
+
+			content: '\201C';
+
+			color: lighten($black, 50%);
+		}
+
+		a
+		{
+			font-style: normal;
+
+			animation: none;
+
+			&:before
+			{
+				content: '\A – ';
+				white-space: pre;
+			}
+		}
+	}
+
 }
 
 article#portfolio
 {
-  margin-bottom: 1em;
-  display: grid;
-  grid-template-columns: repeat(5, 20%);
-  grid-gap: .25em;
-  object-fit: cover;
-  justify-content: space-between;
-  width: calc(100% - .5em);
-  // margin-right: -15em;
-  max-width: 1500px;
+	display: grid;
 
-  @include respond-to(small-handhelds)
+	width: calc(100% - .5em);
+	margin-bottom: 1em;
+
+	cursor: pointer;
+	user-select: none;
+
+	grid-template-columns: repeat(5, 20%);
+	grid-gap: .25em;
+	justify-content: space-between;
+
+	@include respond-to(small-handhelds)
 	{
-	  width: calc(100% - 1.25em);
+		width: calc(100% - 1.25em);
 	}
 	@include respond-to(handhelds)
 	{
-  	width: calc(100% - 1.75em);
+		width: calc(100% - 1.5em);
 	}
 
-  img
-  {
-    max-width: 100%;
-    margin-bottom: -.33em;
-  }
+	img
+	{
+		width: 100%;
+		margin-bottom: -.33em;
+
+		transition: border-radius 5s, filter 2s;
+		transition-delay: .5s;
+
+		filter: saturate(90%) brightness(90%) grayscale(10%);
+
+		&:hover
+		{
+			transition: border-radius 2s;
+			// transition-delay: 1s;
+
+			border-radius: 50%;
+
+			filter: saturate(110%) brightness(110%) grayscale(0%);
+		}
+	}
 }
+
