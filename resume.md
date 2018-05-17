@@ -19,7 +19,7 @@ I organize office initiatives to help activists, non-profits, and a few radical 
 - [Response Innovation Lab, Matchmaker] – Product Strategist
 - [Hutton 2.0, digital storytelling and political education] – Organizer, Mentor
 
-> Anthony is a key member to each product program I work in. He has the ability to fluidly move across an organization from executive advisement and organizational strategy all the way to interface design and user testing strategies. He consistently fills roles across our consulting portfolio as VP of Product. He manages technology programs and stay connected to teams throughout. He is a great example of a someone who leads from the trenches. I would highly recommend Anthony for leadership positions across any technology program.
+> Anthony is a key member to each product program I work in. He has the ability to fluidly move across an organization from executive advisement and organizational strategy all the way to interface design and user testing strategies. He consistently fills roles across our consulting portfolio as VP of Product. He manages technology programs and stays connected to teams throughout. He is a great example of someone who leads from the trenches. I would highly recommend Anthony for leadership positions across any technology program.
 > [John Jarosz]
 
 
@@ -69,7 +69,7 @@ I was responsible for pitching all digital products for the company.  I led deve
 - ["NBK Evolution: How would it all go down now?"] – Producer
 - [Movie Mob] – Editor, Interaction Designer, Developer
 
-> Tony created a department and executed numerous projects that never seemed possible to see through. He's a hard worker and an asset to a team--especially one that thinks outside of the box. His pitching and selling skills are the best in the biz, and can charm a room like no other.
+> Tony created a department and executed numerous projects that never seemed possible to see through. He's a hard worker and an asset to a team, especially one that thinks outside of the box. His pitching and selling skills are the best in the biz, and he can charm a room like no other.
 > [Steph Sklar]
 
 
