@@ -26,7 +26,7 @@ I organize office initiatives to help activists, non-profits, and a few radical 
 [The Playsets Team, LLC]
 ------------------------
 ### Co-Founder & Designer _2013 - Present_
-In addition to successful [Kickstarter] and [Steam Greenlight] campaigns, playsets was selected to participate in the [Indie Megabooth] at PAX and has grown to tens of thousands of users in over 100 countries.
+In addition to successful [Kickstarter] and [Steam Greenlight] campaigns, Playsets was selected to participate in the [Indie Megabooth] at PAX and has grown to tens of thousands of users in over 100 countries.
 
 - [Playsets, virtual tabletop for remote role-playing] – Product Manager, Designer
 
@@ -63,7 +63,7 @@ I managed and led a new company to extend current relationships into new opportu
 
 ### Chief Technical Officer _2010 - 2011_
 ### Director of New Media _2007 - 2010_
-I was responsible for pitching all digital products for the company.  I led development efforts on all digital products during this time; including several websites, applications (web and iOS), and streaming video solutions.
+I was responsible for pitching all digital products for the company.  I led development efforts on all digital products during this time; including several websites, applications (web and iOS), and custom streaming video solutions.
 
 - [PopUp Video (2011)] Video authoring tool – Product Manager
 - ["NBK Evolution: How would it all go down now?"] – Producer
