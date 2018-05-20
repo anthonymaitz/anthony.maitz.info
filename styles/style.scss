@@ -104,7 +104,7 @@ body
 	word-wrap: break-word;
 
 	color: $black;
-	background: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.9) 2em,rgba(255,255,255,.9) 36em,rgba(255,255,255,.8) 45em), $backgroundURL;
+	background: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.9) 2em,rgba(255,255,255,.9) 37.5em,rgba(255,255,255,.8) 45em), $backgroundURL;
 
 	-webkit-font-smoothing: antialiased;
 	font-display: optional;
@@ -150,7 +150,7 @@ header
 	padding-right: 1.5em;
 
 	border-bottom: solid 1px #dddddd;
-	background: linear-gradient(to right, rgba(255,255,255,.8), rgba(255,255,255,.95) 2.25em,rgba(255,255,255,.95) 35em,rgba(255,255,255,.7) 45em);
+	background: linear-gradient(to right, rgba(255,255,255,.8), rgba(255,255,255,.95) 2.25em,rgba(255,255,255,.95) 37.5em,rgba(255,255,255,.7) 45em);
 
 	@include respond-to(small-handhelds)
 	{
@@ -163,12 +163,12 @@ header
 
 	h1
 	{
-		font-size: 1.5em;
+		font-size: 1.33em;
 		font-weight: 400;
 
 		display: inline-block;
 
-		margin-left: 1.25em;
+		margin-left: 1.5em;
 
 		@include respond-to(small-handhelds)
 		{
@@ -180,12 +180,12 @@ header
 		{
 			font-size: 1.25em;
 
-			margin-left: .75em;
+			margin-left: 1em;
 		}
 
 		a
 		{
-			line-height: 3em;
+			line-height: 2.5em;
 
 			margin-left: .25em;
 		}
@@ -194,8 +194,8 @@ header
 	a.social
 	{
 		font-family: 'social';
-		font-size: 1.5em;
-		line-height: 2.8em;
+		font-size: 1.33em;
+		line-height: 2.33em;
 
 		float: right;
 
@@ -204,12 +204,12 @@ header
 		@include respond-to(small-handhelds)
 		{
 			font-size: 1.25em;
-			line-height: 2.95em;
+			line-height: 2.46em;
 		}
 		@include respond-to(handhelds)
 		{
 			font-size: 1.25em;
-			line-height: 2.95em;
+			line-height: 2.46em;
 		}
 
 		span
@@ -232,7 +232,7 @@ section
 	display: flex;
 	flex-direction: column-reverse;
 
-	margin-top: 2em;
+	margin-top: 1em;
 	margin-right: 2em;
 	margin-left: 2em;
 
@@ -265,12 +265,12 @@ section
 	}
 
 	ul li:nth-of-type(6n + 0) { a {animation-delay: 0s}}
-	ul li:nth-of-type(6n + 1) { a {animation-delay: .25s}}
-	ul li:nth-of-type(6n + 2) { a {animation-delay: .5s}}
-	ul li:nth-of-type(6n + 3) { a {animation-delay: .75s}}
-	ul li:nth-of-type(6n + 4) { a {animation-delay: 1s}}
-	ul li:nth-of-type(6n + 5) { a {animation-delay: 1.25s}}
-	ul li:nth-of-type(6n + 6) { a {animation-delay: 1.5s}}
+	ul li:nth-of-type(6n + 1) { a {animation-delay: .2s}}
+	ul li:nth-of-type(6n + 2) { a {animation-delay: .4s}}
+	ul li:nth-of-type(6n + 3) { a {animation-delay: .6s}}
+	ul li:nth-of-type(6n + 4) { a {animation-delay: .8s}}
+	ul li:nth-of-type(6n + 5) { a {animation-delay: 1s}}
+	ul li:nth-of-type(6n + 6) { a {animation-delay: 1.2s}}
 
 	a
 	{
@@ -411,16 +411,6 @@ section
 		}
 	}
 
-	li > ul a
-	{
-		color: $black;
-
-		&:hover
-		{
-			color: $linkHover;
-		}
-	}
-
 	li > ul > li
 	{
 		padding-left: 1.125em;
@@ -442,6 +432,7 @@ section
 		&:before
 		{
 			content: ' – ';
+			text-decoration: none;
 		}
 	}
 
@@ -497,7 +488,7 @@ article#portfolio
 	display: grid;
 
 	width: calc(100% - .5em);
-	margin-bottom: 1em;
+	margin-bottom: .5em;
 
 	cursor: pointer;
 	user-select: none;
@@ -515,20 +506,53 @@ article#portfolio
 		width: calc(100% - 1.5em);
 	}
 
+
+		a:after
+		{
+			opacity: 0;
+			transition: all 1s ease-in-out;
+		}
+
+		a:hover:after
+		{
+			font-size: .66em;
+
+			position: relative;
+
+			float: left;
+
+			margin-top: calc(-50% - 2em);
+			// margin-right: auto;
+			margin-left: calc(50% - 1.5em);
+
+			content: '';
+			cursor: pointer;
+			pointer-events: none;
+
+			opacity: 1;
+
+			border-width: 2em 0 2em 3.5em;
+			border-style: solid;
+			border-color: transparent transparent transparent rgb(255,255,255);
+		}
+
+
 	img
 	{
+		cursor: pointer;
 		width: 100%;
 		margin-bottom: -.33em;
+		border-radius: 4%;
 
-		transition: border-radius 5s, filter 2s;
-		transition-delay: .5s;
+		transition: border-radius 2s, filter 2s;
+		// transition-delay: .25s;
 
 		filter: saturate(90%) brightness(90%) grayscale(10%);
 
 		&:hover
 		{
-			transition: border-radius 2s;
-			// transition-delay: 1s;
+			transition: border-radius .5s;
+			// transition-delay: .25s;
 
 			border-radius: 50%;
 

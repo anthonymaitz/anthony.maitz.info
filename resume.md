@@ -14,8 +14,8 @@ I help leaders of start-ups and fortune 500 companies around the world deliver p
 I organize office initiatives to help activists, non-profits, and a few radical librarians by developing tools and programs to increase their impact and serve vulnerable communities.
 
 - [UCSF Virtual Mentor] – Product Manager
-    - Winner – [Saving Lives at Birth Seed Grant]
-    - Winner – [Johnson & Johnson's GenH Challenge]
+    + Winner of [Saving Lives at Birth Seed Grant]
+    + Winner of [Johnson & Johnson's GenH Challenge]
 - [Response Innovation Lab, Matchmaker] – Product Strategist
 - [Hutton 2.0, digital storytelling and political education] – Organizer, Mentor
 
@@ -26,15 +26,18 @@ I organize office initiatives to help activists, non-profits, and a few radical 
 [The Playsets Team, LLC]
 ------------------------
 ### Co-Founder & Designer _2013 - Present_
-In addition to successful [Kickstarter] and [Steam Greenlight] campaigns, Playsets was selected to participate in the [Indie Megabooth] at PAX and has grown to tens of thousands of users in over 100 countries.
+Playsets is a beautiful set of digital maps and miniatures that makes remote role-playing epic and easy. It has tens of thousands of users in over 100 countries.
 
 - [Playsets, virtual tabletop for remote role-playing] – Product Manager, Designer
+    + Successful [Kickstarter] campaign
+    + Successful [Steam Greenlight] campaign
+    + [Indie Megabooth] at PAX prime
 
 
 [Discovery Communications]
 --------------------------
 ### Director of Product, MyDiscovery _2011 - 2013_
-I helped hire and manage a team of developers and designers to create an online "Social Knowledge" platform.
+I helped hire and lead a team of developers and designers to create an online "Social Knowledge" platform.
 
 - [Collagio] – Product Manager
 
@@ -76,16 +79,16 @@ I was responsible for pitching all digital products for the company.  I led deve
 Production Design
 -----------------
 - ["You are a tourist"] _Death Cab For Cutie_
-    - Nominee – Best Art Direction, MTV Video Music Award
-    - World’s first live, scripted, one-take music video shoot!
+    + Nominee – Best Art Direction, MTV Video Music Award
+    + World’s first live, scripted, one-take music video shoot!
 - ["Adidas all in"] (Los Angeles) _Adidas_
-    - International ad campaign
+    + International ad campaign
 - ["Born free"] _M.I.A._
 - ["I Got A Lot (New New New)"] _Mika Miko_
 - ["The nature between Us"] _William Campbell_
-    - SXSW 2009
+    + SXSW 2009
 - ["The execution of Solomon Harris"] _Wyatt Garfield + Ed Yonitis_
-    - SXSW 2008
+    + SXSW 2008
 
 
 Education
@@ -97,7 +100,7 @@ Education
 [John Jarosz]: https://www.linkedin.com/in/johnjarosz/
 [Sean Atkins]: https://www.linkedin.com/in/theseanatkins/
 [Evelina Rodriguez]: https://www.linkedin.com/in/helloevelina/
-[Steph Sklar]: https://www.linkedin.com/in/steph-sklar-mulcahy/
+[Steph Sklar]: https://www.linkedin.com/in/steph-sklar-mulcahy-1140ba4/
 
 [ThoughtWorks]: https://www.thoughtworks.com/about-us
 [Digital Platform Strategy]: https://youtu.be/mHcTUrFy7vo target="_window" data-fancybox="dps"
