@@ -1,100 +1,137 @@
-I am a product manager with more than ten years of experience making consumer products, video games, and interactive experiences. I have built and led teams as large as 100 people with budgets ranging from thousands to millions of dollars. Along the way, I have coached clients and colleagues in data-driven design, agile methodologies, and product management.
+## Product Manager, Designer, Maker
+
+An award-winning Product Manager highly regarded for 12 years of delivering effective products, innovative technology, and new businesses for Fortune 500 companies and mission-driven organizations.
+
+Passionate about delighting users and pursuing designs and features that best drive business goals, using agile methodologies to release value rapidly and respond to real user feedback.
+
+Sought for expertise in technology consultation, ideation, creative art production, and multi-million-dollar product management.
+
 
 [ThoughtWorks]
 --------------
 ### Lead Product Strategist, Emerging Technologies _2013 - Present_
-I help leaders of start-ups and fortune 500 companies around the world deliver products that matter to their users; occasionally we do the (almost) impossible.
 
-- [Digital Platform Strategy] – Head of Product
-- [QCon, conference feedback platform] – Product Manager
-- [Qbo, connected coffee machine] – Product Strategist
-- [Natural Markets Food Group, retail food at Eaton Center] – Lead Product Manager
+Provide lead product management for clients of a mission-driven creative technology consultancy, helping leaders of start-ups and Fortune 500 companies around the world deliver products that matter to their users.
 
-### Social and Economic Justice Lead, San Francisco _2015 - Present_
-I organize office initiatives to help activists, non-profits, and a few radical librarians by developing tools and programs to increase their impact and serve vulnerable communities.
+Build and direct teams as large as 100 people with budgets ranging up to millions of dollars, leveraging exceptional interpersonal, organizational, and product management skills to lead with empathy, innovation, and passion.
 
-- [UCSF Virtual Mentor] – Product Manager
-    + Winner of [Saving Lives at Birth Seed Grant]
-    + Winner of [Johnson & Johnson's GenH Challenge]
-- [Response Innovation Lab, Matchmaker] – Product Strategist
-- [Hutton 2.0, digital storytelling and political education] – Organizer, Mentor
+Manage the entire product life-cycle, from ideation and strategic development to producing rapidly iterated prototypes and shipping final products.
 
-> Anthony is a key member to each product program I work in. He has the ability to fluidly move across an organization from executive advisement and organizational strategy all the way to interface design and user testing strategies. He consistently fills roles across our consulting portfolio as VP of Product. He manages technology programs and stays connected to teams throughout. He is a great example of someone who leads from the trenches. I would highly recommend Anthony for leadership positions across any technology program.
-> [John Jarosz]
+#### Notable Projects
+##### [QCon, Conference feedback platform] – Product Manager
+Served as Product Manager for the QCon international developer conference, spearheading creation and execution of an agile participant feedback platform used by attendees.
+
+* Rapid prototyping, using custom hardware, with on-site testing in multiple cities.
+* Custom FCC and CE certified hardware created with a manufacturer in Shenzhen.
+* Created industrial design for wearable and directly oversaw its production.
+
+##### [Qbo, Connected coffee machine] – Product Strategist
+Defined product strategy and lead development team for the embedded computer interface for the Q-bo connected coffee machine as well as the corresponding smartphone app and loyalty program.
+
+* Rapid prototyping, with a 3D printed machine and custom hardware, to enable user testing a year before production hardware was available.
+* Hardware component selection for embedded computer for mass produced consumer device.
+
+##### GAP, Validated learning process - Product Strategist
+Worked with the VP of Engineering to institute a new innovation method across the organization and to change the development process between Product and Engineering.
+
+* Led an innovation team of stakeholders, developers, and designers.
+* Trained client stakeholders and helped implement hypothesis driven design and development across the IT organization.
+* Evangelized and executed rapid prototyping and in-store testing of hypotheses to save development time and costs.
+
+##### [Natural Markets Food Group, Retail food at Eaton Center] – Lead Product Manager
+Defined product differentiation for a retail food/restaurant concept at Toronto Eaton Center, conceptualizing and designing technologies for customer payment, customer experience, online ordering, and Point of Sales and Operations.
+
+* Led product development teams in multiple cities and managed 13 vendors across two countries.
+* Managed service design and technology for launch of multi vendor food concept in Toronto Eaton Center with 6 month deadline.
+
+### Social and Economic Justice Lead, San Francisco _2015 - 2018_
+Led and organized initiatives for activists, non-profits, and a few radical librarians to exponentially increase their impact and serve vulnerable communities.
+
+Created and maintained partner relationships and initiatives for the San Franciso ThoughtWorks office.
+
+Recognized for technology innovation in the healthcare space for UCSF Virtual Mentor, winner of a “Saving Lives at Birth” Seed Grant and a winner of Johnson & Johnson’s GenH Challenge.
+
+#### Notable Projects
+
+##### [UCSF Virtual Mentor] – Product Manager
+Led development for a voice-controlled, virtual assistant that guides birth attendants through complicated or emergency procedures, for University of California-San Francisco’s Institute for Global Health Sciences.
+
+* Rapid prototyping with on-site testing at UCSF and medical facility in Nairobi.
+* Programmed AI chatbot in IBM Watson ecosystem.
+* Winner of [Saving Lives at Birth Seed Grant]
+* Winner of [Johnson & Johnson's GenH Challenge]
+
+##### [Response Innovation Lab, Matchmaker] – Product Strategist
+Designer and Program manager for a platform for humanitarian sector problem-holders to be matched with advisers and solutions, overseeing an MVP for pilot programs in Jordan, Somalia, and Puerto Rico.
+
+##### [Hutton 2.0, digital storytelling and political education] – Organizer, Mentor
+Created platform to mentor and teach youth coding and develop their skill sets in design, storytelling, and political education.
 
 
 [The Playsets Team, LLC]
 ------------------------
-### Co-Founder & Designer _2013 - Present_
-Playsets is a beautiful set of digital maps and miniatures that makes remote role-playing epic and easy. It has tens of thousands of users in over 100 countries.
+### Co-Founder & Product Designer _2013 - 2018_
+Designed and brought to market “Playsets”, a collection of digital maps and miniatures for epic remote role-playing, resulting in tens of thousands of users in over 100 countries.
 
-- [Playsets, virtual tabletop for remote role-playing] – Product Manager, Designer
-    + Successful [Kickstarter] campaign
-    + Successful [Steam Greenlight] campaign
-    + [Indie Megabooth] at PAX prime
+Designed and executed product marketing strategies, including successful [Kickstarter] and [Steam Greenlight] campaigns.
+
+Selected for [Indie Megabooth] at PAX prime.
 
 
 [Discovery Communications]
 --------------------------
-### Director of Product, MyDiscovery _2011 - 2013_
-I helped hire and lead a team of developers and designers to create an online "Social Knowledge" platform.
+### Director of Product and Engineering, MyDiscovery _2011 - 2013_
+Provided leadership for a team of developers and designers creating an online “Social Knowledge” platform, overseeing hiring, development, and mentorship for the team.
 
-- [Collagio] – Product Manager
+Head of Product for “Collagio,” an app that let users easily create, share, and discover collections of curated and original content.
 
-<!-- 
-Created live prototypes for the application and its interface.
-Managed a third party development team before and during the transition to an internal team.
-Implemented weekly User Experience testing to validate and inform design decisions.
-Contributed to the front end development of the product.
--->
-
-> Product is in Anthony's blood. He focuses on delighting the customer and passionately pursues the designs and features that will best drive the business forward. He is that rare product talent who also has a technical background that allows him to make his own MVPs.
-> [Sean Atkins]
-
-> Tony is a brilliant creative thinker and comes with loads of passionate and infectious energy. When Tony gets excited about something, it's nearly impossible to not get fired up yourself. He is a mix of right and left brain, being able to manage technical analysis and foresight, while charging forward with imaginative creative vision. Being now in a new environment and position, one of the first things I realized here was how much of a better designer and creative thinker I am for having worked under Tony's guidance and leadership.
-> [Evelina Rodriguez]
+Collaborated closely with developers and designers to prototype, validate, prepare product specs, benchmark and track progress, and launch products.
 
 
 [Eyeboogie Inc]
 ---------------
 ### Chief Operating Officer, Eyeboogie Labs _2010 - 2011_
-I managed and led a new company to extend current relationships into new opportunities in social media and application development.
+Created and managed a profitable independent subsidiary, Eyeboogie Labs; oversaw operations, strategic vision, building partnerships, and securing and maintaining clients.
 
-- [Startraders], social mmo – Game Designer
-- [Toyota Faceoff], Corolla video booth – Product Manager
-- [Dance Cam Slam] – Interaction Designer, Developer
+Extended existing relationships into new opportunities in social media, interactive experiences, and application development.
 
 ### Chief Technical Officer _2010 - 2011_
+Directed digital product development, including websites, apps (web and iOS), and custom streaming video solutions.
+
+Designed the "Pop Tool" a video workflow tool and knowledge base that allowed writers of "Pop Up Video 2.0" to work exponentially faster than previously possible.
+
 ### Director of New Media _2007 - 2010_
-I was responsible for pitching all digital products for the company.  I led development efforts on all digital products during this time; including several websites, applications (web and iOS), and custom streaming video solutions.
+Produced a documentary featured on “Natural Born Killers” Blu-Ray release.
 
-- [PopUp Video (2011)] Video authoring tool – Product Manager
-- ["NBK Evolution: How would it all go down now?"] – Producer
-- [Movie Mob] – Editor, Interaction Designer, Developer
-
-> Tony created a department and executed numerous projects that never seemed possible to see through. He's a hard worker and an asset to a team, especially one that thinks outside of the box. His pitching and selling skills are the best in the biz, and he can charm a room like no other.
-> [Steph Sklar]
+Integrated technology into multiple television projects allowing for new production capabilities including multi-channel integrations for live audience voting and live video streaming.
 
 
 Production Design
 -----------------
-- ["You are a tourist"] _Death Cab For Cutie_
-    + Nominee – Best Art Direction, MTV Video Music Award
-    + World’s first live, scripted, one-take music video shoot!
-- ["Adidas all in"] (Los Angeles) _Adidas_
-    + International ad campaign
-- ["Born free"] _M.I.A._
-- ["I Got A Lot (New New New)"] _Mika Miko_
-- ["The nature between Us"] _William Campbell_
-    + SXSW 2009
-- ["The execution of Solomon Harris"] _Wyatt Garfield + Ed Yonitis_
-    + SXSW 2008
+Throughout my early career I often took on side projects as a Production Designer. I worked soup to nuts, from collaborative design with directors, budgeting with producers, 3D modeling and drafting of sets, managing and participating in construction, and finally leading teams of artists to make worlds come to life.
+
+#### Notable Projects
+
+##### ["You are a tourist"] _Death Cab For Cutie_
+Production designer for the world’s first live broadcast, scripted, multi-camera, one-take music video shoot. Nominated for Best Art Direction at 2011 MTV Video Music Awards.
+
+##### ["Adidas all in"] (Los Angeles) _Adidas_
+Production designer for Los Angeles locations for Adidas International ad campaign, the largest in the brand's history.
+
+##### ["Born free"] _M.I.A._
+Production designer for short film/ music video nominated for “Best Dance Video” at the 2010 UK Music Video Awards and ranked by NME as thirteenth on a list of the 100 Greatest Music Videos Ever Made.
+
+##### ["The nature between Us"] _William Campbell_
+Production designer for short film selected for SXSW 2009.
+
+##### ["The execution of Solomon Harris"] _Wyatt Garfield + Ed Yonitis_
+Production designer for short film selected for SXSW 2008.
 
 
 Education
 ---------
-### Savannah College of Art and Design _2002 – 2006_
-- BA Film and Television
+### Savannah College of Art and Design
+Bachelor of Arts in Film and Television Production
 
 
 [John Jarosz]: https://www.linkedin.com/in/johnjarosz/
