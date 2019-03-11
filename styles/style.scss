@@ -3,7 +3,6 @@
 	font-family: 'social';
 	font-weight: normal;
 	font-style: normal;
-
 	src: url('fonts/social.eot?84141987');
 	src: url('fonts/social.eot?84141987#iefix') format('embedded-opentype'),
 	url('fonts/social.woff?84141987') format('woff'),
@@ -19,12 +18,31 @@ $header: rgb(85,98,112);
 $backgroundURL: url('images/seamless_paper_texture.png');
 $break-hand: 380px;
 $break-small: 45em;
+$break-wide: 60em;
 
 @mixin respond-to ( $media )
 {
-	@if $media == small-handhelds { @media only screen and (max-width: $break-hand) { @content; }}
-	@else if $media == handhelds { @media only screen and (min-width: $break-hand+1) and (max-width: $break-small) { @content; }}
-	@else if $media == screens { @media only screen and (min-width: $break-small + 1) { @content; }}
+	@if $media == small-handhelds
+	{
+		@media only screen and (max-width: $break-hand)
+		{
+			@content;
+		}
+	}
+	@else if $media == handhelds
+	{
+		@media only screen and (min-width: $break-hand+1) and (max-width: $break-small)
+		{
+			@content;
+		}
+	}
+	@else if $media == wide
+	{
+		@media only screen and (min-width: $break-wide + 1)
+		{
+			@content;
+		}
+	}
 }
 
 @mixin keyframes($animation-name)
@@ -62,27 +80,40 @@ $break-small: 45em;
 }
 
 
-@include keyframes(wave) {
-  0%
-  {
-  	filter: brightness(100%) hue-rotate(0deg);
-  }
-  90%
-  {
-  	filter: brightness(100%) hue-rotate(0deg);
-  	animation-timing-function: ease-in-out;
-  }
-  100%
-  {
-  	filter: brightness(150%) hue-rotate(180deg);
-  }
+@include keyframes(wave)
+{
+	0%
+	{
+		filter: brightness(100%) hue-rotate(0deg);
+	}
+	90%
+	{
+		filter: brightness(100%) hue-rotate(0deg);
+		animation-timing-function: ease-in-out;
+	}
+	100%
+	{
+		filter: brightness(150%) hue-rotate(180deg);
+	}
 }
 
-h1, h2, h3, h4, h5, ol, ul, dd, dt, dl, li, blockquote
+h1,
+h2,
+h3,
+h4,
+h5,
+ol,
+ul,
+dd,
+dt,
+dl,
+li,
+blockquote,
+pre,
+code
 {
 	margin: 0;
 	padding: 0;
-
 	list-style: none;
 }
 
@@ -98,14 +129,10 @@ body
 	font-weight: normal;
 	font-style: normal;
 	font-stretch: normal;
-
 	margin: 0;
-
 	word-wrap: break-word;
-
 	color: $black;
 	background: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.9) 2em,rgba(255,255,255,.9) 37.5em,rgba(255,255,255,.8) 45em), $backgroundURL;
-
 	-webkit-font-smoothing: antialiased;
 	font-display: optional;
 	text-rendering: optimizeLegibility;
@@ -114,13 +141,11 @@ body
 	@include respond-to(small-handhelds)
 	{
 		font-size: 14px;
-
 		color: black;
 	}
 	@include respond-to(handhelds)
 	{
 		font-size: 16px;
-
 		color: black;
 	}
 }
@@ -128,15 +153,21 @@ body
 a
 {
 	text-decoration: none;
-
 	color: $link;
 
-	&:hover
+	@media(any-hover)
 	{
-		text-decoration: underline;
-
-		color: $linkHover;
+		&:hover
+		{
+			text-decoration: underline;
+			color: $linkHover;
+		}
 	}
+}
+
+pre
+{
+	white-space: pre-line;
 }
 
 header
@@ -144,12 +175,8 @@ header
 	position: sticky;
 	z-index: 1;
 	top: 0;
-	right: 0;
-	left: 0;
-
 	padding-right: 1.5em;
-
-	border-bottom: solid 1px #dddddd;
+	border-bottom: solid 1px #f0f0f0;
 	background: linear-gradient(to right, rgba(255,255,255,.8), rgba(255,255,255,.95) 2.25em,rgba(255,255,255,.95) 37.5em,rgba(255,255,255,.7) 45em);
 
 	@include respond-to(small-handhelds)
@@ -158,35 +185,30 @@ header
 	}
 	@include respond-to(handhelds)
 	{
-		padding-right: 1.25em;
+		padding-right: .75em;
 	}
 
 	h1
 	{
 		font-size: 1.33em;
 		font-weight: 400;
-
 		display: inline-block;
-
-		margin-left: 1.5em;
+		margin-left: 1.25em;
 
 		@include respond-to(small-handhelds)
 		{
 			font-size: 1.25em;
-
 			margin-left: .75em;
 		}
 		@include respond-to(handhelds)
 		{
 			font-size: 1.25em;
-
-			margin-left: 1em;
+			margin-left: .75em;
 		}
 
 		a
 		{
 			line-height: 2.5em;
-
 			margin-left: .25em;
 		}
 	}
@@ -196,9 +218,7 @@ header
 		font-family: 'social';
 		font-size: 1.33em;
 		line-height: 2.33em;
-
 		float: right;
-
 		user-select: none;
 
 		@include respond-to(small-handhelds)
@@ -227,57 +247,76 @@ header
 
 section
 {
-	line-height: 1.4em;
-
 	display: flex;
 	flex-direction: column-reverse;
-
+	line-height: 1.4em;
 	margin-top: 1em;
-	margin-right: 2em;
-	margin-left: 2em;
+	margin-right: 1.5em;
+	margin-left: 1.5em;
 
-	@include respond-to(small-handhelds)
+
+@include respond-to(small-handhelds)
 	{
 		margin-top: 1em;
-		margin-right: .75em;
+		width: auto;
 		margin-left: 1em;
-		padding-right: 0;
+		margin-right: 1em;
 	}
+
 	@include respond-to(handhelds)
 	{
 		margin-top: 1.5em;
+		margin-left: .75em;
 		margin-right: .75em;
-		margin-left: 1.25em;
-		padding-right: 0;
+		width: auto;
 	}
 }
 
 #resume
 {
+
 	width: 37.5em;
 	max-width: 100%;
 	padding-bottom: 4em;
 
+
+
+	h5 a,
 	ul a,
 	p a
 	{
 		@include animation('wave 10s alternate infinite');
 	}
 
-	ul li:nth-of-type(6n + 0) { a {animation-delay: 0s}}
-	ul li:nth-of-type(6n + 1) { a {animation-delay: .2s}}
-	ul li:nth-of-type(6n + 2) { a {animation-delay: .4s}}
-	ul li:nth-of-type(6n + 3) { a {animation-delay: .6s}}
-	ul li:nth-of-type(6n + 4) { a {animation-delay: .8s}}
-	ul li:nth-of-type(6n + 5) { a {animation-delay: 1s}}
-	ul li:nth-of-type(6n + 6) { a {animation-delay: 1.2s}}
+	// This isn't great.
+	// I think I need to use JQuery to make this wave page wide
+	h5,
+	ul,
+	p
+	{
+		&:nth-of-type(10n + 0) { a{animation-delay: 0s; } }
+		&:nth-of-type(10n + 1) { a{animation-delay: .2s; } }
+		&:nth-of-type(10n + 2) { a{animation-delay: .4s; } }
+		&:nth-of-type(10n + 3) { a{animation-delay: .6s; } }
+		&:nth-of-type(10n + 4) { a{animation-delay: .8s; } }
+		&:nth-of-type(10n + 5) { a{animation-delay: 1s; } }
+		&:nth-of-type(10n + 6) { a{animation-delay: 1.2s; } }
+		&:nth-of-type(10n + 7) { a{animation-delay: 1.4s; } }
+		&:nth-of-type(10n + 8) { a{animation-delay: 1.6s; } }
+		&:nth-of-type(10n + 9) { a{animation-delay: 1.8s; } }
+		&:nth-of-type(10n + 10) { a{animation-delay: 2s; } }
+	}
+
 
 	a
 	{
-		&:hover
+		@media(any-hover)
+		{
+			&:hover
 		{
 			animation: none;
 		}
+	}
 	}
 
 	h2
@@ -285,16 +324,12 @@ section
 		font-size: 1.125em;
 		font-weight: 700;
 		line-height: 1.125em;
-
-		display: inline-block;
-
+		// display: inline-block;
 		width: 100%;
-		margin-top: 2em;
+		margin-top: 2.5em;
 		margin-bottom: 0;
 		padding-bottom: .25em;
-
 		letter-spacing: .5px;
-
 		border-bottom: solid 1px #999999;
 
 		@include respond-to(small-handhelds)
@@ -305,6 +340,29 @@ section
 		{
 			font-size: 1.125em;
 		}
+
+		&:first-of-type
+		{
+			margin-top: 0;
+			margin-bottom: 0;
+			border-bottom: none;
+
+
+				& + p
+				{
+					margin-left: 0;
+
+					& + p
+					{
+						margin-left: 0;
+
+						& + p
+						{
+							margin-left: 0;
+						}
+					}
+			}
+		}
 	}
 
 	h2 + h3
@@ -314,9 +372,8 @@ section
 
 	h3
 	{
-		font-size: .875em;
+		font-size: 1em;
 		font-weight: 700;
-
 		margin-top: 2em;
 		margin-bottom: .5em;
 
@@ -324,14 +381,12 @@ section
 		{
 			font-size: .875em;
 			font-weight: 400;
-
 			white-space: nowrap;
 
 			&:before
 			{
 				font-size: 1.125em;
 				font-weight: 700;
-
 				content: ', ';
 				white-space: normal;
 			}
@@ -346,12 +401,6 @@ section
 	h3 + p
 	{
 		margin-top: 0;
-		margin-left: .75em;
-
-		@include respond-to(small-handhelds)
-		{
-			margin-left: 0;
-		}
 
 		a
 		{
@@ -364,20 +413,41 @@ section
 		}
 	}
 
+	h4
+	{
+		font-size: .875em;
+		margin-top: 1em;
+		margin-bottom: -1em;
+		// margin-left: .5em;
+		font-weight: 400;
+		color: lighten($black, 25%);
+
+		&:after
+		{
+			content: ':';
+		}
+	}
+
+	h5
+	{
+		margin-top: 2em;
+		margin-bottom: -.25em;
+		margin-left: 1em;
+	}
+
 	p
 	{
 		font-size: .875em;
-
-		margin-top: 1em;
+		margin-top: .5em;
 		margin-bottom: 0;
+		margin-left: 1em;
 	}
 
 	ul
 	{
-		font-size: .75em;
-
-		margin-top: 1em;
-		margin-left: .75em;
+		font-size: .875em;
+		margin-left: 2em;
+		margin-top: .75em;
 
 		@include respond-to(small-handhelds)
 		{
@@ -387,11 +457,10 @@ section
 
 	li
 	{
-		line-height: 1.875em;
-
+		line-height: 1.5em;
 		padding-left: .75em;
-
 		text-indent: -.75em;
+		margin-top: .5em;
 
 		&:before
 		{
@@ -399,10 +468,10 @@ section
 		}
 	}
 
-	li > ul, li > ul a
+	li > ul,
+	li > ul a
 	{
 		font-size: 1em;
-
 		margin-top: 0;
 
 		&::before
@@ -414,7 +483,6 @@ section
 	li > ul > li
 	{
 		padding-left: 1.125em;
-
 		list-style: none;
 
 
@@ -435,129 +503,71 @@ section
 			text-decoration: none;
 		}
 	}
-
-
-	blockquote
-	{
-		font-size: .875em;
-		line-height: 1.5em;
-
-		margin-top: 1.5em;
-		margin-left: .75em;
-		padding-left: .45em;
-
-		border-left: 2px solid lighten($black, 55%);
-
-		@include respond-to(small-handhelds)
-		{
-			margin-left: 0;
-		}
-
-		&:before
-		{
-			font-size: 3em;
-
-			float: left;
-
-			margin-left: -.66em;
-			padding-top: .3em;
-
-			content: '\201C';
-
-			color: lighten($black, 50%);
-		}
-
-		a
-		{
-			font-style: normal;
-
-			animation: none;
-
-			&:before
-			{
-				content: '\A – ';
-				white-space: pre;
-			}
-		}
-	}
-
 }
 
-article#portfolio
+#portfolio
 {
 	display: grid;
 
-	width: calc(100% - .5em);
-	margin-bottom: .5em;
-
 	cursor: pointer;
 	user-select: none;
+	grid-gap: .33em;
+	grid-template-columns: repeat(auto-fill, minmax(24%, 1fr));
 
-	grid-template-columns: repeat(5, 20%);
-	grid-gap: .25em;
-	justify-content: space-between;
-
-	@include respond-to(small-handhelds)
+	@media(max-aspect-ratio: 60/100)
 	{
-		width: calc(100% - 1.25em);
+		grid-template-columns: repeat(auto-fill, minmax(32%, 1fr));
 	}
-	@include respond-to(handhelds)
+	@media(min-aspect-ratio: 95/100)
 	{
-		width: calc(100% - 1.5em);
+		grid-template-columns: repeat(auto-fill, minmax(19%, 1fr));
 	}
 
+	justify-content: space-evenly;
 
-		a:after
-		{
-			opacity: 0;
-			transition: all 1s ease-in-out;
-		}
 
+
+	@media(any-hover)
+	{
 		a:hover:after
 		{
 			font-size: .66em;
-
 			position: relative;
-
 			float: left;
-
 			margin-top: calc(-50% - 2em);
-			// margin-right: auto;
 			margin-left: calc(50% - 1.5em);
-
 			content: '';
 			cursor: pointer;
 			pointer-events: none;
-
 			opacity: 1;
-
 			border-width: 2em 0 2em 3.5em;
 			border-style: solid;
 			border-color: transparent transparent transparent rgb(255,255,255);
 		}
-
+	}
 
 	img
 	{
 		cursor: pointer;
 		width: 100%;
 		margin-bottom: -.33em;
-		border-radius: 4%;
-
-		transition: border-radius 2s, filter 2s;
+		border-radius: 3%;
+		transition: filter .33s;
 		// transition-delay: .25s;
 
 		filter: saturate(90%) brightness(90%) grayscale(10%);
 
-		&:hover
+		@media(any-hover)
 		{
-			transition: border-radius .5s;
-			// transition-delay: .25s;
+			&:hover
+			{
+				// transition: border-radius .33s;
+				// transition-delay: .25s;
 
-			border-radius: 50%;
-
-			filter: saturate(110%) brightness(110%) grayscale(0%);
+				// border-radius: 50%;
+				box-shadow: 0 0 .25em .125em rgba(0,0,0,.2);
+				filter: saturate(110%) brightness(110%) grayscale(0%);
+			}
 		}
 	}
 }
-
