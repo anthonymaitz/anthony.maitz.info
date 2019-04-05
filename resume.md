@@ -1,16 +1,14 @@
 ## Product Manager, Designer, Maker
-
-An award-winning Product Manager highly regarded for 12 years of delivering effective products, innovative technology, and new businesses for Fortune 500 companies and mission-driven organizations.
-
-Passionate about delighting users and pursuing designs and features that best drive business goals, using agile methodologies to release value rapidly and respond to real user feedback.
+Award-winning Product Manager highly regarded for 12 years of delivering impactful products, innovative technology, and new businesses for Fortune 500 companies and mission-driven organizations.
 
 Sought for expertise in technology consultation, ideation, creative art production, and multi-million-dollar product management.
+
+Passionate about delighting users and pursuing designs and features that best drive business goals, using agile methodologies to release value rapidly and respond to real user feedback.
 
 
 [ThoughtWorks]
 --------------
 ### Lead Product Strategist, Emerging Technologies _2013 - Present_
-
 Provide lead product management for clients of a mission-driven creative technology consultancy, helping leaders of start-ups and Fortune 500 companies around the world deliver products that matter to their users.
 
 Build and direct teams as large as 100 people with budgets ranging up to millions of dollars, leveraging exceptional interpersonal, organizational, and product management skills to lead with empathy, innovation, and passion.
@@ -18,31 +16,31 @@ Build and direct teams as large as 100 people with budgets ranging up to million
 Manage the entire product life-cycle, from ideation and strategic development to producing rapidly iterated prototypes and shipping final products.
 
 #### Notable Projects
-##### [QCon, Conference feedback platform] – Product Manager
-Served as Product Manager for the QCon international developer conference, spearheading creation and execution of an agile participant feedback platform used by attendees.
+##### [C4 Media, Conference feedback platform] – Product Manager
+Product Manager for the creation and execution of a platform of participant feedback wearables for the QCon international developer conference.
 
 * Rapid prototyping, using custom hardware, with on-site testing in multiple cities.
 * Custom FCC and CE certified hardware created with a manufacturer in Shenzhen.
 * Created industrial design for wearable and directly oversaw its production.
 
-##### [Qbo, Connected coffee machine] – Product Strategist
-Defined product strategy and lead development team for the embedded computer interface for the Q-bo connected coffee machine as well as the corresponding smartphone app and loyalty program.
+##### [Tchibo, Connected coffee machine] – Product Strategist
+Defined product strategy and led a development team for the embedded computer interface for the Q-bo connected coffee machine as well as the corresponding smartphone app and loyalty program.
 
-* Rapid prototyping, with a 3D printed machine and custom hardware, to enable user testing a year before production hardware was available.
-* Hardware component selection for embedded computer for mass produced consumer device.
+* Rapid prototyping, with a 3D printed coffee machine and custom hardware, to enable user testing a year before production hardware was available.
+* Hardware component selection for an embedded computer for a mass-produced consumer device.
 
-##### GAP, Validated learning process - Product Strategist
-Worked with the VP of Engineering to institute a new innovation method across the organization and to change the development process between Product and Engineering.
+##### GAP Inc, Validated learning process - Product Strategist
+Worked with the VP of Engineering to institute a new method for innovation across the organization and to change the development process between Product and Engineering.
 
 * Led an innovation team of stakeholders, developers, and designers.
-* Trained client stakeholders and helped implement hypothesis driven design and development across the IT organization.
+* Trained client stakeholders and helped implement hypothesis-driven design and development across the IT organization.
 * Evangelized and executed rapid prototyping and in-store testing of hypotheses to save development time and costs.
 
 ##### [Natural Markets Food Group, Retail food at Eaton Center] – Lead Product Manager
 Defined product differentiation for a retail food/restaurant concept at Toronto Eaton Center, conceptualizing and designing technologies for customer payment, customer experience, online ordering, and Point of Sales and Operations.
 
 * Led product development teams in multiple cities and managed 13 vendors across two countries.
-* Managed service design and technology for launch of multi vendor food concept in Toronto Eaton Center with 6 month deadline.
+* Managed service design and technology for the launch of a multi-vendor food concept in Toronto Eaton Center with a six-month deadline.
 
 ### Social and Economic Justice Lead, San Francisco _2015 - 2018_
 Led and organized initiatives for activists, non-profits, and a few radical librarians to exponentially increase their impact and serve vulnerable communities.
@@ -57,7 +55,7 @@ Recognized for technology innovation in the healthcare space for UCSF Virtual Me
 Led development for a voice-controlled, virtual assistant that guides birth attendants through complicated or emergency procedures, for University of California-San Francisco’s Institute for Global Health Sciences.
 
 * Rapid prototyping with on-site testing at UCSF and medical facility in Nairobi.
-* Programmed AI chatbot in IBM Watson ecosystem.
+* Programmed an AI chatbot in the IBM Watson Ecosystem.
 * Winner of [Saving Lives at Birth Seed Grant]
 * Winner of [Johnson & Johnson's GenH Challenge]
 
@@ -65,7 +63,7 @@ Led development for a voice-controlled, virtual assistant that guides birth atte
 Designer and Program manager for a platform for humanitarian sector problem-holders to be matched with advisers and solutions, overseeing an MVP for pilot programs in Jordan, Somalia, and Puerto Rico.
 
 ##### [Hutton 2.0, digital storytelling and political education] – Organizer, Mentor
-Created platform to mentor and teach youth coding and develop their skill sets in design, storytelling, and political education.
+Mentored and taught youth game development, design, storytelling, and political education.
 
 
 [The Playsets Team, LLC]
@@ -75,7 +73,7 @@ Designed and brought to market “Playsets”, a collection of digital maps and 
 
 Designed and executed product marketing strategies, including successful [Kickstarter] and [Steam Greenlight] campaigns.
 
-Selected for [Indie Megabooth] at PAX prime.
+Selected for [Indie Megabooth] at PAX Prime.
 
 
 [Discovery Communications]
@@ -85,7 +83,7 @@ Provided leadership for a team of developers and designers creating an online �
 
 Head of Product for “Collagio,” an app that let users easily create, share, and discover collections of curated and original content.
 
-Collaborated closely with developers and designers to prototype, validate, prepare product specs, benchmark and track progress, and launch products.
+Collaborated closely with developers and designers to prototype, validate, prepare product specs, and launch products.
 
 
 [Eyeboogie Inc]
@@ -98,17 +96,17 @@ Extended existing relationships into new opportunities in social media, interact
 ### Chief Technical Officer _2010 - 2011_
 Directed digital product development, including websites, apps (web and iOS), and custom streaming video solutions.
 
-Designed the "Pop Tool" a video workflow tool and knowledge base that allowed writers of "Pop Up Video 2.0" to work exponentially faster than previously possible.
+Designed "Pop Tool" a video workflow tool and knowledge base that allowed writers of "Pop Up Video 2.0" to work exponentially faster than previously possible.
 
 ### Director of New Media _2007 - 2010_
-Produced a documentary featured on “Natural Born Killers” Blu-Ray release.
-
 Integrated technology into multiple television projects allowing for new production capabilities including multi-channel integrations for live audience voting and live video streaming.
+
+Produced a documentary featured on “Natural Born Killers” Blu-Ray release.
 
 
 Production Design
 -----------------
-Throughout my early career I often took on side projects as a Production Designer. I worked soup to nuts, from collaborative design with directors, budgeting with producers, 3D modeling and drafting of sets, managing and participating in construction, and finally leading teams of artists to make worlds come to life.
+Worked closely with directors, producers, and cinematographers to achieve the overall visual look of film projects. Responsible for execution including designing sets, drafting, budgeting, managing and participating in construction, and leading the art department during production.
 
 #### Notable Projects
 
@@ -141,8 +139,8 @@ Bachelor of Arts in Film and Television Production
 
 [ThoughtWorks]: https://www.thoughtworks.com/about-us
 [Digital Platform Strategy]: https://youtu.be/mHcTUrFy7vo target="_window" data-fancybox="dps"
-[QCon, conference feedback platform]: https://embedwistia-a.akamaihd.net/deliveries/2774b0904ae1c8cf6286066bcc8f6aec4b4759a0/file.mp4 title="Qcon case study" data-fancybox="qcon"
-[Qbo, connected coffee machine]: https://youtu.be/hVk3VHgqY0w data-fancybox="qbo" target="_window"
+[C4 Media, Conference feedback platform]: https://embedwistia-a.akamaihd.net/deliveries/2774b0904ae1c8cf6286066bcc8f6aec4b4759a0/file.mp4 title="Qcon case study" data-fancybox="qcon"
+[Tchibo, Connected coffee machine]: https://youtu.be/hVk3VHgqY0w data-fancybox="qbo" target="_window"
 [Natural Markets Food Group, retail food at Eaton Center]: https://youtu.be/yG28QGNVWkA target="_window" data-fancybox="nmfg"
 
 [UCSF Virtual Mentor]: https://youtu.be/JuACEhP6ci4 target="_window" data-fancybox="ucsf"
