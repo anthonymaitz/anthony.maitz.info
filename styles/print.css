@@ -68,14 +68,10 @@ body {
   font-display: optional;
   text-rendering: optimizeLegibility;
   font-variant-caps: normal; }
-  @media only screen and (max-width: 380px) {
+  @media only screen and (max-width: 45em) {
     body {
-      font-size: 14px;
-      color: black; } }
-  @media only screen and (min-width: 381px) and (max-width: 45em) {
-    body {
-      font-size: 16px;
-      color: black; } }
+      font-size: 15px;
+      color: #4b5866; } }
 
 a {
   text-decoration: none;
@@ -97,28 +93,23 @@ header {
   border-bottom: solid 1px #f0f0f0;
   background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.8)), color-stop(2.25em, rgba(255, 255, 255, 0.95)), color-stop(37.5em, rgba(255, 255, 255, 0.95)), color-stop(45em, rgba(255, 255, 255, 0.7)));
   background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95) 2.25em, rgba(255, 255, 255, 0.95) 37.5em, rgba(255, 255, 255, 0.7) 45em); }
-  @media only screen and (max-width: 380px) {
+  @media only screen and (max-width: 45em) {
     header {
       padding-right: 1em; } }
-  @media only screen and (min-width: 381px) and (max-width: 45em) {
-    header {
-      padding-right: .75em; } }
   header h1 {
     font-size: 1.33em;
     font-weight: 400;
     display: inline-block;
     margin-left: 1.25em; }
-    @media only screen and (max-width: 380px) {
+    @media only screen and (max-width: 45em) {
       header h1 {
-        font-size: 1.25em;
-        margin-left: .75em; } }
-    @media only screen and (min-width: 381px) and (max-width: 45em) {
-      header h1 {
-        font-size: 1.25em;
+        font-size: 1.125em;
+        line-height: 2.875em;
         margin-left: .75em; } }
     header h1 a {
+      font-size: 1em;
       line-height: 2.5em;
-      margin-left: .25em; }
+      margin-left: .125em; }
   header a.social {
     font-family: 'social';
     font-size: 1.33em;
@@ -128,14 +119,10 @@ header {
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none; }
-    @media only screen and (max-width: 380px) {
+    @media only screen and (max-width: 45em) {
       header a.social {
-        font-size: 1.25em;
-        line-height: 2.46em; } }
-    @media only screen and (min-width: 381px) and (max-width: 45em) {
-      header a.social {
-        font-size: 1.25em;
-        line-height: 2.46em; } }
+        font-size: 1.125em;
+        line-height: 2.66em; } }
     header a.social span {
       display: none; }
     header a.social:hover {
@@ -156,18 +143,12 @@ section {
   margin-top: 1em;
   margin-right: 1.5em;
   margin-left: 1.5em; }
-  @media only screen and (max-width: 380px) {
+  @media only screen and (max-width: 45em) {
     section {
       margin-top: 1em;
       width: auto;
       margin-left: 1em;
       margin-right: 1em; } }
-  @media only screen and (min-width: 381px) and (max-width: 45em) {
-    section {
-      margin-top: 1.5em;
-      margin-left: .75em;
-      margin-right: .75em;
-      width: auto; } }
 
 #resume {
   width: 37.5em;
@@ -247,12 +228,9 @@ section {
     padding-bottom: .25em;
     letter-spacing: .5px;
     border-bottom: solid 1px #999999; }
-    @media only screen and (max-width: 380px) {
+    @media only screen and (max-width: 45em) {
       #resume h2 {
-        font-size: 1.125em; } }
-    @media only screen and (min-width: 381px) and (max-width: 45em) {
-      #resume h2 {
-        font-size: 1.125em; } }
+        font-size: 1em; } }
     #resume h2:first-of-type {
       margin-top: 0;
       margin-bottom: 0;
@@ -270,14 +248,16 @@ section {
     font-weight: 700;
     margin-top: 2em;
     margin-bottom: .5em; }
+    @media only screen and (max-width: 45em) {
+      #resume h3 {
+        font-size: .875em; } }
     #resume h3 em {
       font-size: .875em;
       font-weight: 400;
       white-space: nowrap; }
       #resume h3 em:before {
-        font-size: 1.125em;
-        font-weight: 700;
-        content: ', ';
+        padding-right: .5em;
+        content: '';
         white-space: normal; }
   #resume h3 + h3 {
     margin-top: -.5em; }
@@ -306,11 +286,11 @@ section {
     margin-left: 1em; }
   #resume ul {
     font-size: .875em;
-    margin-left: 2em;
+    margin-left: 1.125em;
     margin-top: .75em; }
-    @media only screen and (max-width: 380px) {
+    @media only screen and (max-width: 45em) {
       #resume ul {
-        margin-left: 0; } }
+        margin-left: 1em; } }
   #resume li {
     line-height: 1.5em;
     padding-left: .75em;
@@ -402,16 +382,13 @@ body {
 header {
   border: none;
   position: relative;
-  margin-bottom: none;
+  margin-bottom: 2em;
   background: none; }
   header .social {
     display: none; }
 
-section {
-  margin-top: -1em; }
-
-h2, h3 {
+h1, h2, h3, h4, h5 {
   page-break-after: avoid; }
 
-pre, ul, a {
+pre, ul, a, p {
   page-break-inside: avoid; }

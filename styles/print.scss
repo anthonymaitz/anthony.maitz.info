@@ -19,26 +19,25 @@ header
 {
 	border: none;
 	position: relative;
+	margin-bottom: 2em;
 
 	.social
 	{
 		display:none;
 	}
 
-	margin-bottom: none;
-
 	background: none;
 }
 
 section
 {
-	margin-top: -1em;
+	// margin-top: -1em;
 }
 
-h2, h3 {
+h1, h2, h3, h4, h5 {
   page-break-after: avoid;
 }
 
-pre, ul, a {
+pre, ul, a, p {
   page-break-inside: avoid;
 }
