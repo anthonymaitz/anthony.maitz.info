@@ -16,22 +16,14 @@ $linkHover: rgb(126,181,229);
 $black: rgb(75,88,102);
 $header: rgb(85,98,112);
 $backgroundURL: url('images/seamless_paper_texture.png');
-$break-hand: 380px;
-$break-small: 45em;
+$break-hand: 45em;
 $break-wide: 60em;
 
 @mixin respond-to ( $media )
 {
-	@if $media == small-handhelds
+	@if $media == small
 	{
 		@media only screen and (max-width: $break-hand)
-		{
-			@content;
-		}
-	}
-	@else if $media == handhelds
-	{
-		@media only screen and (min-width: $break-hand+1) and (max-width: $break-small)
 		{
 			@content;
 		}
@@ -138,15 +130,10 @@ body
 	text-rendering: optimizeLegibility;
 	font-variant-caps: normal;
 
-	@include respond-to(small-handhelds)
+	@include respond-to(small)
 	{
-		font-size: 14px;
-		color: black;
-	}
-	@include respond-to(handhelds)
-	{
-		font-size: 16px;
-		color: black;
+		font-size: 15px;
+		color: $black;
 	}
 }
 
@@ -179,13 +166,9 @@ header
 	border-bottom: solid 1px #f0f0f0;
 	background: linear-gradient(to right, rgba(255,255,255,.8), rgba(255,255,255,.95) 2.25em,rgba(255,255,255,.95) 37.5em,rgba(255,255,255,.7) 45em);
 
-	@include respond-to(small-handhelds)
+	@include respond-to(small)
 	{
 		padding-right: 1em;
-	}
-	@include respond-to(handhelds)
-	{
-		padding-right: .75em;
 	}
 
 	h1
@@ -195,21 +178,18 @@ header
 		display: inline-block;
 		margin-left: 1.25em;
 
-		@include respond-to(small-handhelds)
+		@include respond-to(small)
 		{
-			font-size: 1.25em;
-			margin-left: .75em;
-		}
-		@include respond-to(handhelds)
-		{
-			font-size: 1.25em;
+			font-size: 1.125em;
+			line-height: 2.875em;
 			margin-left: .75em;
 		}
 
 		a
 		{
+			font-size: 1em;
 			line-height: 2.5em;
-			margin-left: .25em;
+			margin-left: .125em;
 		}
 	}
 
@@ -221,15 +201,10 @@ header
 		float: right;
 		user-select: none;
 
-		@include respond-to(small-handhelds)
+		@include respond-to(small)
 		{
-			font-size: 1.25em;
-			line-height: 2.46em;
-		}
-		@include respond-to(handhelds)
-		{
-			font-size: 1.25em;
-			line-height: 2.46em;
+			font-size: 1.125em;
+			line-height: 2.66em;
 		}
 
 		span
@@ -255,20 +230,12 @@ section
 	margin-left: 1.5em;
 
 
-@include respond-to(small-handhelds)
+@include respond-to(small)
 	{
 		margin-top: 1em;
 		width: auto;
 		margin-left: 1em;
 		margin-right: 1em;
-	}
-
-	@include respond-to(handhelds)
-	{
-		margin-top: 1.5em;
-		margin-left: .75em;
-		margin-right: .75em;
-		width: auto;
 	}
 }
 
@@ -278,8 +245,6 @@ section
 	width: 37.5em;
 	max-width: 100%;
 	padding-bottom: 4em;
-
-
 
 	h5 a,
 	ul a,
@@ -332,13 +297,9 @@ section
 		letter-spacing: .5px;
 		border-bottom: solid 1px #999999;
 
-		@include respond-to(small-handhelds)
+		@include respond-to(small)
 		{
-			font-size: 1.125em;
-		}
-		@include respond-to(handhelds)
-		{
-			font-size: 1.125em;
+			font-size: 1em;
 		}
 
 		&:first-of-type
@@ -377,6 +338,11 @@ section
 		margin-top: 2em;
 		margin-bottom: .5em;
 
+		@include respond-to(small)
+		{
+			font-size: .875em;
+		}
+
 		em
 		{
 			font-size: .875em;
@@ -385,9 +351,8 @@ section
 
 			&:before
 			{
-				font-size: 1.125em;
-				font-weight: 700;
-				content: ', ';
+				padding-right: .5em;
+				content: '';
 				white-space: normal;
 			}
 		}
@@ -446,12 +411,12 @@ section
 	ul
 	{
 		font-size: .875em;
-		margin-left: 2em;
+		margin-left: 1.125em;
 		margin-top: .75em;
 
-		@include respond-to(small-handhelds)
+		@include respond-to(small)
 		{
-			margin-left: 0;
+			margin-left: 1em;
 		}
 	}
 
