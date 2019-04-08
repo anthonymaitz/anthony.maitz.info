@@ -132,11 +132,9 @@ Bachelor of Arts in Film and Television Production
 
 
 [ThoughtWorks]: https://www.thoughtworks.com/about-us
-[Digital Platform Strategy]: https://youtu.be/mHcTUrFy7vo target="_window" data-fancybox="dps"
 [C4 Media, Conference feedback platform]: https://youtu.be/DEkq6Hr71OA title="Qcon case study" data-fancybox="qcon"
 [Tchibo, Connected coffee machine]: https://youtu.be/hVk3VHgqY0w data-fancybox="qbo" target="_window"
 [Natural Markets Food Group, retail food at Eaton Center]: https://youtu.be/yG28QGNVWkA target="_window" data-fancybox="nmfg"
-
 [UCSF Virtual Mentor]: https://youtu.be/DA7rIcd8XNI target="_window" data-fancybox="ucsf"
 [Saving Lives at Birth Seed Grant]: http://globalhealthsciences.ucsf.edu/news/star-trek-inspired-virtual-mentor-wins-saving-lives-birth-seed-grant target="_window"
 [Johnson & Johnson's GenH Challenge]: https://www.jnj.com/innovation/6-healthcare-entrepreneurs-who-could-make-genh-the-healthiest-yet target="_window"
@@ -147,22 +145,13 @@ Bachelor of Arts in Film and Television Production
 [Kickstarter]: https://www.kickstarter.com/projects/985647565/playsets-the-future-of-social-storytelling target="_window"
 [Steam Greenlight]: https://steamcommunity.com/sharedfiles/filedetails/?id=866256995 target="_window"
 [Indie Megabooth]: http://indiemegabooth.com/event/pax-prime-2015/ target="_window"
-[Playsets, virtual tabletop for remote role-playing]: https://www.youtube.com/embed/mNgjgNSpVGA?list=PL5AjSG-LQwc6m96V_t2jgG_08UElFIhmi&autoplay=1&loop=1 data-fancybox="playsets"
 
 [Discovery Communications]: https://www.discovery.com/ target="_window"
-[Collagio]: ../media/collagio-1.jpg data-fancybox="collagio"
 
 [Eyeboogie Inc]: http://www.eyeboogie.com/
-[Startraders]: ../media/startraders-1.jpg data-fancybox="startraders"
-[Toyota Faceoff]: https://vimeo.com/20440714#t=73s data-fancybox="corollafaceoff"
-[Dance Cam Slam]: http://www.imdb.com/title/tt2065165/
-[PopUp Video (2011)]: http://www.imdb.com/title/tt2043521/?ref_=nv_sr_2
-["NBK Evolution: How would it all go down now?"]: http://www.imdb.com/title/tt1643236/
-[Movie Mob]: http://www.imdb.com/title/tt1176822/
 
 ["You are a tourist"]: https://youtu.be/qkk5wViJo-I data-fancybox="youareatourist"
 ["Adidas all in"]: https://youtu.be/DCRihtIZZdM data-fancybox="adidasallin"
 ["Born free"]: https://vimeo.com/11219730 data-fancybox="bornfree"
-["I Got A Lot (New New New)"]: https://youtu.be/z9bzjhnGrCQ data-fancybox="igotalot"
 ["The nature between Us"]: https://youtu.be/S-VNUOl0GU4 data-fancybox="thenaturebetweenus"
 ["The execution of Solomon Harris"]: http://vimeo.com/20337358 data-fancybox="theexecutionofsolomonharris"
