@@ -203,12 +203,17 @@ header
 
 		a
 		{
-			// margin-right: .5em;
+			margin-right: .5em;
 			font-size: 1.125em;
 			line-height: 2.8125em;
-			margin-left: .75em;
+			// margin-left: .75em;
 			vertical-align: middle;
 			padding-bottom: .8125em;
+
+			&:last-of-type
+			{
+				margin-right: 0;
+			}
 
 			&.selected
 			{

@@ -108,11 +108,13 @@ header {
     display: inline-block;
     vertical-align: middle; }
     header nav a {
+      margin-right: .5em;
       font-size: 1.125em;
       line-height: 2.8125em;
-      margin-left: .75em;
       vertical-align: middle;
       padding-bottom: .8125em; }
+      header nav a:last-of-type {
+        margin-right: 0; }
       header nav a.selected {
         text-decoration: none;
         color: #4b5866;
