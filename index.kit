@@ -9,11 +9,16 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
 <link rel="stylesheet" href="styles/style.css" media="screen" />
 <link rel="stylesheet" href="styles/print.css" media="print" />
+
 </head>
 <body>
 <header>
 <h1>Anthony Maitz<a href="mailto:anthonymaitz+contact@gmail.com">@gmail.com</a></h1>
-<a class="social" title="Linked in" href="https://www.linkedin.com/in/anthonymaitz">l<span>inked in</span></a>
+
+<nav style="display:none;">
+	<a href="#" class="portfolio" onclick="mytest('portfolio');">portfolio</a>
+	<a href="#" class="resume" onclick="mytest('resume');">resume</a>
+</nav>
 </header>
 <section>
 <article id="resume">
@@ -25,5 +30,33 @@
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<script>
+		window.onload =
+
+			function init(){
+				$('nav').show();
+				mytest('portfolio');
+			}
+
+			function mytest(test){
+				$('article').hide();
+				$('nav a').removeClass('selected');
+
+				switch (test) {
+					case 'portfolio':
+						$('#portfolio').show();
+						$('a.portfolio').addClass('selected');
+						break;
+					case 'resume':
+						$('#resume').show();
+						$('a.resume').addClass('selected');
+						break;
+					case 'manifesto':
+						$('#manifesto').show();
+						$('a.manifesto').addClass('selected');
+						break;
+				}
+			};
+		</script>
 </body>
 </html>

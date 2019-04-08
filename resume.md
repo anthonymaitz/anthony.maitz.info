@@ -93,7 +93,6 @@ Created and managed a profitable independent subsidiary, Eyeboogie Labs; oversaw
 
 Extended existing relationships into new opportunities in social media, interactive experiences, and application development.
 
-### Chief Technical Officer _2010 - 2011_
 Directed digital product development, including websites, apps (web and iOS), and custom streaming video solutions.
 
 Designed "Pop Tool" a video workflow tool and knowledge base that allowed writers of "Pop Up Video 2.0" to work exponentially faster than previously possible.
@@ -132,11 +131,6 @@ Education
 Bachelor of Arts in Film and Television Production
 
 
-[John Jarosz]: https://www.linkedin.com/in/johnjarosz/
-[Sean Atkins]: https://www.linkedin.com/in/theseanatkins/
-[Evelina Rodriguez]: https://www.linkedin.com/in/helloevelina/
-[Steph Sklar]: https://www.linkedin.com/in/steph-sklar-mulcahy-1140ba4/
-
 [ThoughtWorks]: https://www.thoughtworks.com/about-us
 [Digital Platform Strategy]: https://youtu.be/mHcTUrFy7vo target="_window" data-fancybox="dps"
 [C4 Media, Conference feedback platform]: https://embedwistia-a.akamaihd.net/deliveries/2774b0904ae1c8cf6286066bcc8f6aec4b4759a0/file.mp4 title="Qcon case study" data-fancybox="qcon"
@@ -149,7 +143,7 @@ Bachelor of Arts in Film and Television Production
 [Response Innovation Lab, Matchmaker]: https://responseinnovationlab.com/matchmaker/ target="_window" data-type="iframe" data-src="https://responseinnovationlab.com/matchmaker/" href="javascript:;"
 [Hutton 2.0, digital storytelling and political education]: ../media/hutton-1.png data-fancybox="hutton"
 
-[The playsets team, LLC]: http://playsets.strikingly.com data-fancybox="" data-type="iframe" data-src="http://playsets.strikingly.com" href="javascript:;"
+[The Playsets Team, LLC]: http://playsets.strikingly.com data-fancybox="" data-type="iframe" data-src="http://playsets.strikingly.com" href="javascript:;"
 [Kickstarter]: https://www.kickstarter.com/projects/985647565/playsets-the-future-of-social-storytelling target="_window"
 [Steam Greenlight]: https://steamcommunity.com/sharedfiles/filedetails/?id=866256995 target="_window"
 [Indie Megabooth]: http://indiemegabooth.com/event/pax-prime-2015/ target="_window"
