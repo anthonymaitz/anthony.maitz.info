@@ -133,17 +133,17 @@ Bachelor of Arts in Film and Television Production
 
 [ThoughtWorks]: https://www.thoughtworks.com/about-us
 [Digital Platform Strategy]: https://youtu.be/mHcTUrFy7vo target="_window" data-fancybox="dps"
-[C4 Media, Conference feedback platform]: https://embedwistia-a.akamaihd.net/deliveries/2774b0904ae1c8cf6286066bcc8f6aec4b4759a0/file.mp4 title="Qcon case study" data-fancybox="qcon"
+[C4 Media, Conference feedback platform]: https://youtu.be/DEkq6Hr71OA title="Qcon case study" data-fancybox="qcon"
 [Tchibo, Connected coffee machine]: https://youtu.be/hVk3VHgqY0w data-fancybox="qbo" target="_window"
 [Natural Markets Food Group, retail food at Eaton Center]: https://youtu.be/yG28QGNVWkA target="_window" data-fancybox="nmfg"
 
-[UCSF Virtual Mentor]: https://youtu.be/JuACEhP6ci4 target="_window" data-fancybox="ucsf"
+[UCSF Virtual Mentor]: https://youtu.be/DA7rIcd8XNI target="_window" data-fancybox="ucsf"
 [Saving Lives at Birth Seed Grant]: http://globalhealthsciences.ucsf.edu/news/star-trek-inspired-virtual-mentor-wins-saving-lives-birth-seed-grant target="_window"
 [Johnson & Johnson's GenH Challenge]: https://www.jnj.com/innovation/6-healthcare-entrepreneurs-who-could-make-genh-the-healthiest-yet target="_window"
 [Response Innovation Lab, Matchmaker]: https://responseinnovationlab.com/matchmaker/ target="_window" data-type="iframe" data-src="https://responseinnovationlab.com/matchmaker/" href="javascript:;"
 [Hutton 2.0, digital storytelling and political education]: ../media/hutton-1.png data-fancybox="hutton"
 
-[The Playsets Team, LLC]: http://playsets.strikingly.com data-fancybox="" data-type="iframe" data-src="http://playsets.strikingly.com" href="javascript:;"
+[The Playsets Team, LLC]: https://youtu.be/mNgjgNSpVGA&list=PL5AjSG-LQwc6m96V_t2jgG_08UElFIhmi data-fancybox="playsets" target="_window"
 [Kickstarter]: https://www.kickstarter.com/projects/985647565/playsets-the-future-of-social-storytelling target="_window"
 [Steam Greenlight]: https://steamcommunity.com/sharedfiles/filedetails/?id=866256995 target="_window"
 [Indie Megabooth]: http://indiemegabooth.com/event/pax-prime-2015/ target="_window"

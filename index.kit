@@ -36,6 +36,7 @@
 			function init(){
 				$('nav').show();
 				mytest('portfolio');
+				$('a.hidden').each(function(){$(this).data('caption', $(this).text());});
 			}
 
 			function mytest(test){
