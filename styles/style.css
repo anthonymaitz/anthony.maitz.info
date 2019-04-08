@@ -63,7 +63,7 @@ body {
   font-variant-caps: normal; }
   @media only screen and (max-width: 45em) {
     body {
-      font-size: 15px;
+      font-size: 16px;
       color: #4b5866; } }
 
 a {
@@ -94,12 +94,14 @@ header {
     font-weight: 400;
     display: inline-block;
     margin-left: 1.125em;
+    margin-right: .5em;
     line-height: 2.5em; }
     @media only screen and (max-width: 45em) {
       header h1 {
         font-size: 1.125em;
         line-height: 2.875em;
-        margin-left: .75em; } }
+        margin-left: .75em;
+        margin-bottom: -.5em; } }
     header h1 a {
       margin-left: .125em; }
   header nav {
@@ -113,6 +115,11 @@ header {
       line-height: 2.8125em;
       vertical-align: middle;
       padding-bottom: .8125em; }
+      @media only screen and (max-width: 45em) {
+        header nav a {
+          font-size: 1em;
+          line-height: 2.875em;
+          margin-bottom: -.5em; } }
       header nav a:last-of-type {
         margin-right: 0; }
       header nav a.selected {

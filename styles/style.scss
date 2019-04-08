@@ -132,7 +132,7 @@ body
 
 	@include respond-to(small)
 	{
-		font-size: 15px;
+		font-size: 16px;
 		color: $black;
 	}
 }
@@ -179,6 +179,7 @@ header
 		font-weight: 400;
 		display: inline-block;
 		margin-left: 1.125em;
+		margin-right: .5em;
 		line-height: 2.5em;
 
 		@include respond-to(small)
@@ -186,6 +187,7 @@ header
 			font-size: 1.125em;
 			line-height: 2.875em;
 			margin-left: .75em;
+			margin-bottom: -.5em;
 		}
 
 		a
@@ -209,6 +211,13 @@ header
 			// margin-left: .75em;
 			vertical-align: middle;
 			padding-bottom: .8125em;
+
+			@include respond-to(small)
+			{
+				font-size: 1em;
+				line-height: 2.875em;
+				margin-bottom: -.5em;
+			}
 
 			&:last-of-type
 			{
