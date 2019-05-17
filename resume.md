@@ -132,26 +132,41 @@ Bachelor of Arts in Film and Television Production
 
 
 [ThoughtWorks]: https://www.thoughtworks.com/about-us
-[C4 Media, Conference feedback platform]: https://youtu.be/DEkq6Hr71OA title="Qcon case study" data-fancybox="qcon"
-[Tchibo, Connected coffee machine]: https://youtu.be/hVk3VHgqY0w data-fancybox="qbo" target="_window"
-[Natural Markets Food Group, retail food at Eaton Center]: https://youtu.be/yG28QGNVWkA target="_window" data-fancybox="nmfg"
-[UCSF Virtual Mentor]: https://youtu.be/DA7rIcd8XNI target="_window" data-fancybox="ucsf"
-[Saving Lives at Birth Seed Grant]: http://globalhealthsciences.ucsf.edu/news/star-trek-inspired-virtual-mentor-wins-saving-lives-birth-seed-grant target="_window"
-[Johnson & Johnson's GenH Challenge]: https://www.jnj.com/innovation/6-healthcare-entrepreneurs-who-could-make-genh-the-healthiest-yet target="_window"
-[Response Innovation Lab, Matchmaker]: https://responseinnovationlab.com/matchmaker/ target="_window" data-type="iframe" data-src="https://responseinnovationlab.com/matchmaker/" href="javascript:;"
-[Hutton 2.0, digital storytelling and political education]: ../media/hutton-1.png data-fancybox="hutton"
 
-[The Playsets Team, LLC]: https://youtu.be/mNgjgNSpVGA&list=PL5AjSG-LQwc6m96V_t2jgG_08UElFIhmi data-fancybox="playsets" target="_window"
+[C4 Media, Conference feedback platform]: https://youtu.be/DEkq6Hr71OA title="Qcon case study" data-trigger="qcon"
+
+[Tchibo, Connected coffee machine]: https://youtu.be/hVk3VHgqY0w data-trigger="qbo" target="_window"
+
+[Natural Markets Food Group, retail food at Eaton Center]: https://youtu.be/yG28QGNVWkA target="_window" data-trigger="nmfg"
+
+[UCSF Virtual Mentor]: https://youtu.be/DA7rIcd8XNI target="_window" data-trigger="ucsf"
+
+[Saving Lives at Birth Seed Grant]: http://globalhealthsciences.ucsf.edu/news/star-trek-inspired-virtual-mentor-wins-saving-lives-birth-seed-grant target="_window"
+
+[Johnson & Johnson's GenH Challenge]: https://www.jnj.com/innovation/6-healthcare-entrepreneurs-who-could-make-genh-the-healthiest-yet target="_window"
+
+[Response Innovation Lab, Matchmaker]: https://responseinnovationlab.com/matchmaker/ target="_window" data-type="iframe" data-src="https://responseinnovationlab.com/matchmaker/" href="javascript:;"
+
+[Hutton 2.0, digital storytelling and political education]: ../media/hutton-1.png data-trigger="hutton"
+
+[The Playsets Team, LLC]: https://youtu.be/mNgjgNSpVGA&list=PL5AjSG-LQwc6m96V_t2jgG_08UElFIhmi data-trigger="playsets" target="_window"
+
 [Kickstarter]: https://www.kickstarter.com/projects/985647565/playsets-the-future-of-social-storytelling target="_window"
+
 [Steam Greenlight]: https://steamcommunity.com/sharedfiles/filedetails/?id=866256995 target="_window"
+
 [Indie Megabooth]: http://indiemegabooth.com/event/pax-prime-2015/ target="_window"
 
 [Discovery Communications]: https://www.discovery.com/ target="_window"
 
 [Eyeboogie Inc]: http://www.eyeboogie.com/
 
-["You are a tourist"]: https://youtu.be/qkk5wViJo-I data-fancybox="youareatourist"
-["Adidas all in"]: https://youtu.be/DCRihtIZZdM data-fancybox="adidasallin"
-["Born free"]: https://vimeo.com/11219730 data-fancybox="bornfree"
-["The nature between Us"]: https://youtu.be/S-VNUOl0GU4 data-fancybox="thenaturebetweenus"
-["The execution of Solomon Harris"]: http://vimeo.com/20337358 data-fancybox="theexecutionofsolomonharris"
+["You are a tourist"]: https://youtu.be/qkk5wViJo-I data-trigger="youareatourist"
+
+["Adidas all in"]: https://youtu.be/DCRihtIZZdM data-trigger="adidasallin"
+
+["Born free"]: https://vimeo.com/11219730 data-trigger="bornfree"
+
+["The nature between Us"]: https://youtu.be/S-VNUOl0GU4 data-trigger="thenaturebetweenus"
+
+["The execution of Solomon Harris"]: http://vimeo.com/20337358 data-trigger="theexecutionofsolomonharris"
