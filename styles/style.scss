@@ -1,15 +1,3 @@
-// @font-face
-// {
-// 	font-family: 'social';
-// 	font-weight: normal;
-// 	font-style: normal;
-// 	src: url('fonts/social.eot?84141987');
-// 	src: url('fonts/social.eot?84141987#iefix') format('embedded-opentype'),
-// 	url('fonts/social.woff?84141987') format('woff'),
-// 	url('fonts/social.ttf?84141987') format('truetype'),
-// 	url('fonts/social.svg?84141987#social') format('svg');
-// }
-
 $fadedLink: rgb(135,112,154);
 $link: rgb(71,121,174);
 $linkHover: rgb(126,181,229);
@@ -89,6 +77,24 @@ $break-wide: 60em;
 	}
 }
 
+@include keyframes(hover)
+{
+
+	0%
+	{
+		filter: brightness(100%) hue-rotate(0deg);
+	}
+	50%
+	{
+		filter: brightness(100%) hue-rotate(360deg);
+		animation-timing-function: ease-in-out;
+	}
+	100%
+	{
+		filter: brightness(100%) hue-rotate(0deg);
+	}
+}
+
 h1,
 h2,
 h3,
@@ -125,6 +131,7 @@ body
 	word-wrap: break-word;
 	color: $black;
 	background: linear-gradient(to right, rgba(255,255,255,.5), rgba(255,255,255,.9) 2em,rgba(255,255,255,.9) 37.5em,rgba(255,255,255,.8) 45em), $backgroundURL;
+	// background: linear-gradient(to right, rgba(0,0,0,.88), rgba(0,0,0,.88) 2em,rgba(0,0,0,.88) 37.5em,rgba(0,0,0,.88) 45em), $backgroundURL;
 	-webkit-font-smoothing: antialiased;
 	font-display: optional;
 	text-rendering: optimizeLegibility;
@@ -147,7 +154,9 @@ a
 		&:hover
 		{
 			text-decoration: underline;
-			color: $linkHover;
+
+				@include animation('hover 3s alternate infinite');
+			
 		}
 	}
 }
@@ -268,6 +277,11 @@ section
 	p a
 	{
 		@include animation('wave 10s alternate infinite');
+
+		&:hover
+		{
+			@include animation('hover 3s alternate infinite');
+		}
 	}
 
 	// This isn't great.
@@ -397,10 +411,10 @@ section
 
 	h4
 	{
-		font-size: .875em;
-		margin-top: 1em;
-		margin-bottom: -1em;
-		// margin-left: 1em;
+		font-size: .75em;
+		margin-top: 2em;
+		margin-bottom: -2em;
+		margin-left: 2em;
 		font-weight: 400;
 		color: lighten($black, 25%);
 
@@ -414,21 +428,26 @@ section
 	{
 		margin-top: 2em;
 		margin-bottom: -.25em;
-		margin-left: 1em;
+		margin-left: 2em;
 	}
 
 	p
 	{
 		font-size: .875em;
 		margin-top: .5em;
-		margin-bottom: 0;
-		margin-left: 1em;
+		margin-left: 2em;
 	}
+
+	h3 + p,
+	h3 + p + p,
+	h3 + p + p + p,
+	h3 + p + p + p + p {margin-left: 0;}
+	h2 + p {margin-left: 0;}
 
 	ul
 	{
 		font-size: .875em;
-		margin-left: 1.125em;
+		margin-left: 2em;
 		margin-top: .75em;
 
 		@include respond-to(small)
