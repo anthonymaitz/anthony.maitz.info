@@ -12,16 +12,16 @@
 </head>
 <body>
 <header>
-<h1>Anthony Maitz<a href="mailto:anthonymaitz+contact@gmail.com">@gmail.com</a></h1>
+<h1><a href="#" onclick="navctrl('contact'); return false;">Anthony Maitz</a></h1>
 
 <nav style="display:none;">
-	<a href="#" class="home" onclick="navctrl('home');">home</a>
+	<a href="#" class="contact" onclick="navctrl('contact');">contact</a>
 	<a href="#" class="portfolio" onclick="navctrl('portfolio');">portfolio</a>
 	<a href="#" class="resume" onclick="navctrl('resume');">resume</a>
 </nav>
 </header>
 <section>
-<article id="home">
+<article id="contact">
   <h2>Product Manager, Designer, Maker</h2>
   <p>I build products, games, and experiences — from indie titles to enterprise platforms. Currently open to senior product and game production roles.</p>
   <h3>Featured Work</h3>
@@ -411,7 +411,7 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 					return;
 				}
 			}
-			navctrl('home');
+			navctrl('contact');
 		}
 
 		function navctrl(test){
@@ -419,9 +419,9 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 			$('nav a').removeClass('selected');
 
 			switch (test) {
-				case 'home':
-					$('#home').show();
-					$('a.home').addClass('selected');
+				case 'contact':
+					$('#contact').show();
+					$('a.contact').addClass('selected');
 					break;
 				case 'portfolio':
 					$('#portfolio').show();
