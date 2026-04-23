@@ -9,15 +9,18 @@ const projectsDir = path.resolve(__dirname, '../projects')
 
 const html = generateResumeHTML(employersPath, projectsDir)
 
-// Must have exactly 7 employer sections
-assert((html.match(/class="resume-employer"/g) || []).length === 7, 'must have exactly 7 employer sections')
+// Must have exactly 9 employer sections
+assert((html.match(/class="resume-employer"/g) || []).length === 9, 'must have exactly 9 employer sections')
 
 // data-disciplines attributes
 assert(html.includes('data-disciplines="product"'), 'product discipline section must exist')
 assert(html.includes('data-disciplines="interactive product"'), 'ThoughtWorks must have interactive+product disciplines')
 assert(html.includes('data-disciplines="production"'), 'production discipline section must exist')
+assert(html.includes('data-disciplines="game-production"'), 'game-production discipline section must exist')
 
 // Employer names present
+assert(html.includes('ForeVR Games'), 'ForeVR must appear')
+assert(html.includes('>Insummary<'), 'Insummary must appear')
 assert(html.includes('>Pariveda<'), 'Pariveda must appear')
 assert(html.includes('>Checkr<'), 'Checkr must appear')
 assert(html.includes('>ThoughtWorks<'), 'ThoughtWorks must appear')

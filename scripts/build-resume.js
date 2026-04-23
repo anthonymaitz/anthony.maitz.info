@@ -91,8 +91,10 @@ function renderEmployer(employer, projectMap) {
   }
 
   for (const role of (employer.roles || [])) {
-    if (role.title && role.dates) {
-      html += `<h3>${role.title} <em>${htmlEncode(role.dates)}</em></h3>\n`
+    if (role.dates) {
+      html += role.title
+        ? `<h3>${role.title} <em>${htmlEncode(role.dates)}</em></h3>\n`
+        : `<h3><em>${htmlEncode(role.dates)}</em></h3>\n`
     }
     for (const desc of (role.descriptions || [])) {
       html += `<p>${desc}</p>\n`

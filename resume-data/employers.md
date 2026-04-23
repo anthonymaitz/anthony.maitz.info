@@ -1,5 +1,21 @@
 ---
 employers:
+  - id: forevr
+    name: ForeVR Games
+    disciplines: [game-production]
+    roles:
+      - id: forevr-role
+        dates: "2025 - 2026"
+        descriptions: []
+
+  - id: insummary
+    name: Insummary
+    disciplines: [product]
+    roles:
+      - id: insummary-role
+        dates: "2023 - 2024"
+        descriptions: []
+
   - id: pariveda
     name: Pariveda
     url: "https://www.parivedasolutions.com"
@@ -7,7 +23,7 @@ employers:
     roles:
       - id: pariveda-principal
         title: "Principal"
-        dates: "2022 - present"
+        dates: "2022 - 2023"
         descriptions: []
 
   - id: checkr
