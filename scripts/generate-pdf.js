@@ -33,9 +33,10 @@ async function generatePdf() {
 
   await new Promise(res => server.listen(4174, res))
 
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] })
   const page = await browser.newPage()
-  await page.goto('http://localhost:4174/resume/index.html', { waitUntil: 'networkidle0' })
+  await page.goto('http://localhost:4174/resume/', { waitUntil: 'domcontentloaded', timeout: 30000 })
+  await page.waitForFunction(() => document.getElementById('resume-content')?.children.length > 0)
 
   await page.pdf({
     path: join(distDir, 'resume.pdf'),
