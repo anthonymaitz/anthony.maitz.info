@@ -23,10 +23,16 @@ const MIME = {
 }
 
 function serveDir(dir) {
+  const absDir = path.resolve(dir)
   return http.createServer((req, res) => {
     let urlPath = req.url.split('?')[0]
     if (urlPath === '/') urlPath = '/index.html'
-    const filePath = path.join(dir, urlPath)
+    const filePath = path.resolve(path.join(absDir, urlPath))
+    if (!filePath.startsWith(absDir + path.sep) && filePath !== absDir) {
+      res.writeHead(403)
+      res.end()
+      return
+    }
     const ext = path.extname(filePath)
     try {
       const data = fs.readFileSync(filePath)
@@ -47,26 +53,29 @@ async function main() {
   const browser = await puppeteer.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   })
-  const page = await browser.newPage()
+  try {
+    const page = await browser.newPage()
 
-  await page.goto(`http://127.0.0.1:${port}/`, { waitUntil: 'domcontentloaded', timeout: 30000 })
-  await page.waitForFunction(() => typeof navctrl !== 'undefined')
-  await page.evaluate(() => navctrl('resume'))
-  await page.waitForFunction(() => {
-    const el = document.getElementById('resume')
-    return el && el.style.display !== 'none'
-  })
+    await page.goto(`http://127.0.0.1:${port}/`, { waitUntil: 'domcontentloaded', timeout: 30000 })
+    await page.waitForFunction(() => typeof navctrl !== 'undefined', { timeout: 30000 })
+    await page.evaluate(() => navctrl('resume'))
+    await page.waitForFunction(() => {
+      const el = document.getElementById('resume')
+      return el && getComputedStyle(el).display !== 'none'
+    }, { timeout: 30000 })
 
-  await page.pdf({
-    path: outputPath,
-    format: 'Letter',
-    printBackground: false,
-    margin: { top: '0.75in', bottom: '0.75in', left: '0.75in', right: '0.75in' },
-  })
+    await page.pdf({
+      path: outputPath,
+      format: 'Letter',
+      printBackground: false,
+      margin: { top: '0.75in', bottom: '0.75in', left: '0.75in', right: '0.75in' },
+    })
 
-  await browser.close()
-  server.close()
-  console.log(`PDF written to ${outputPath}`)
+    console.log(`PDF written to ${outputPath}`)
+  } finally {
+    await browser.close()
+    server.close()
+  }
 }
 
 main().catch(err => { console.error(err); process.exit(1) })
