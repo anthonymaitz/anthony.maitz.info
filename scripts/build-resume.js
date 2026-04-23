@@ -79,7 +79,7 @@ function renderProjectEntry(p) {
 
 function renderEmployer(employer, projectMap) {
   const disciplines = (employer.disciplines || []).join(' ')
-  let html = `<section class="resume-employer" data-disciplines="${htmlEncode(disciplines)}">\n`
+  let html = `<div class="resume-employer" data-disciplines="${htmlEncode(disciplines)}">\n`
 
   if (employer.url) {
     let attrs = `href="${htmlEncode(employer.url)}"`
@@ -106,7 +106,7 @@ function renderEmployer(employer, projectMap) {
     }
   }
 
-  html += `</section>\n`
+  html += `</div>\n`
   return html
 }
 

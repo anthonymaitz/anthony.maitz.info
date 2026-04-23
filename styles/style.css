@@ -251,15 +251,15 @@ section {
     @media only screen and (max-width: 45em) {
       #resume h2 {
         font-size: 1em; } }
-    #resume h2:first-of-type {
+    #resume > h2:first-of-type {
       margin-top: 0;
       margin-bottom: 0;
       border-bottom: none; }
-      #resume h2:first-of-type + p {
+      #resume > h2:first-of-type + p {
         margin-left: 0; }
-        #resume h2:first-of-type + p + p {
+        #resume > h2:first-of-type + p + p {
           margin-left: 0; }
-          #resume h2:first-of-type + p + p + p {
+          #resume > h2:first-of-type + p + p + p {
             margin-left: 0; }
   #resume h2 + h3 {
     margin-top: .75em; }
