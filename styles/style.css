@@ -471,3 +471,27 @@ section {
     font-size: .75em;
     color: #8998a8;
     margin-top: .125em; }
+
+.portfolio-item {
+  display: block; }
+
+.portfolio-stub-card {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #e0e8f0;
+  border-radius: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: .875em;
+  color: #8998a8;
+  text-align: center;
+  padding: .5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
