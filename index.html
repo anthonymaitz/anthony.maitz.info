@@ -445,8 +445,15 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 
 			function init(){
 				$('nav').show();
-				navctrl('home');
 				$('a.hidden').each(function(){$(this).data('caption', $(this).text());});
+				var params = new URLSearchParams(window.location.search);
+				var discipline = params.get('discipline');
+				if (discipline) {
+					navctrl('portfolio');
+					filterPortfolio(discipline);
+				} else {
+					navctrl('home');
+				}
 			}
 
 			function navctrl(test){
