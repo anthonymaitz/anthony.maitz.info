@@ -11,7 +11,7 @@ const PORTFOLIO_START = '<!-- PORTFOLIO_GENERATED_START -->'
 const PORTFOLIO_END = '<!-- PORTFOLIO_GENERATED_END -->'
 
 function htmlEncode(str) {
-  return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 }
 
 function isExternalUrl(src) {
