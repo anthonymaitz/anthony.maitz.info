@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp -r assets dist/ && cp favicon.ico dist/ && node scripts/generate-pdf.js",
+    "build": "vite build && cp -r assets dist/ && node scripts/generate-pdf.js",
     "preview": "vite preview"
   },
   "devDependencies": {
