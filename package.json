@@ -4,10 +4,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp -r assets dist/ && cp favicon.ico dist/",
+    "build": "vite build && cp -r assets dist/ && cp favicon.ico dist/ && node scripts/generate-pdf.js",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "puppeteer": "^24.42.0",
     "vite": "^5.4.0"
   }
 }
