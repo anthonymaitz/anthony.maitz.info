@@ -24,7 +24,7 @@ function mediaHref(src) {
 
 function renderProject(project) {
   const { slug, title, disciplines, stub, no_trigger, media = [] } = project
-  const disciplineAttr = disciplines.join(' ')
+  const disciplineAttr = (disciplines ?? []).join(' ')
 
   if (stub) {
     return `<div class="portfolio-item" id="${slug}" data-discipline="${disciplineAttr}">
@@ -49,7 +49,7 @@ function renderProject(project) {
 
   const galleryHTML = galleryItems.map(item => {
     const href = htmlEncode(mediaHref(item.src))
-    const inner = item.caption ? `\n${item.caption}\n` : ''
+    const inner = item.caption ? `\n${htmlEncode(item.caption)}\n` : ''
     return `<a href="${href}" class="hidden" data-fancybox="${slug}" alt="">${inner}</a>\n`
   }).join('')
 
