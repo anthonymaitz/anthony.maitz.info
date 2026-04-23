@@ -58,4 +58,9 @@ assert.ok(html.includes('&amp;list='), 'playsets YouTube URL has & encoded as &a
 assert.ok(html.includes('../media/playsets-0.jpg'), 'local media path convention')
 assert.ok(html.includes('../media/qbo-6.m4v'), 'local m4v media path')
 
+// All items should have id attribute with their slug
+assert.ok(html.includes('id="jetpack-geography"'), 'jetpack id attr')
+assert.ok(html.includes('id="playsets"'), 'playsets id attr')
+assert.ok(html.includes('id="hutton"'), 'hutton id attr')
+
 console.log('All tests passed ✓')

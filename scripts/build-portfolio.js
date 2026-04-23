@@ -53,7 +53,7 @@ function renderProject(project) {
     return `<a href="${href}" class="hidden" data-fancybox="${slug}" alt="">${inner}</a>\n`
   }).join('')
 
-  return `<div class="portfolio-item" data-discipline="${disciplineAttr}">\n${trigger}${galleryHTML}</div>\n`
+  return `<div class="portfolio-item" id="${slug}" data-discipline="${disciplineAttr}">\n${trigger}${galleryHTML}</div>\n`
 }
 
 export function generatePortfolioHTML(dir) {
