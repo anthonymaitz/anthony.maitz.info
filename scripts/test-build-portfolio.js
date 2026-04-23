@@ -1,4 +1,6 @@
 import assert from 'assert'
+import fs from 'fs'
+import os from 'os'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { generatePortfolioHTML } from './build-portfolio.js'
@@ -62,5 +64,16 @@ assert.ok(html.includes('../media/qbo-6.m4v'), 'local m4v media path')
 assert.ok(html.includes('id="jetpack-geography"'), 'jetpack id attr')
 assert.ok(html.includes('id="playsets"'), 'playsets id attr')
 assert.ok(html.includes('id="hutton"'), 'hutton id attr')
+
+// portfolio: false filtering
+{
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'portfolio-test-'))
+  fs.writeFileSync(path.join(tmpDir, 'visible.md'), '---\nslug: visible\ntitle: Visible\ndisciplines: [product]\norder: 1\nmedia:\n  - img.jpg\n---\n')
+  fs.writeFileSync(path.join(tmpDir, 'hidden.md'), '---\nslug: hidden\ntitle: Hidden\nportfolio: false\ndisciplines: [product]\norder: 2\nmedia:\n  - img.jpg\n---\n')
+  const html = generatePortfolioHTML(tmpDir)
+  assert(!html.includes('id="hidden"'), 'portfolio: false item must not appear in portfolio HTML')
+  assert(html.includes('id="visible"'), 'portfolio: true item must appear in portfolio HTML')
+  fs.rmSync(tmpDir, { recursive: true })
+}
 
 console.log('All tests passed ✓')

@@ -63,6 +63,7 @@ export function generatePortfolioHTML(dir) {
       const raw = fs.readFileSync(path.join(dir, f), 'utf8')
       return matter(raw).data
     })
+    .filter(d => d.portfolio !== false)
     .sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
 
   return files.map(renderProject).join('\n')
