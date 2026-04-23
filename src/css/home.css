@@ -1,0 +1,24 @@
+.home-bio {
+  max-width: 640px;
+  padding: 3rem var(--gutter) 1.5rem;
+}
+
+.home-bio p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.home-status {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.home-section-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  padding: 0 var(--gutter);
+  margin: 0.5rem 0 0;
+}
