@@ -13,3 +13,4 @@
 - Better image for c4
 - Better image for VM
 - Color image for NMFG
+- REMOVE THIRD PERSON AND MAKE IT READABLE

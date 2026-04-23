@@ -2086,13 +2086,24 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/QA.txt" : {
+    "\/resume-2022.md" : {
       "cB" : 0,
-      "ft" : 8192,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 0,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
       "hM" : 0,
-      "oA" : 2,
-      "oAP" : "\/QA.txt",
-      "oF" : 0
+      "oA" : 0,
+      "oAP" : "\/resume-2022.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 1,
+      "pHT" : 1,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
     },
     "\/resume.html" : {
       "cB" : 0,
