@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp -r media dist/ && cp favicon.ico dist/",
+    "build": "vite build && cp -r assets dist/ && cp favicon.ico dist/",
     "preview": "vite preview"
   },
   "devDependencies": {
