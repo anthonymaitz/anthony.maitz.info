@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Portfolio — Anthony Maitz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/src/css/main.css">
+  <link rel="stylesheet" href="/src/css/components.css">
+  <link rel="stylesheet" href="/src/css/portfolio.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header__name" href="/">Anthony Maitz</a>
+    <nav class="site-header__nav">
+      <a href="/portfolio/" aria-current="page">Portfolio</a>
+      <a href="/resume/">Resume</a>
+    </nav>
+  </header>
+
+  <div class="filter-tabs" role="tablist" aria-label="Filter by discipline">
+    <button class="filter-tab active" data-filter="all" role="tab">All</button>
+    <button class="filter-tab" data-filter="interactive" role="tab">Interactive &amp; Game Design</button>
+    <button class="filter-tab" data-filter="product" role="tab">Product</button>
+    <button class="filter-tab" data-filter="game-production" role="tab">Game Production</button>
+    <button class="filter-tab" data-filter="production-design" role="tab">Production Design</button>
+  </div>
+
+  <main class="project-grid" id="portfolio-grid"></main>
+
+  <footer class="site-footer">
+    <a href="mailto:anthony@forevrgames.com">anthony@forevrgames.com</a>
+  </footer>
+
+  <script type="module" src="/src/js/portfolio.js"></script>
+</body>
+</html>
