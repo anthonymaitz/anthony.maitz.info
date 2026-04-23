@@ -1,0 +1,13 @@
+{
+  "name": "anthony-maitz-info",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && cp -r media dist/ && cp favicon.ico dist/",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
