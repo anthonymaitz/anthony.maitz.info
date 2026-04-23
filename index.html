@@ -382,56 +382,99 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 <script>
-		window.onload =
+		var KEYWORD_MAP = {
+			product: ['product'],
+			design: ['production'],
+			game: ['game-production'],
+			interactive: ['interactive']
+		};
 
-			function init(){
-				$('nav').show();
-				$('a.hidden').each(function(){$(this).data('caption', $(this).text());});
-				var params = new URLSearchParams(window.location.search);
-				var discipline = params.get('discipline');
-				if (discipline) {
-					navctrl('portfolio');
-					filterPortfolio(discipline);
-				} else {
-					navctrl('home');
-				}
-			}
-
-			function navctrl(test){
-				$('article').hide();
-				$('nav a').removeClass('selected');
-
-				switch (test) {
-					case 'home':
-						$('#home').show();
-						$('a.home').addClass('selected');
-						break;
-					case 'portfolio':
-						$('#portfolio').show();
-						$('a.portfolio').addClass('selected');
-						filterPortfolio('all');
-						break;
-					case 'resume':
-						$('#resume').show();
-						$('a.resume').addClass('selected');
-						break;
-				}
-			};
-
-			function filterPortfolio(discipline) {
-				$('.portfolio-item').each(function() {
-					var d = $(this).data('discipline') || '';
-					var disciplines = d.split(' ');
-					if (discipline === 'all' || disciplines.indexOf(discipline) !== -1) {
-						$(this).show();
-					} else {
-						$(this).hide();
+		window.onload = function init(){
+			$('nav').show();
+			$('a.hidden').each(function(){$(this).data('caption', $(this).text());});
+			var search = window.location.search;
+			if (search) {
+				var keywords = search.slice(1).split('+');
+				var disciplines = [];
+				keywords.forEach(function(k) {
+					var mapped = KEYWORD_MAP[k];
+					if (mapped) {
+						mapped.forEach(function(d) {
+							if (disciplines.indexOf(d) === -1) disciplines.push(d);
+						});
 					}
 				});
-				$('.filter-btn').removeClass('selected');
-				$('.filter-btn[data-filter="' + discipline + '"]').addClass('selected');
+				if (disciplines.length > 0) {
+					navctrl('portfolio');
+					filterPortfolio(disciplines);
+					filterResume(disciplines);
+					return;
+				}
 			}
-		</script>
+			navctrl('home');
+		}
+
+		function navctrl(test){
+			$('article').hide();
+			$('nav a').removeClass('selected');
+
+			switch (test) {
+				case 'home':
+					$('#home').show();
+					$('a.home').addClass('selected');
+					break;
+				case 'portfolio':
+					$('#portfolio').show();
+					$('a.portfolio').addClass('selected');
+					filterPortfolio('all');
+					break;
+				case 'resume':
+					$('#resume').show();
+					$('a.resume').addClass('selected');
+					filterResume('all');
+					break;
+			}
+		};
+
+		function filterPortfolio(filter) {
+			var isArray = Array.isArray(filter);
+			var disciplineArr = isArray ? filter : [filter];
+			$('.portfolio-item').each(function() {
+				if (filter === 'all') {
+					$(this).show();
+					return;
+				}
+				var d = $(this).data('discipline') || '';
+				var disciplines = d === '' ? [] : d.split(' ');
+				var match = disciplineArr.some(function(df) {
+					return disciplines.indexOf(df) !== -1;
+				});
+				$(this).toggle(match);
+			});
+			$('.filter-btn').removeClass('selected');
+			if (filter === 'all') {
+				$('.filter-btn[data-filter="all"]').addClass('selected');
+			} else if (!isArray) {
+				$('.filter-btn[data-filter="' + filter + '"]').addClass('selected');
+			}
+		}
+
+		function filterResume(filter) {
+			var disciplineArr = (filter === 'all') ? null : (Array.isArray(filter) ? filter : [filter]);
+			$('.resume-employer').each(function() {
+				if (!disciplineArr) {
+					$(this).show();
+					return;
+				}
+				var d = $(this).data('disciplines') || '';
+				var disciplines = d === '' ? [] : d.split(' ');
+				var match = disciplineArr.some(function(df) {
+					return disciplines.indexOf(df) !== -1;
+				});
+				$(this).toggle(match);
+			});
+		}
+	</script>
 </body>
 </html>
 
