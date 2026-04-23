@@ -396,3 +396,78 @@ section {
                 box-shadow: 0 0 0.25em 0.125em rgba(0, 0, 0, 0.2);
         -webkit-filter: saturate(110%) brightness(110%) grayscale(0%);
                 filter: saturate(110%) brightness(110%) grayscale(0%); } }
+
+#home {
+  margin-top: .25em;
+  width: 37.5em;
+  max-width: 100%;
+  padding-bottom: 4em; }
+  #home h2 {
+    font-size: 1.125em;
+    font-weight: 700;
+    margin-top: 0;
+    border-bottom: none; }
+  #home h3 {
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: 2.5em;
+    margin-bottom: .75em; }
+  #home p {
+    font-size: .875em;
+    margin-top: .5em; }
+
+#featured-projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em; }
+  @media only screen and (max-width: 45em) {
+    #featured-projects {
+      grid-template-columns: 1fr; } }
+  #featured-projects .featured-card {
+    display: block;
+    text-decoration: none;
+    color: inherit; }
+  #featured-projects .featured-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 3%;
+    display: block;
+    -webkit-filter: saturate(90%) brightness(90%) grayscale(10%);
+            filter: saturate(90%) brightness(90%) grayscale(10%);
+    -webkit-transition: -webkit-filter .33s;
+    transition: filter .33s; }
+  @media (any-hover) {
+    #featured-projects .featured-card:hover img {
+      -webkit-filter: saturate(110%) brightness(110%) grayscale(0%);
+              filter: saturate(110%) brightness(110%) grayscale(0%);
+      -webkit-box-shadow: 0 0 0.25em 0.125em rgba(0, 0, 0, 0.2);
+              box-shadow: 0 0 0.25em 0.125em rgba(0, 0, 0, 0.2); } }
+  #featured-projects .featured-card-stub {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #e0e8f0;
+    border-radius: 3%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: .875em;
+    color: #8998a8;
+    text-align: center;
+    padding: .5em;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+  #featured-projects .featured-card-title {
+    font-size: .875em;
+    font-weight: 700;
+    margin-top: .33em; }
+  #featured-projects .featured-card-meta {
+    font-size: .75em;
+    color: #8998a8;
+    margin-top: .125em; }

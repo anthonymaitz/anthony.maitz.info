@@ -15,11 +15,34 @@
 <h1>Anthony Maitz<a href="mailto:anthonymaitz+contact@gmail.com">@gmail.com</a></h1>
 
 <nav style="display:none;">
+	<a href="#" class="home" onclick="navctrl('home');">home</a>
 	<a href="#" class="portfolio" onclick="navctrl('portfolio');">portfolio</a>
 	<a href="#" class="resume" onclick="navctrl('resume');">resume</a>
 </nav>
 </header>
 <section>
+<article id="home">
+  <h2>Product Manager, Designer, Maker</h2>
+  <p>I build products, games, and experiences — from indie titles to enterprise platforms. Currently open to senior product and game production roles.</p>
+  <h3>Featured Work</h3>
+  <div id="featured-projects">
+    <a href="#" class="featured-card" onclick="navctrl('portfolio'); return false;">
+      <div class="featured-card-stub">Jetpack Geography!</div>
+      <div class="featured-card-title">Jetpack Geography!</div>
+      <div class="featured-card-meta">Game Production &middot; Interactive &amp; Game Design</div>
+    </a>
+    <a href="#shine" class="featured-card" onclick="navctrl('portfolio'); return true;">
+      <img src="../media/shine-0.jpg" alt="Shine">
+      <div class="featured-card-title">Shine</div>
+      <div class="featured-card-meta">Interactive &amp; Game Design</div>
+    </a>
+    <a href="#playsets" class="featured-card" onclick="navctrl('portfolio'); return true;">
+      <img src="../media/playsets-0.jpg" alt="Playsets">
+      <div class="featured-card-title">Playsets</div>
+      <div class="featured-card-meta">Interactive &amp; Game Design &middot; Product</div>
+    </a>
+  </div>
+</article>
 <article id="resume">
 <h2>Product Manager, Designer, Maker</h2>
 
@@ -386,7 +409,7 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 
 			function init(){
 				$('nav').show();
-				navctrl('resume');
+				navctrl('home');
 				$('a.hidden').each(function(){$(this).data('caption', $(this).text());});
 			}
 
@@ -395,6 +418,10 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 				$('nav a').removeClass('selected');
 
 				switch (test) {
+					case 'home':
+						$('#home').show();
+						$('a.home').addClass('selected');
+						break;
 					case 'portfolio':
 						$('#portfolio').show();
 						$('a.portfolio').addClass('selected');
