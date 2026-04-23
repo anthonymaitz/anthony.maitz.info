@@ -495,3 +495,27 @@ section {
   padding: .5em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
+
+#portfolio-filters {
+  grid-column: 1 / -1;
+  padding: .25em 0 .5em 0;
+  margin-bottom: .25em; }
+
+.filter-btn {
+  font-family: 'Libre Caslon Text', serif;
+  font-size: .875em;
+  color: #4b5866;
+  background: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  padding: .25em .75em;
+  margin-right: .33em;
+  margin-bottom: .33em;
+  cursor: pointer; }
+  @media (any-hover) {
+    .filter-btn:hover {
+      border-color: #4b5866; } }
+  .filter-btn.selected {
+    background: #4b5866;
+    color: #fff;
+    border-color: #4b5866; }

@@ -220,6 +220,13 @@ Programmed an AI chatbot in the IBM Watson Ecosystem.</p>
 
 </article>
 <article id="portfolio">
+<div id="portfolio-filters">
+  <button class="filter-btn selected" data-filter="all" onclick="filterPortfolio('all')">All</button>
+  <button class="filter-btn" data-filter="interactive" onclick="filterPortfolio('interactive')">Interactive &amp; Game Design</button>
+  <button class="filter-btn" data-filter="product" onclick="filterPortfolio('product')">Product</button>
+  <button class="filter-btn" data-filter="game-production" onclick="filterPortfolio('game-production')">Game Production</button>
+  <button class="filter-btn" data-filter="production" onclick="filterPortfolio('production')">Production Design</button>
+</div>
 <div class="portfolio-item" data-discipline="interactive game-production">
 <div class="portfolio-stub-card">Jetpack Geography!</div>
 </div>
@@ -481,6 +488,20 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 						break;
 				}
 			};
+
+			function filterPortfolio(discipline) {
+				$('.portfolio-item').each(function() {
+					var d = $(this).data('discipline') || '';
+					var disciplines = d.split(' ');
+					if (discipline === 'all' || disciplines.indexOf(discipline) !== -1) {
+						$(this).show();
+					} else {
+						$(this).hide();
+					}
+				});
+				$('.filter-btn').removeClass('selected');
+				$('.filter-btn[data-filter="' + discipline + '"]').addClass('selected');
+			}
 		</script>
 </body>
 </html>
