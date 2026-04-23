@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build-portfolio": "node scripts/build-portfolio.js",
-    "prebuild": "node scripts/test-build-portfolio.js && node scripts/build-portfolio.js",
+    "build-resume": "node scripts/build-resume.js",
+    "prebuild": "node scripts/test-build-portfolio.js && node scripts/build-portfolio.js && node scripts/test-build-resume.js && node scripts/build-resume.js",
     "build": "vite build && cp -r media dist/ && cp favicon.ico dist/ && node scripts/generate-pdf.js",
     "preview": "vite preview"
   },
