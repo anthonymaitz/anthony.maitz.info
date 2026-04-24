@@ -6,6 +6,7 @@ import puppeteer from 'puppeteer'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const distDir = path.resolve(__dirname, '../dist')
+const publicDir = path.resolve(__dirname, '../public')
 
 const PHONE = '213.793.1790'
 
@@ -97,16 +98,17 @@ async function generatePdf(browser, port, config) {
       }
     }, PHONE)
 
-    const outputPath = path.join(distDir, config.filename)
+    const distPath = path.join(distDir, config.filename)
     await page.pdf({
-      path: outputPath,
+      path: distPath,
       format: 'Letter',
       printBackground: false,
       margin: { top: '0.75in', bottom: '0.75in', left: '0.75in', right: '0.75in' },
     })
 
+    fs.copyFileSync(distPath, path.join(publicDir, config.filename))
     console.log(`PDF written: ${config.filename} (${config.downloadName})`)
-    return outputPath
+    return distPath
   } finally {
     await page.close()
   }
@@ -129,8 +131,8 @@ async function main() {
     }
 
     if (defaultPath) {
-      const resumePdfPath = path.join(distDir, 'resume.pdf')
-      fs.copyFileSync(defaultPath, resumePdfPath)
+      fs.copyFileSync(defaultPath, path.join(distDir, 'resume.pdf'))
+      fs.copyFileSync(defaultPath, path.join(publicDir, 'resume.pdf'))
       console.log('Copied default to resume.pdf')
     }
   } finally {
