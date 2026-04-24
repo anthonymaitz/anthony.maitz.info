@@ -25,7 +25,9 @@ employers:
     roles:
       - id: insummary-role
         dates: "2023 - 2024"
-        descriptions: []
+        descriptions:
+          - "Served as Head of Product for a generative AI start-up, shaping product strategy, leading design, and contributing front-end code across multiple product iterations."
+          - "Helped position and pivot the product to meet the needs of stakeholders and thousands of users, landing the company&rsquo;s first enterprise customer."
 
   - id: pariveda
     name: Pariveda
@@ -35,7 +37,9 @@ employers:
       - id: pariveda-principal
         title: "Principal"
         dates: "2022 - 2023"
-        descriptions: []
+        descriptions:
+          - "Served as a principal consultant and member of the office leadership team, managing delivery teams to ensure client satisfaction and project success."
+          - "Contributed to sales pursuits and proposals for government and financial sector clients."
 
   - id: checkr
     name: Checkr
