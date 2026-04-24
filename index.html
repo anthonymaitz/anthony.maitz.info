@@ -426,33 +426,31 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 <script>
-		var KEYWORD_MAP = {
-			product: ['product-management'],
-			design: ['production-design'],
-			game: ['game-design']
-		};
-
 		window.onload = function init(){
 			$('nav').show();
 			$('a.hidden').each(function(){$(this).data('caption', $(this).text());});
+			var pathname = window.location.pathname.replace(/\/+$/, '') || '/';
 			var search = window.location.search;
+			var disciplines = [];
 			if (search) {
-				var keywords = search.slice(1).split('+');
-				var disciplines = [];
-				keywords.forEach(function(k) {
-					var mapped = KEYWORD_MAP[k];
-					if (mapped) {
-						mapped.forEach(function(d) {
-							if (disciplines.indexOf(d) === -1) disciplines.push(d);
-						});
-					}
+				new URLSearchParams(search).forEach(function(val, key) {
+					var slug = key.toLowerCase().replace(/\s+/g, '-');
+					if (disciplines.indexOf(slug) === -1) disciplines.push(slug);
 				});
-				if (disciplines.length > 0) {
-					navctrl('portfolio');
-					setFiltersByDisciplines('portfolio', disciplines);
-					setFiltersByDisciplines('resume', disciplines);
-					return;
-				}
+			}
+			if (pathname === '/resume-as-pdf') {
+				window.location.href = '/resume.pdf';
+				return;
+			}
+			if (pathname === '/resume') {
+				navctrl('resume');
+				if (disciplines.length > 0) setFiltersByDisciplines('resume', disciplines);
+				return;
+			}
+			if (pathname === '/portfolio') {
+				navctrl('portfolio');
+				if (disciplines.length > 0) setFiltersByDisciplines('portfolio', disciplines);
+				return;
 			}
 			navctrl('contact');
 		}

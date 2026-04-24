@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    { "source": "/resume-as-pdf", "destination": "/resume.pdf", "permanent": true },
+    { "source": "/pdf", "destination": "/resume.pdf", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/resume", "destination": "/index.html" },
+    { "source": "/portfolio", "destination": "/index.html" }
+  ]
+}
