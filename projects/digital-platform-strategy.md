@@ -2,7 +2,7 @@
 slug: digital-platform-strategy
 title: Digital Platform Strategy
 portfolio: false
-disciplines: [product]
+disciplines: [product-management]
 resume_section: thoughtworks-lead
 resume_order: 1
 resume_entry_title: "ThoughtWorks, Digital Platform Strategy Offering"

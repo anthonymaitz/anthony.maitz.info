@@ -2,7 +2,7 @@
 slug: expungements
 title: Expungements
 portfolio: false
-disciplines: [product]
+disciplines: [product-management]
 resume_section: checkr-sgpm
 resume_order: 4
 resume_entry_title: "Expungements"

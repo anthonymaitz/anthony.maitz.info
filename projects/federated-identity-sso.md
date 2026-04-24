@@ -2,7 +2,7 @@
 slug: federated-identity-sso
 title: Federated Identity and SSO
 portfolio: false
-disciplines: [product]
+disciplines: [product-management]
 resume_section: checkr-sgpm
 resume_order: 5
 resume_entry_title: "Federated Identity and SSO"

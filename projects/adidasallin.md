@@ -1,7 +1,7 @@
 ---
 slug: adidasallin
 title: Adidas All In
-disciplines: [production]
+disciplines: [production-design]
 order: 12
 resume_section: production-design-freelance
 resume_order: 2

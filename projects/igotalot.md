@@ -1,7 +1,7 @@
 ---
 slug: igotalot
 title: I Got a Lot
-disciplines: [production]
+disciplines: [production-design]
 order: 15
 media:
   - igotalot-0.jpg

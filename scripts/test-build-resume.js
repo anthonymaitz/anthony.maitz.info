@@ -13,9 +13,9 @@ const html = generateResumeHTML(employersPath, projectsDir)
 assert((html.match(/class="resume-employer"/g) || []).length === 10, 'must have exactly 10 employer sections')
 
 // data-disciplines attributes
-assert(html.includes('data-disciplines="product"'), 'product discipline section must exist')
-assert(html.includes('data-disciplines="production"'), 'production discipline section must exist')
-assert(html.includes('data-disciplines="game-production"'), 'game-production discipline section must exist')
+assert(html.includes('data-disciplines="product-management"'), 'product-management discipline section must exist')
+assert(html.includes('data-disciplines="production-design"'), 'production-design discipline section must exist')
+assert(html.includes('data-disciplines="game-design"'), 'game-design discipline section must exist')
 
 // Employer names present
 assert(html.includes('ForeVR Games'), 'ForeVR must appear')

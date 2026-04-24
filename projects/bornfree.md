@@ -1,7 +1,7 @@
 ---
 slug: bornfree
 title: Born Free
-disciplines: [production]
+disciplines: [production-design]
 order: 13
 resume_section: production-design-freelance
 resume_order: 3

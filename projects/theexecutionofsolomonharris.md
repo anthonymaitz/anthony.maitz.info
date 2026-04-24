@@ -1,7 +1,7 @@
 ---
 slug: theexecutionofsolomonharris
 title: The Execution of Solomon Harris
-disciplines: [production]
+disciplines: [production-design]
 order: 18
 resume_section: production-design-freelance
 resume_order: 5

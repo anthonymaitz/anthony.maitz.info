@@ -1,7 +1,7 @@
 ---
 slug: nmfg
 title: Natural Markets Food Group
-disciplines: [product]
+disciplines: [product-management]
 order: 9
 resume_section: thoughtworks-lead
 resume_order: 5

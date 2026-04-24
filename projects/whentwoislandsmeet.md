@@ -1,7 +1,7 @@
 ---
 slug: whentwoislandsmeet
 title: When Two Islands Meet
-disciplines: [production]
+disciplines: [production-design]
 order: 19
 media:
   - whentwoislandsmeet-0.jpg

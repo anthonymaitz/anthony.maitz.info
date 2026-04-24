@@ -1,7 +1,7 @@
 ---
 slug: ayyo
 title: Ayyo
-disciplines: [production]
+disciplines: [production-design]
 order: 16
 media:
   - ayyo-0.jpg

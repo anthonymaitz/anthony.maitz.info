@@ -2,7 +2,7 @@
 employers:
   - id: forevr
     name: ForeVR Games
-    disciplines: [game-production]
+    disciplines: [game-design]
     roles:
       - id: forevr-role
         dates: "2025 - 2026"
@@ -13,7 +13,7 @@ employers:
 
   - id: independent
     name: Independent
-    disciplines: [game-production]
+    disciplines: [game-design]
     roles:
       - id: independent-role
         dates: "2025"
@@ -21,7 +21,7 @@ employers:
 
   - id: insummary
     name: Insummary
-    disciplines: [product]
+    disciplines: [product-management]
     roles:
       - id: insummary-role
         dates: "2023 - 2024"
@@ -32,7 +32,7 @@ employers:
   - id: pariveda
     name: Pariveda
     url: "https://www.parivedasolutions.com"
-    disciplines: [product]
+    disciplines: [product-management]
     roles:
       - id: pariveda-principal
         title: "Principal"
@@ -44,7 +44,7 @@ employers:
   - id: checkr
     name: Checkr
     url: "https://www.checkr.com"
-    disciplines: [product]
+    disciplines: [product-management]
     roles:
       - id: checkr-sgpm
         title: "Senior Group Product Manager, Self-Service"
@@ -55,7 +55,7 @@ employers:
   - id: thoughtworks
     name: ThoughtWorks
     url: "https://www.thoughtworks.com/about-us"
-    disciplines: [product]
+    disciplines: [product-management]
     roles:
       - id: thoughtworks-lead
         title: "Lead Product Strategist, Emerging Technologies"
@@ -77,7 +77,7 @@ employers:
     url: "https://youtu.be/mNgjgNSpVGA&list=PL5AjSG-LQwc6m96V_t2jgG_08UElFIhmi"
     url_target: "_window"
     h2_trigger: playsets
-    disciplines: [game-production]
+    disciplines: [game-design]
     roles:
       - id: playsets-founder
         title: "Co-Founder &amp; Product Designer"
@@ -91,7 +91,7 @@ employers:
     name: Discovery Communications
     url: "https://www.discovery.com/"
     url_target: "_window"
-    disciplines: [product]
+    disciplines: [product-management]
     roles:
       - id: discovery-dir
         title: "Director of Product and Engineering, MyDiscovery"
@@ -104,7 +104,7 @@ employers:
   - id: eyeboogie
     name: Eyeboogie Inc
     url: "http://www.eyeboogie.com/"
-    disciplines: [product]
+    disciplines: [product-management]
     roles:
       - id: eyeboogie-coo
         title: "Chief Operating Officer, Eyeboogie Labs"
@@ -123,7 +123,7 @@ employers:
 
   - id: production-design
     name: Production Design
-    disciplines: [production]
+    disciplines: [production-design]
     roles:
       - id: production-design-freelance
         descriptions:

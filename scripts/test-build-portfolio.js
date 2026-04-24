@@ -35,9 +35,9 @@ assert.ok(html.includes('data-fancybox="playsets"'), 'playsets has gallery items
 assert.ok(html.includes('data-fancybox="shine"'), 'shine has gallery items')
 
 // Disciplines on portfolio-item wrappers
-assert.ok(html.includes('data-discipline="game-production"'), 'game-production discipline present')
-assert.ok(html.includes('data-discipline="product"'), 'product discipline present')
-assert.ok(html.includes('data-discipline="production"'), 'production discipline present')
+assert.ok(html.includes('data-discipline="game-design"'), 'game-design discipline present')
+assert.ok(html.includes('data-discipline="product-management"'), 'product-management discipline present')
+assert.ok(html.includes('data-discipline="production-design"'), 'production-design discipline present')
 
 // Captions: ucsf media items have text inside the <a>
 assert.ok(html.includes('We tested with medical workers in Kenya.'), 'ucsf caption 1')

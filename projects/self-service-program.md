@@ -2,7 +2,7 @@
 slug: self-service-program
 title: Self-Service Program
 portfolio: false
-disciplines: [product]
+disciplines: [product-management]
 resume_section: checkr-sgpm
 resume_order: 1
 resume_entry_title: "Self-Service Program"

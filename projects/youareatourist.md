@@ -1,7 +1,7 @@
 ---
 slug: youareatourist
 title: "You Are a Tourist"
-disciplines: [production]
+disciplines: [production-design]
 order: 11
 resume_section: production-design-freelance
 resume_order: 1

@@ -1,7 +1,7 @@
 ---
 slug: shine
 title: Shine
-disciplines: [game-production]
+disciplines: [game-design]
 order: 6
 featured: true
 featured_order: 2

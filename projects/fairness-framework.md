@@ -2,7 +2,7 @@
 slug: fairness-framework
 title: Fairness Framework
 portfolio: false
-disciplines: [product]
+disciplines: [product-management]
 resume_section: checkr-sgpm
 resume_order: 6
 resume_entry_title: "Fairness Framework"

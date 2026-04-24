@@ -1,7 +1,7 @@
 ---
 slug: thenaturebetweenus
 title: The Nature Between Us
-disciplines: [production]
+disciplines: [production-design]
 order: 17
 resume_section: production-design-freelance
 resume_order: 4

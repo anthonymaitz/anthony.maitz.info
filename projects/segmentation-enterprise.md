@@ -2,7 +2,7 @@
 slug: segmentation-enterprise
 title: Segmentation and Enterprise
 portfolio: false
-disciplines: [product]
+disciplines: [product-management]
 resume_section: checkr-sgpm
 resume_order: 3
 resume_entry_title: "Segmentation and Enterprise"

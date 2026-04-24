@@ -1,7 +1,7 @@
 ---
 slug: insummary
 title: Insummary
-disciplines: [product]
+disciplines: [product-management]
 order: 3
 stub: true
 ---

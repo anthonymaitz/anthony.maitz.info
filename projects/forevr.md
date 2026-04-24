@@ -1,7 +1,7 @@
 ---
 slug: forevr
 title: ForeVR Games
-disciplines: [game-production]
+disciplines: [game-design]
 order: 2
 stub: true
 ---

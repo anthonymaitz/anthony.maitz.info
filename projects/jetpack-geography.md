@@ -1,7 +1,7 @@
 ---
 slug: jetpack-geography
 title: Jetpack Geography!
-disciplines: [game-production]
+disciplines: [game-design]
 order: 1
 stub: true
 featured: true
