@@ -99,6 +99,13 @@ function renderEmployer(employer, projectMap) {
     for (const desc of (role.descriptions || [])) {
       html += `<p>${desc}</p>\n`
     }
+    if (role.bullets && role.bullets.length > 0) {
+      html += `<ul>\n`
+      for (const b of role.bullets) {
+        html += `<li>${b}</li>\n`
+      }
+      html += `</ul>\n`
+    }
     const projects = projectMap[role.id] || []
     if (projects.length > 0) {
       html += `<h4>Notable Projects</h4>\n`

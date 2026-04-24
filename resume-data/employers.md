@@ -11,13 +11,18 @@ employers:
           - "Pitched a new &ldquo;Firefighter Survivors&rdquo; mode to Meta for Star City Firefighters, received approval, directed UI/UX systems, and served as final design authority &mdash; the feature doubled engagement at release."
           - "Led product and design on r/Kaboom and Social Poker, driving achievements, flair, post frames, and game economy systems across the full portfolio."
 
-  - id: independent
-    name: Independent
+  - id: jetpackgeo
+    name: "Jetpack Geography!"
     disciplines: [game-design]
     roles:
-      - id: independent-role
+      - id: jetpackgeo-role
+        title: "Game Designer"
         dates: "2025"
-        descriptions: []
+        descriptions:
+          - "Answer geography questions as you fall towards a beautiful neon map, using your jetpack to land on the correct country. Race friends, collect landmarks, and complete your atlas!"
+        bullets:
+          - "Judges Choice Award – Meta Horizon Creator Competition: Mobile Genre Showdown"
+          - "Most Satisfying Progression – Meta Horizon Creator Competition: Elevate your mobile world"
 
   - id: insummary
     name: Insummary

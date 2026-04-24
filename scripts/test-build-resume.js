@@ -32,7 +32,7 @@ assert(html.includes('data-disciplines="game-design"'), 'game-design discipline 
 
 // Employer names present
 assert(html.includes('ForeVR Games'), 'ForeVR must appear')
-assert(html.includes('>Independent<'), 'Independent must appear')
+assert(html.includes('>Jetpack Geography!</'), 'Jetpack Geography employer must appear')
 assert(html.includes('>Insummary<'), 'Insummary must appear')
 assert(html.includes('>Pariveda<'), 'Pariveda must appear')
 assert(html.includes('>Checkr<'), 'Checkr must appear')
@@ -94,11 +94,12 @@ assert(html.includes('<h4>Notable Projects</h4>'), 'Notable Projects header must
 assert(html.includes('Firefighter Survivors'), 'ForeVR Firefighter Survivors description must appear')
 assert(html.includes('doubled engagement'), 'ForeVR doubled engagement description must appear')
 
-// Jetpack Geography description appears (in overview and/or Independent section)
+// Jetpack Geography employer section
 assert(html.includes('beautiful neon map'), 'Jetpack Geography description must appear')
+assert(html.includes('Judges Choice Award'), 'Jetpack Geography awards must appear')
 const forevIdx = html.indexOf('ForeVR Games')
-const indepIdx = html.indexOf('>Independent<')
-assert(indepIdx > forevIdx, 'Independent must come after ForeVR')
+const jetpackEmpIdx = html.indexOf('>Jetpack Geography!</')
+assert(jetpackEmpIdx > forevIdx, 'Jetpack Geography must come after ForeVR')
 
 // Employer order
 const parivIdx = html.indexOf('>Pariveda<')
