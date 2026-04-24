@@ -10,9 +10,8 @@ const projectsDir = path.resolve(__dirname, '../projects')
 const html = generateResumeHTML(employersPath, projectsDir)
 
 // Overview title and paragraphs
-assert(html.includes('<h2>Product Manager, Designer, Maker</h2>'), 'overview title must appear')
-assert(html.includes('Award-winning Product Manager'), 'overview paragraph 1 must appear')
-assert(html.includes('Sought for expertise'), 'overview paragraph 2 must appear')
+assert(html.includes('<h2>Product Manager, Game Designer, Maker</h2>'), 'overview title must appear')
+assert(html.includes('agile settings'), 'overview paragraph must appear')
 
 // Must have exactly 10 employer sections
 assert((html.match(/class="resume-employer"/g) || []).length === 10, 'must have exactly 10 employer sections')
