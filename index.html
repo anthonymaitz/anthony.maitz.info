@@ -44,10 +44,9 @@
 <article id="resume">
 <h2>Product Manager, Designer, Maker</h2>
 <div id="resume-filters">
-  <button class="filter-btn selected" data-filter="all" onclick="filterResume('all')">All</button>
-  <button class="filter-btn" data-filter="product-management" onclick="filterResume('product-management')">Product Management</button>
-  <button class="filter-btn" data-filter="game-design" onclick="filterResume('game-design')">Game Design</button>
-  <button class="filter-btn" data-filter="production-design" onclick="filterResume('production-design')">Production Design</button>
+  <button class="filter-btn selected" data-filter="product-management" onclick="toggleResumeFilter('product-management')">Product Management</button>
+  <button class="filter-btn selected" data-filter="game-design" onclick="toggleResumeFilter('game-design')">Game Design</button>
+  <button class="filter-btn selected" data-filter="production-design" onclick="toggleResumeFilter('production-design')">Production Design</button>
 </div>
 <!-- RESUME_GENERATED_START -->
 <div class="resume-employer" data-disciplines="game-production">
@@ -194,10 +193,9 @@
 </article>
 <article id="portfolio">
 <div id="portfolio-filters">
-  <button class="filter-btn selected" data-filter="all" onclick="filterPortfolio('all')">All</button>
-  <button class="filter-btn" data-filter="product-management" onclick="filterPortfolio('product-management')">Product Management</button>
-  <button class="filter-btn" data-filter="game-design" onclick="filterPortfolio('game-design')">Game Design</button>
-  <button class="filter-btn" data-filter="production-design" onclick="filterPortfolio('production-design')">Production Design</button>
+  <button class="filter-btn selected" data-filter="product-management" onclick="togglePortfolioFilter('product-management')">Product Management</button>
+  <button class="filter-btn selected" data-filter="game-design" onclick="togglePortfolioFilter('game-design')">Game Design</button>
+  <button class="filter-btn selected" data-filter="production-design" onclick="togglePortfolioFilter('production-design')">Production Design</button>
 </div>
 <!-- PORTFOLIO_GENERATED_START -->
 <div class="portfolio-item" id="jetpack-geography" data-discipline="interactive game-production">
@@ -443,8 +441,8 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 				});
 				if (disciplines.length > 0) {
 					navctrl('portfolio');
-					filterPortfolio(disciplines);
-					filterResume(disciplines);
+					setFiltersByDisciplines('portfolio', disciplines);
+					setFiltersByDisciplines('resume', disciplines);
 					return;
 				}
 			}
@@ -463,60 +461,61 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 				case 'portfolio':
 					$('#portfolio').show();
 					$('a.portfolio').addClass('selected');
-					filterPortfolio('all');
+					applyPortfolioFilter();
 					break;
 				case 'resume':
 					$('#resume').show();
 					$('a.resume').addClass('selected');
-					filterResume('all');
+					applyResumeFilter();
 					break;
 			}
 		};
 
-		function filterPortfolio(filter) {
-			var isArray = Array.isArray(filter);
-			var disciplineArr = isArray ? filter : (FILTER_DISCIPLINES[filter] || [filter]);
-			$('.portfolio-item').each(function() {
-				if (filter === 'all') {
-					$(this).show();
-					return;
-				}
-				var d = $(this).data('discipline') || '';
-				var disciplines = d === '' ? [] : d.split(' ');
-				var match = disciplineArr.some(function(df) {
-					return disciplines.indexOf(df) !== -1;
-				});
-				$(this).toggle(match);
+		function activeDisc(prefix) {
+			var active = [];
+			$(prefix + ' .filter-btn.selected').each(function() {
+				var discs = FILTER_DISCIPLINES[$(this).data('filter')] || [$(this).data('filter')];
+				discs.forEach(function(d) { if (active.indexOf(d) === -1) active.push(d); });
 			});
-			$('#portfolio-filters .filter-btn').removeClass('selected');
-			if (filter === 'all') {
-				$('#portfolio-filters .filter-btn[data-filter="all"]').addClass('selected');
-			} else if (!isArray) {
-				$('#portfolio-filters .filter-btn[data-filter="' + filter + '"]').addClass('selected');
-			}
+			return active;
 		}
 
-		function filterResume(filter) {
-			var isArray = Array.isArray(filter);
-			var disciplineArr = (filter === 'all') ? null : (isArray ? filter : (FILTER_DISCIPLINES[filter] || [filter]));
-			$('.resume-employer').each(function() {
-				if (!disciplineArr) {
-					$(this).show();
-					return;
-				}
-				var d = $(this).data('disciplines') || '';
-				var disciplines = d === '' ? [] : d.split(' ');
-				var match = disciplineArr.some(function(df) {
-					return disciplines.indexOf(df) !== -1;
-				});
-				$(this).toggle(match);
+		function togglePortfolioFilter(slug) {
+			$('#portfolio-filters .filter-btn[data-filter="' + slug + '"]').toggleClass('selected');
+			applyPortfolioFilter();
+		}
+
+		function applyPortfolioFilter() {
+			var active = activeDisc('#portfolio-filters');
+			$('.portfolio-item').each(function() {
+				var d = $(this).data('discipline') || '';
+				var discs = d ? d.split(' ') : [];
+				$(this).toggle(active.some(function(df) { return discs.indexOf(df) !== -1; }));
 			});
-			$('#resume-filters .filter-btn').removeClass('selected');
-			if (filter === 'all') {
-				$('#resume-filters .filter-btn[data-filter="all"]').addClass('selected');
-			} else if (!isArray) {
-				$('#resume-filters .filter-btn[data-filter="' + filter + '"]').addClass('selected');
-			}
+		}
+
+		function toggleResumeFilter(slug) {
+			$('#resume-filters .filter-btn[data-filter="' + slug + '"]').toggleClass('selected');
+			applyResumeFilter();
+		}
+
+		function applyResumeFilter() {
+			var active = activeDisc('#resume-filters');
+			$('.resume-employer').each(function() {
+				var d = $(this).data('disciplines') || '';
+				var discs = d ? d.split(' ') : [];
+				$(this).toggle(active.some(function(df) { return discs.indexOf(df) !== -1; }));
+			});
+		}
+
+		function setFiltersByDisciplines(section, disciplines) {
+			var prefix = '#' + section + '-filters';
+			$(prefix + ' .filter-btn').each(function() {
+				var slugDiscs = FILTER_DISCIPLINES[$(this).data('filter')] || [$(this).data('filter')];
+				$(this).toggleClass('selected', slugDiscs.some(function(d) { return disciplines.indexOf(d) !== -1; }));
+			});
+			if (section === 'portfolio') applyPortfolioFilter();
+			else applyResumeFilter();
 		}
 	</script>
 </body>
