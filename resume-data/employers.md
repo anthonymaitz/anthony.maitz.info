@@ -6,6 +6,17 @@ employers:
     roles:
       - id: forevr-role
         dates: "2025 - 2026"
+        descriptions:
+          - "Served as product and design lead, taking creative and strategic ownership across a portfolio of Meta Horizon VR titles: Star City Firefighters, r/Kaboom, and Social Poker."
+          - "Pitched a new &ldquo;Firefighter Survivors&rdquo; mode to Meta for Star City Firefighters, received approval, directed UI/UX systems, and served as final design authority &mdash; the feature doubled engagement at release."
+          - "Led product and design on r/Kaboom and Social Poker, driving achievements, flair, post frames, and game economy systems across the full portfolio."
+
+  - id: independent
+    name: Independent
+    disciplines: [game-production, interactive]
+    roles:
+      - id: independent-role
+        dates: "2025"
         descriptions: []
 
   - id: insummary

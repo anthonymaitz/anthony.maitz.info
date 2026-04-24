@@ -9,8 +9,8 @@ const projectsDir = path.resolve(__dirname, '../projects')
 
 const html = generateResumeHTML(employersPath, projectsDir)
 
-// Must have exactly 9 employer sections
-assert((html.match(/class="resume-employer"/g) || []).length === 9, 'must have exactly 9 employer sections')
+// Must have exactly 10 employer sections
+assert((html.match(/class="resume-employer"/g) || []).length === 10, 'must have exactly 10 employer sections')
 
 // data-disciplines attributes
 assert(html.includes('data-disciplines="product"'), 'product discipline section must exist')
@@ -20,6 +20,7 @@ assert(html.includes('data-disciplines="game-production"'), 'game-production dis
 
 // Employer names present
 assert(html.includes('ForeVR Games'), 'ForeVR must appear')
+assert(html.includes('>Independent<'), 'Independent must appear')
 assert(html.includes('>Insummary<'), 'Insummary must appear')
 assert(html.includes('>Pariveda<'), 'Pariveda must appear')
 assert(html.includes('>Checkr<'), 'Checkr must appear')
@@ -79,6 +80,18 @@ assert(html.includes('Saving Lives at Birth Seed Grant'), 'ucsf bullet link text
 
 // Notable Projects header appears
 assert(html.includes('<h4>Notable Projects</h4>'), 'Notable Projects header must appear')
+
+// ForeVR descriptions
+assert(html.includes('Firefighter Survivors'), 'ForeVR Firefighter Survivors description must appear')
+assert(html.includes('doubled engagement'), 'ForeVR doubled engagement description must appear')
+
+// Jetpack Geography under Independent (not ForeVR)
+assert(html.includes('beautiful neon map'), 'Jetpack Geography description must appear')
+const forevIdx = html.indexOf('ForeVR Games')
+const indepIdx = html.indexOf('>Independent<')
+const jetpackIdx = html.indexOf('Jetpack Geography')
+assert(indepIdx > forevIdx, 'Independent must come after ForeVR')
+assert(jetpackIdx > indepIdx, 'Jetpack Geography must be inside Independent section')
 
 // Employer order
 const parivIdx = html.indexOf('>Pariveda<')
