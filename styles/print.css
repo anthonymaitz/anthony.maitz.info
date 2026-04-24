@@ -405,17 +405,35 @@ a {
 #resume-filters {
   display: none !important; }
 
+/* Override browser UA stylesheet page-break defaults on headings */
+h1, h2, h3, h4, h5, h6, p, ul, li, div {
+  page-break-before: auto !important;
+  page-break-after: auto !important;
+  page-break-inside: auto !important;
+  break-before: auto !important;
+  break-after: auto !important;
+  break-inside: auto !important; }
+
 body {
   background: none;
   font-size: 14px; }
 
+/* Align content with header — remove screen layout margins */
+section {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0; }
+
 header {
   border: none;
   position: relative;
-  margin-bottom: .5em;
+  padding-right: 0;
+  margin-bottom: 2em;
   background: none; }
   header nav {
-    display: block; }
+    display: block;
+    margin-left: 0;
+    margin-top: 0; }
   header nav a {
     display: none; }
   header nav a.contact {
@@ -424,8 +442,7 @@ header {
     font-weight: 700;
     color: #4b5866 !important;
     text-decoration: none;
-    line-height: 1.4em;
-    padding-bottom: 0; }
+    line-height: 1.4em; }
 
 header #resume-contact-print {
   font-size: .875em;
@@ -435,10 +452,7 @@ header #resume-contact-print {
     color: #4b5866 !important;
     text-decoration: none; }
 
-#resume h2 {
-  margin-top: 1.5em; }
-
 .resume-employer {
-  margin-top: 1.75em; }
+  margin-top: 2.5em; }
   .resume-employer:first-of-type {
     margin-top: 0; }
