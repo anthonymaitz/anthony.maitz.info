@@ -1,7 +1,7 @@
 ---
 slug: collagio
 title: Collagio
-disciplines: [interactive, product]
+disciplines: [product]
 order: 10
 media:
   - collagio-0.jpg

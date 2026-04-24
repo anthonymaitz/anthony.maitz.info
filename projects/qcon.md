@@ -1,7 +1,7 @@
 ---
 slug: qcon
 title: QCon Conference Wearables
-disciplines: [interactive]
+disciplines: [product]
 order: 7
 resume_section: thoughtworks-lead
 resume_order: 2

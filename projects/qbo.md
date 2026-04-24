@@ -1,7 +1,7 @@
 ---
 slug: qbo
 title: Q-bo Connected Coffee Machine
-disciplines: [interactive]
+disciplines: [product]
 order: 8
 resume_section: thoughtworks-lead
 resume_order: 3

@@ -13,7 +13,7 @@ employers:
 
   - id: independent
     name: Independent
-    disciplines: [game-production, interactive]
+    disciplines: [game-production]
     roles:
       - id: independent-role
         dates: "2025"
@@ -55,7 +55,7 @@ employers:
   - id: thoughtworks
     name: ThoughtWorks
     url: "https://www.thoughtworks.com/about-us"
-    disciplines: [interactive, product]
+    disciplines: [product]
     roles:
       - id: thoughtworks-lead
         title: "Lead Product Strategist, Emerging Technologies"
@@ -77,7 +77,7 @@ employers:
     url: "https://youtu.be/mNgjgNSpVGA&list=PL5AjSG-LQwc6m96V_t2jgG_08UElFIhmi"
     url_target: "_window"
     h2_trigger: playsets
-    disciplines: [interactive, product]
+    disciplines: [game-production]
     roles:
       - id: playsets-founder
         title: "Co-Founder &amp; Product Designer"

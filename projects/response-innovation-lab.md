@@ -2,6 +2,7 @@
 slug: response-innovation-lab
 title: Response Innovation Lab, Matchmaker
 portfolio: false
+disciplines: [product]
 resume_section: thoughtworks-sej
 resume_order: 2
 resume_entry_title: "Response Innovation Lab, Matchmaker"

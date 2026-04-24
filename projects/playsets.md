@@ -1,7 +1,7 @@
 ---
 slug: playsets
 title: Playsets
-disciplines: [interactive, product]
+disciplines: [game-production]
 order: 5
 featured: true
 featured_order: 3

@@ -2,6 +2,7 @@
 slug: gap-validated-learning
 title: GAP Inc, Validated Learning Process
 portfolio: false
+disciplines: [product]
 resume_section: thoughtworks-lead
 resume_order: 4
 resume_entry_title: "GAP Inc, Validated learning process"

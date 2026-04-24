@@ -14,7 +14,6 @@ assert((html.match(/class="resume-employer"/g) || []).length === 10, 'must have 
 
 // data-disciplines attributes
 assert(html.includes('data-disciplines="product"'), 'product discipline section must exist')
-assert(html.includes('data-disciplines="interactive product"'), 'ThoughtWorks must have interactive+product disciplines')
 assert(html.includes('data-disciplines="production"'), 'production discipline section must exist')
 assert(html.includes('data-disciplines="game-production"'), 'game-production discipline section must exist')
 

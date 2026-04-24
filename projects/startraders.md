@@ -1,7 +1,7 @@
 ---
 slug: startraders
 title: Star Traders
-disciplines: [interactive]
+disciplines: [game-production]
 order: 14
 media:
   - startraders-0.jpg

@@ -1,7 +1,7 @@
 ---
 slug: ucsf
 title: UCSF Virtual Mentor
-disciplines: [interactive]
+disciplines: [product]
 order: 4
 resume_section: thoughtworks-sej
 resume_order: 1

@@ -1,7 +1,7 @@
 ---
 slug: hutton
 title: Hutton 2.0
-disciplines: [interactive]
+disciplines: [product]
 order: 20
 no_trigger: true
 resume_section: thoughtworks-sej
