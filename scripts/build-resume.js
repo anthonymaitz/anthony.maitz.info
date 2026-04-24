@@ -113,10 +113,18 @@ function renderEmployer(employer, projectMap) {
 }
 
 export function generateResumeHTML(empPath, projDir) {
+  const overviewPath = path.join(path.dirname(empPath), 'overview.md')
+  const overview = matter(fs.readFileSync(overviewPath, 'utf8')).data
+  let html = `<h2>${htmlEncode(overview.title || '')}</h2>\n`
+  for (const para of (overview.overview || [])) {
+    html += `<p>${htmlEncode(para)}</p>\n`
+  }
+  html += '\n'
   const raw = fs.readFileSync(empPath, 'utf8')
   const employers = matter(raw).data.employers || []
   const projectMap = buildProjectMap(projDir)
-  return employers.map(e => renderEmployer(e, projectMap)).join('\n')
+  html += employers.map(e => renderEmployer(e, projectMap)).join('\n')
+  return html
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
