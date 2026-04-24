@@ -95,6 +95,8 @@ async function generatePdf(browser, port, config) {
         const span = document.createElement('span')
         span.textContent = ' · ' + phone
         contact.appendChild(span)
+        const header = document.querySelector('header')
+        if (header) header.appendChild(contact)
       }
     }, PHONE)
 

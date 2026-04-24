@@ -554,11 +554,26 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 		}
 
 		var _printPrevSection = null;
+		var _contactOriginalParent = null;
+		var _contactOriginalNextSibling = null;
 		window.addEventListener('beforeprint', function() {
 			_printPrevSection = document.querySelector('article:not([style*="display:none"])');
 			navctrl('resume');
+			var contact = document.getElementById('resume-contact');
+			var header = document.querySelector('header');
+			if (contact && header) {
+				_contactOriginalParent = contact.parentNode;
+				_contactOriginalNextSibling = contact.nextSibling;
+				header.appendChild(contact);
+			}
 		});
 		window.addEventListener('afterprint', function() {
+			var contact = document.getElementById('resume-contact');
+			if (contact && _contactOriginalParent) {
+				_contactOriginalParent.insertBefore(contact, _contactOriginalNextSibling);
+				_contactOriginalParent = null;
+				_contactOriginalNextSibling = null;
+			}
 			if (_printPrevSection && _printPrevSection.id) navctrl(_printPrevSection.id);
 		});
 
