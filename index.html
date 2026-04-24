@@ -48,8 +48,25 @@
   <button class="filter-btn selected" data-filter="production-design" onclick="toggleResumeFilter('production-design')">Production Design</button>
 </div>
 <!-- RESUME_GENERATED_START -->
+<div class="resume-overview" data-overview="all">
 <h2>Product Manager, Game Designer, Maker</h2>
-<p>I focus on web and mobile development, interactive media, and innovative technologies to build experiences that impact users. Over 18 years in agile settings have shaped my approach: emphasizing teamwork, embracing iteration, fostering clear communication, and prioritizing the user's needs above all. I'm convinced that passion shines through in the products we create and that great products come from the collective dedication and collaboration of closely connected teams.</p>
+<p>I focus on web and mobile development, interactive media, and innovative technologies to build experiences that impact users. Over 19 years in agile settings have shaped my approach: emphasizing teamwork, embracing iteration, fostering clear communication, and prioritizing the user's needs above all. I'm convinced that passion shines through in the products we create and that great products come from the collective dedication and collaboration of closely connected teams.</p>
+</div>
+<div class="resume-overview" style="display:none" data-overview="product-management">
+<h2>Product Manager</h2>
+<p>Product Manager with 19 years of experience delivering SaaS platforms, developer tools, and consumer products for Fortune 500 companies and mission-driven organizations.</p>
+<p>Led cross-functional teams of up to 100 people with multi-million-dollar budgets, managing the full product lifecycle from strategy and roadmap through agile delivery. Consistent track record of stakeholder alignment, user-centered product thinking, and building high-performing teams.</p>
+</div>
+<div class="resume-overview" style="display:none" data-overview="game-design">
+<h2>Game Designer</h2>
+<p>Game designer and producer with shipped titles across VR, mobile, and PC — including award-winning Jetpack Geography and Playsets, which grew to tens of thousands of players across 100+ countries.</p>
+<p>Served as design lead on Meta Horizon VR titles Star City Firefighters, r/Kaboom, and Social Poker at ForeVR Games — driving live service systems including game economy, achievements, and social features. Pitched and shipped a new game mode that doubled player engagement at release.</p>
+</div>
+<div class="resume-overview" style="display:none" data-overview="combined">
+<h2>Product Manager · Game Designer</h2>
+<p>Product Manager and game designer with 19 years shipping digital products — from enterprise SaaS platforms to live service VR and mobile games. Proven in leading cross-functional product teams, driving game economy and live operations, and delivering measurable improvements to player engagement.</p>
+<p>Applies enterprise product discipline — roadmap ownership, stakeholder alignment, multi-million-dollar program management — to game product leadership, with direct experience shipping titles across VR, PC, and mobile platforms.</p>
+</div>
 
 <div class="resume-employer" data-disciplines="game-design">
 <h2>ForeVR Games</h2>
@@ -136,8 +153,6 @@
 <li>Winner of <a href="http://globalhealthsciences.ucsf.edu/news/star-trek-inspired-virtual-mentor-wins-saving-lives-birth-seed-grant" target="_window">Saving Lives at Birth Seed Grant</a></li>
 <li>Winner of <a href="https://www.jnj.com/innovation/6-healthcare-entrepreneurs-who-could-make-genh-the-healthiest-yet" target="_window">Johnson &amp; Johnson&rsquo;s GenH Challenge</a></li>
 </ul>
-<h5><a href="javascript:;" data-type="iframe" data-src="https://responseinnovationlab.com/matchmaker/" target="_window">Response Innovation Lab, Matchmaker</a> – Product Strategist</h5>
-<p>Designer and Program manager for a platform for humanitarian sector problem-holders to be matched with advisers and solutions, overseeing an MVP for pilot programs in Jordan, Somalia, and Puerto Rico.</p>
 <h5><a href="../media/hutton-1.png" data-trigger="hutton">Hutton 2.0, digital storytelling and political education</a> – Organizer, Mentor</h5>
 <p>Mentored and taught youth game development, design, storytelling, and political education.</p>
 </div>
@@ -500,6 +515,20 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 				var discs = d ? d.split(' ') : [];
 				$(this).toggle(active.some(function(df) { return discs.indexOf(df) !== -1; }));
 			});
+			updateOverview(active);
+		}
+
+		function updateOverview(active) {
+			var hasPM   = active.indexOf('product-management') !== -1;
+			var hasGame = active.indexOf('game-design') !== -1;
+			var hasProd = active.indexOf('production-design') !== -1;
+			var key;
+			if (hasProd || (!hasPM && !hasGame)) key = 'all';
+			else if (hasPM && hasGame)            key = 'combined';
+			else if (hasPM)                       key = 'product-management';
+			else                                  key = 'game-design';
+			$('.resume-overview').hide();
+			$('.resume-overview[data-overview="' + key + '"]').show();
 		}
 
 		function setFiltersByDisciplines(section, disciplines) {

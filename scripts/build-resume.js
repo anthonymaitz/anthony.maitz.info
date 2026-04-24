@@ -114,12 +114,23 @@ function renderEmployer(employer, projectMap) {
 
 export function generateResumeHTML(empPath, projDir) {
   const overviewPath = path.join(path.dirname(empPath), 'overview.md')
-  const overview = matter(fs.readFileSync(overviewPath, 'utf8')).data
-  let html = `<h2>${htmlEncode(overview.title || '')}</h2>\n`
-  for (const para of (overview.overview || [])) {
-    html += `<p>${htmlEncode(para)}</p>\n`
-  }
+  const overviewData = matter(fs.readFileSync(overviewPath, 'utf8')).data
+  const startYear = overviewData.start_year || 2007
+  const years = new Date().getFullYear() - startYear
+  const overviews = overviewData.overviews || {}
+
+  let html = ''
+  Object.entries(overviews).forEach(([key, ov], i) => {
+    const hidden = i > 0 ? ' style="display:none"' : ''
+    html += `<div class="resume-overview"${hidden} data-overview="${htmlEncode(key)}">\n`
+    html += `<h2>${htmlEncode(ov.title || '')}</h2>\n`
+    for (const para of (ov.paragraphs || [])) {
+      html += `<p>${para.replace('{years}', String(years))}</p>\n`
+    }
+    html += `</div>\n`
+  })
   html += '\n'
+
   const raw = fs.readFileSync(empPath, 'utf8')
   const employers = matter(raw).data.employers || []
   const projectMap = buildProjectMap(projDir)

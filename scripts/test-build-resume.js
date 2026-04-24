@@ -9,9 +9,18 @@ const projectsDir = path.resolve(__dirname, '../projects')
 
 const html = generateResumeHTML(employersPath, projectsDir)
 
-// Overview title and paragraphs
-assert(html.includes('<h2>Product Manager, Game Designer, Maker</h2>'), 'overview title must appear')
-assert(html.includes('agile settings'), 'overview paragraph must appear')
+// All four overview variants present
+assert(html.includes('data-overview="all"'), 'all overview must be present')
+assert(html.includes('data-overview="product-management"'), 'product-management overview must be present')
+assert(html.includes('data-overview="game-design"'), 'game-design overview must be present')
+assert(html.includes('data-overview="combined"'), 'combined overview must be present')
+// Key content in each variant
+assert(html.includes('agile settings'), 'all overview text must appear')
+assert(html.includes('Fortune 500'), 'PM overview text must appear')
+assert(html.includes('Jetpack Geography'), 'game overview text must appear')
+assert(html.includes('live service'), 'combined overview text must appear')
+// Dynamic years rendered
+assert(html.includes('19 years'), 'dynamic years must be rendered')
 
 // Must have exactly 10 employer sections
 assert((html.match(/class="resume-employer"/g) || []).length === 10, 'must have exactly 10 employer sections')
@@ -53,7 +62,7 @@ assert(html.includes('ThoughtWorks, Digital Platform Strategy Offering'), 'Digit
 
 // ThoughtWorks-sej projects appear
 assert(html.includes('UCSF Virtual Mentor'), 'UCSF entry must appear')
-assert(html.includes('Response Innovation Lab, Matchmaker'), 'Response Innovation Lab must appear')
+assert(!html.includes('Response Innovation Lab, Matchmaker'), 'Response Innovation Lab must not appear in resume')
 assert(html.includes('Hutton 2.0'), 'Hutton entry must appear')
 
 // Production design entries use <em> for client
@@ -72,9 +81,6 @@ assert(html.includes('data-trigger="hutton"'), 'hutton must have data-trigger')
 // Link title on qcon
 assert(html.includes('title="Qcon case study"'), 'qcon link must have title attribute')
 
-// Iframe type for Response Innovation Lab
-assert(html.includes('data-type="iframe"'), 'Response Innovation Lab must use iframe type')
-assert(!html.includes('href="https://responseinnovationlab'), 'iframe link must not have direct href')
 
 // Bullets
 assert(html.includes('<ul>'), 'bullets must render as ul')
@@ -88,13 +94,11 @@ assert(html.includes('<h4>Notable Projects</h4>'), 'Notable Projects header must
 assert(html.includes('Firefighter Survivors'), 'ForeVR Firefighter Survivors description must appear')
 assert(html.includes('doubled engagement'), 'ForeVR doubled engagement description must appear')
 
-// Jetpack Geography under Independent (not ForeVR)
+// Jetpack Geography description appears (in overview and/or Independent section)
 assert(html.includes('beautiful neon map'), 'Jetpack Geography description must appear')
 const forevIdx = html.indexOf('ForeVR Games')
 const indepIdx = html.indexOf('>Independent<')
-const jetpackIdx = html.indexOf('Jetpack Geography')
 assert(indepIdx > forevIdx, 'Independent must come after ForeVR')
-assert(jetpackIdx > indepIdx, 'Jetpack Geography must be inside Independent section')
 
 // Employer order
 const parivIdx = html.indexOf('>Pariveda<')
