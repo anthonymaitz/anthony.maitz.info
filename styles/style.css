@@ -489,8 +489,21 @@ section {
   margin-bottom: .25em; }
 
 #resume-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   padding: .25em 0 .5em 0;
   margin-bottom: .25em; }
+
+#resume-pdf-link {
+  margin-left: auto;
+  font-size: .875em;
+  white-space: nowrap; }
+
+#resume-contact {
+  font-size: .875em;
+  color: #8998a8;
+  margin-bottom: .5em; }
 
 .filter-btn {
   font-family: 'Libre Caslon Text', serif;

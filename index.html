@@ -46,7 +46,9 @@
   <button class="filter-btn selected" data-filter="product-management" onclick="toggleResumeFilter('product-management')">Product Management</button>
   <button class="filter-btn selected" data-filter="game-design" onclick="toggleResumeFilter('game-design')">Game Design</button>
   <button class="filter-btn selected" data-filter="production-design" onclick="toggleResumeFilter('production-design')">Production Design</button>
+  <a id="resume-pdf-link" href="/resume-product-manager-game-designer.pdf" download="Anthony Maitz - Product Manager &amp; Game Designer.pdf">Download PDF</a>
 </div>
+<div id="resume-contact"><a href="mailto:anthonymaitz@gmail.com">anthonymaitz@gmail.com</a></div>
 <!-- RESUME_GENERATED_START -->
 <div class="resume-overview" data-overview="all">
 <h2>Product Manager &amp; Game Designer &amp; Maker</h2>
@@ -512,6 +514,30 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 				$(this).toggle(active.some(function(df) { return discs.indexOf(df) !== -1; }));
 			});
 			updateOverview(active);
+			updatePdfLink(active);
+		}
+
+		function updatePdfLink(active) {
+			var hasPM   = active.indexOf('product-management') !== -1;
+			var hasGame = active.indexOf('game-design') !== -1;
+			var link = document.getElementById('resume-pdf-link');
+			if (!link) return;
+			var slug, name;
+			if (hasPM && hasGame) {
+				slug = 'resume-product-manager-game-designer.pdf';
+				name = 'Anthony Maitz - Product Manager & Game Designer.pdf';
+			} else if (hasPM) {
+				slug = 'resume-product-manager.pdf';
+				name = 'Anthony Maitz - Product Manager.pdf';
+			} else if (hasGame) {
+				slug = 'resume-game-designer.pdf';
+				name = 'Anthony Maitz - Game Designer.pdf';
+			} else {
+				slug = 'resume-product-manager-game-designer.pdf';
+				name = 'Anthony Maitz - Product Manager & Game Designer.pdf';
+			}
+			link.href = '/' + slug;
+			link.setAttribute('download', name);
 		}
 
 		function updateOverview(active) {
@@ -526,6 +552,15 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 			$('.resume-overview').hide();
 			$('.resume-overview[data-overview="' + key + '"]').show();
 		}
+
+		var _printPrevSection = null;
+		window.addEventListener('beforeprint', function() {
+			_printPrevSection = document.querySelector('article:not([style*="display:none"])');
+			navctrl('resume');
+		});
+		window.addEventListener('afterprint', function() {
+			if (_printPrevSection && _printPrevSection.id) navctrl(_printPrevSection.id);
+		});
 
 		function setFiltersByDisciplines(section, disciplines) {
 			var prefix = '#' + section + '-filters';

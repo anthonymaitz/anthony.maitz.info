@@ -401,7 +401,8 @@ a {
 
 #home,
 #portfolio,
-#portfolio-filters {
+#portfolio-filters,
+#resume-filters {
   display: none !important; }
 
 body {
@@ -411,10 +412,28 @@ body {
 header {
   border: none;
   position: relative;
-  margin-bottom: 2em;
+  margin-bottom: .5em;
   background: none; }
+  header nav {
+    display: block; }
   header nav a {
     display: none; }
+  header nav a.contact {
+    display: block;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #4b5866 !important;
+    text-decoration: none;
+    line-height: 1.4em;
+    padding-bottom: 0; }
+
+#resume-contact {
+  font-size: .875em;
+  color: #4b5866;
+  margin-bottom: .75em; }
+  #resume-contact a {
+    color: #4b5866 !important;
+    text-decoration: none; }
 
 h1, h2, h3, h4, h5 {
   page-break-after: avoid; }
