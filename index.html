@@ -45,10 +45,9 @@
 <h2>Product Manager, Designer, Maker</h2>
 <div id="resume-filters">
   <button class="filter-btn selected" data-filter="all" onclick="filterResume('all')">All</button>
-  <button class="filter-btn" data-filter="interactive" onclick="filterResume('interactive')">Interactive &amp; Game Design</button>
-  <button class="filter-btn" data-filter="product" onclick="filterResume('product')">Product</button>
-  <button class="filter-btn" data-filter="game-production" onclick="filterResume('game-production')">Game Production</button>
-  <button class="filter-btn" data-filter="production" onclick="filterResume('production')">Production Design</button>
+  <button class="filter-btn" data-filter="product-management" onclick="filterResume('product-management')">Product Management</button>
+  <button class="filter-btn" data-filter="game-design" onclick="filterResume('game-design')">Game Design</button>
+  <button class="filter-btn" data-filter="production-design" onclick="filterResume('production-design')">Production Design</button>
 </div>
 <!-- RESUME_GENERATED_START -->
 <div class="resume-employer" data-disciplines="game-production">
@@ -196,10 +195,9 @@
 <article id="portfolio">
 <div id="portfolio-filters">
   <button class="filter-btn selected" data-filter="all" onclick="filterPortfolio('all')">All</button>
-  <button class="filter-btn" data-filter="interactive" onclick="filterPortfolio('interactive')">Interactive &amp; Game Design</button>
-  <button class="filter-btn" data-filter="product" onclick="filterPortfolio('product')">Product</button>
-  <button class="filter-btn" data-filter="game-production" onclick="filterPortfolio('game-production')">Game Production</button>
-  <button class="filter-btn" data-filter="production" onclick="filterPortfolio('production')">Production Design</button>
+  <button class="filter-btn" data-filter="product-management" onclick="filterPortfolio('product-management')">Product Management</button>
+  <button class="filter-btn" data-filter="game-design" onclick="filterPortfolio('game-design')">Game Design</button>
+  <button class="filter-btn" data-filter="production-design" onclick="filterPortfolio('production-design')">Production Design</button>
 </div>
 <!-- PORTFOLIO_GENERATED_START -->
 <div class="portfolio-item" id="jetpack-geography" data-discipline="interactive game-production">
@@ -422,6 +420,12 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 			interactive: ['interactive']
 		};
 
+		var FILTER_DISCIPLINES = {
+			'product-management': ['product'],
+			'game-design': ['interactive', 'game-production'],
+			'production-design': ['production']
+		};
+
 		window.onload = function init(){
 			$('nav').show();
 			$('a.hidden').each(function(){$(this).data('caption', $(this).text());});
@@ -471,7 +475,7 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 
 		function filterPortfolio(filter) {
 			var isArray = Array.isArray(filter);
-			var disciplineArr = isArray ? filter : [filter];
+			var disciplineArr = isArray ? filter : (FILTER_DISCIPLINES[filter] || [filter]);
 			$('.portfolio-item').each(function() {
 				if (filter === 'all') {
 					$(this).show();
@@ -494,7 +498,7 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 
 		function filterResume(filter) {
 			var isArray = Array.isArray(filter);
-			var disciplineArr = (filter === 'all') ? null : (isArray ? filter : [filter]);
+			var disciplineArr = (filter === 'all') ? null : (isArray ? filter : (FILTER_DISCIPLINES[filter] || [filter]));
 			$('.resume-employer').each(function() {
 				if (!disciplineArr) {
 					$(this).show();
