@@ -427,11 +427,11 @@ header {
     line-height: 1.4em;
     padding-bottom: 0; }
 
-header #resume-contact {
+header #resume-contact-print {
   font-size: .875em;
   color: #4b5866;
   margin-top: .25em; }
-  header #resume-contact a {
+  header #resume-contact-print a {
     color: #4b5866 !important;
     text-decoration: none; }
 

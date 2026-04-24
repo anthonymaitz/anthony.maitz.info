@@ -90,13 +90,15 @@ async function generatePdf(browser, port, config) {
     }, config.disciplines)
 
     await page.evaluate((phone) => {
-      const contact = document.getElementById('resume-contact')
-      if (contact) {
+      const header = document.querySelector('header')
+      if (header) {
+        const el = document.createElement('div')
+        el.id = 'resume-contact-print'
+        el.innerHTML = '<a href="mailto:anthonymaitz@gmail.com">anthonymaitz@gmail.com</a>'
         const span = document.createElement('span')
         span.textContent = ' · ' + phone
-        contact.appendChild(span)
-        const header = document.querySelector('header')
-        if (header) header.appendChild(contact)
+        el.appendChild(span)
+        header.appendChild(el)
       }
     }, PHONE)
 

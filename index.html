@@ -48,7 +48,6 @@
   <button class="filter-btn selected" data-filter="production-design" onclick="toggleResumeFilter('production-design')">Production Design</button>
   <a id="resume-pdf-link" href="/resume-product-manager-game-designer.pdf" download="Anthony Maitz - Product Manager &amp; Game Designer.pdf">Download PDF</a>
 </div>
-<div id="resume-contact"><a href="mailto:anthonymaitz@gmail.com">anthonymaitz@gmail.com</a></div>
 <!-- RESUME_GENERATED_START -->
 <div class="resume-overview" data-overview="all">
 <h2>Product Manager &amp; Game Designer &amp; Maker</h2>
@@ -554,26 +553,20 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 		}
 
 		var _printPrevSection = null;
-		var _contactOriginalParent = null;
-		var _contactOriginalNextSibling = null;
 		window.addEventListener('beforeprint', function() {
 			_printPrevSection = document.querySelector('article:not([style*="display:none"])');
 			navctrl('resume');
-			var contact = document.getElementById('resume-contact');
 			var header = document.querySelector('header');
-			if (contact && header) {
-				_contactOriginalParent = contact.parentNode;
-				_contactOriginalNextSibling = contact.nextSibling;
-				header.appendChild(contact);
+			if (header && !document.getElementById('resume-contact-print')) {
+				var el = document.createElement('div');
+				el.id = 'resume-contact-print';
+				el.innerHTML = '<a href="mailto:anthonymaitz@gmail.com">anthonymaitz@gmail.com</a>';
+				header.appendChild(el);
 			}
 		});
 		window.addEventListener('afterprint', function() {
-			var contact = document.getElementById('resume-contact');
-			if (contact && _contactOriginalParent) {
-				_contactOriginalParent.insertBefore(contact, _contactOriginalNextSibling);
-				_contactOriginalParent = null;
-				_contactOriginalNextSibling = null;
-			}
+			var el = document.getElementById('resume-contact-print');
+			if (el) el.parentNode.removeChild(el);
 			if (_printPrevSection && _printPrevSection.id) navctrl(_printPrevSection.id);
 		});
 
