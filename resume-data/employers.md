@@ -24,6 +24,7 @@ employers:
     disciplines: [product-management]
     roles:
       - id: insummary-role
+        title: "Head of Product"
         dates: "2023 - 2024"
         descriptions:
           - "Served as Head of Product for a generative AI start-up, shaping product strategy, leading design, and contributing front-end code across multiple product iterations."
