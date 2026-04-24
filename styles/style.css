@@ -486,6 +486,10 @@ section {
   padding: .25em 0 .5em 0;
   margin-bottom: .25em; }
 
+#resume-filters {
+  padding: .25em 0 .5em 0;
+  margin-bottom: .25em; }
+
 .filter-btn {
   font-family: 'Libre Caslon Text', serif;
   font-size: .875em;

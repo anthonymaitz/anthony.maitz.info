@@ -43,7 +43,13 @@
 </article>
 <article id="resume">
 <h2>Product Manager, Designer, Maker</h2>
-
+<div id="resume-filters">
+  <button class="filter-btn selected" data-filter="all" onclick="filterResume('all')">All</button>
+  <button class="filter-btn" data-filter="interactive" onclick="filterResume('interactive')">Interactive &amp; Game Design</button>
+  <button class="filter-btn" data-filter="product" onclick="filterResume('product')">Product</button>
+  <button class="filter-btn" data-filter="game-production" onclick="filterResume('game-production')">Game Production</button>
+  <button class="filter-btn" data-filter="production" onclick="filterResume('production')">Production Design</button>
+</div>
 <!-- RESUME_GENERATED_START -->
 <div class="resume-employer" data-disciplines="game-production">
 <h2>ForeVR Games</h2>
@@ -474,16 +480,17 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 				});
 				$(this).toggle(match);
 			});
-			$('.filter-btn').removeClass('selected');
+			$('#portfolio-filters .filter-btn').removeClass('selected');
 			if (filter === 'all') {
-				$('.filter-btn[data-filter="all"]').addClass('selected');
+				$('#portfolio-filters .filter-btn[data-filter="all"]').addClass('selected');
 			} else if (!isArray) {
-				$('.filter-btn[data-filter="' + filter + '"]').addClass('selected');
+				$('#portfolio-filters .filter-btn[data-filter="' + filter + '"]').addClass('selected');
 			}
 		}
 
 		function filterResume(filter) {
-			var disciplineArr = (filter === 'all') ? null : (Array.isArray(filter) ? filter : [filter]);
+			var isArray = Array.isArray(filter);
+			var disciplineArr = (filter === 'all') ? null : (isArray ? filter : [filter]);
 			$('.resume-employer').each(function() {
 				if (!disciplineArr) {
 					$(this).show();
@@ -496,6 +503,12 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 				});
 				$(this).toggle(match);
 			});
+			$('#resume-filters .filter-btn').removeClass('selected');
+			if (filter === 'all') {
+				$('#resume-filters .filter-btn[data-filter="all"]').addClass('selected');
+			} else if (!isArray) {
+				$('#resume-filters .filter-btn[data-filter="' + filter + '"]').addClass('selected');
+			}
 		}
 	</script>
 </body>
