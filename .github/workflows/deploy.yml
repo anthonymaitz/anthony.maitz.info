@@ -20,6 +20,9 @@ jobs:
 
       - run: npm ci
 
+      - name: Install Chromium for Puppeteer
+        run: npx puppeteer browsers install chrome
+
       - run: npm run build
 
       - uses: peaceiris/actions-gh-pages@v4

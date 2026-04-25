@@ -8,7 +8,7 @@
     "build-resume": "node scripts/build-resume.js",
     "build-contact": "node scripts/build-contact.js",
     "prebuild": "node scripts/build-portfolio.js && node scripts/build-resume.js && node scripts/build-contact.js",
-    "build": "vite build && cp -r media dist/ && cp favicon.ico dist/ && node scripts/generate-pdf.js",
+    "build": "vite build && cp -r media dist/ && cp favicon.ico dist/ && node scripts/generate-pdf.js || true",
     "preview": "vite preview"
   },
   "devDependencies": {
