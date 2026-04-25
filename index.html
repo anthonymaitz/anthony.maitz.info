@@ -479,6 +479,13 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 		});
 
 		window.onload = function init(){
+			// Restore path after GitHub Pages 404 redirect
+			var ghRedirect = sessionStorage.getItem('gh-pages-redirect');
+			if (ghRedirect) {
+				sessionStorage.removeItem('gh-pages-redirect');
+				history.replaceState(null, null, ghRedirect);
+			}
+
 			$('nav').show();
 			$('a.hidden').each(function(){$(this).data('caption', $(this).text());});
 			var pathname = window.location.pathname.replace(/\/+$/, '') || '/';
