@@ -2,6 +2,7 @@
 slug: collagio
 title: Collagio
 disciplines: [product-management]
+portfolio: false
 order: 10
 media:
   - collagio-0.jpg

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Pairing Explorer — anthony.maitz.info</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #0f0f0f;
+    color: #e0e0e0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    overflow: hidden;
+  }
+
+  /* ── Controls ── */
+  #controls {
+    background: #161616;
+    border-right: 1px solid #252525;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  #controls h1 {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #555;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #444;
+    margin-bottom: 10px;
+  }
+
+  .pairing-grid { display: flex; flex-direction: column; gap: 7px; }
+
+  .pairing-card {
+    background: #1e1e1e;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 11px 13px;
+    cursor: pointer;
+    transition: border-color 0.12s, background 0.12s;
+  }
+  .pairing-card:hover { background: #232323; border-color: #3a3a3a; }
+  .pairing-card.selected { border-color: #5a82b4; background: #192030; }
+
+  .pair-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .pairing-card.selected .pair-name { color: #7aaad8; }
+
+  .pair-heading { font-size: 17px; color: #ddd; line-height: 1.2; margin-bottom: 2px; }
+  .pair-body    { font-size: 12px; color: #666; line-height: 1.4; }
+
+  /* sliders */
+  .control-group { display: flex; flex-direction: column; gap: 14px; }
+
+  .control-row { display: flex; flex-direction: column; gap: 6px; }
+  .control-row label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+  }
+  .control-row label span { color: #999; }
+  input[type=range] { width: 100%; accent-color: #5a82b4; }
+
+  /* ── Right side ── */
+  #right {
+    display: grid;
+    grid-template-rows: 1fr 160px;
+    overflow: hidden;
+  }
+
+  #preview-wrap {
+    overflow-y: auto;
+    background: #fff;
+  }
+
+  /* ── Preview (mirrors site styles) ── */
+  #preview {
+    max-width: 600px;
+    font-size: 18px;
+    color: #4b5866;
+    line-height: 1.5em;
+  }
+
+  #preview header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border-bottom: 1px solid #e0e0e0;
+    background: rgba(255,255,255,0.96);
+    padding: 0 1.5em;
+  }
+
+  #preview nav a {
+    display: inline-block;
+    margin-right: 0.75em;
+    font-size: 1.125em;
+    line-height: 2.8em;
+    color: #4779ae;
+    text-decoration: none;
+    padding-bottom: 0.5em;
+  }
+  #preview nav a.active {
+    color: #4b5866;
+    border-bottom: 2px solid #4b5866;
+    font-weight: 700;
+  }
+
+  #preview .content { padding: 1.5em 1.5em 3em; }
+
+  #preview .page-intro { font-size: 1.2em; font-weight: 700; margin-bottom: 0.6em; }
+
+  #preview .employer-h2 {
+    font-size: 1.125em;
+    font-weight: 700;
+    border-bottom: 1px solid #999;
+    padding-bottom: 0.25em;
+    margin-top: 2em;
+    margin-bottom: 0;
+  }
+
+  #preview .role-h3 {
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: 0.75em;
+    margin-bottom: 0;
+  }
+
+  #preview p { margin-top: 0.6em; line-height: inherit; }
+
+  #preview .notable-h4 {
+    font-size: 0.85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1em;
+  }
+
+  #preview .project-h5 { font-size: 0.9em; font-weight: 700; margin-top: 0.75em; }
+  #preview .project-h5 a { color: #4779ae; }
+
+  #preview ul {
+    list-style: disc;
+    margin-left: 1.5em;
+    margin-top: 0.4em;
+    font-size: 0.875em;
+  }
+  #preview ul li { margin-bottom: 0.2em; line-height: 1.45; }
+
+  /* ── Prompt ── */
+  #prompt-area {
+    background: #161616;
+    border-top: 1px solid #252525;
+    padding: 14px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #prompt-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #444;
+  }
+
+  #prompt-text {
+    font-size: 13px;
+    color: #bbb;
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  #copy-btn {
+    align-self: flex-end;
+    background: #1e1e1e;
+    color: #aaa;
+    border: 1px solid #2a2a2a;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.1s;
+  }
+  #copy-btn:hover { background: #272727; }
+  #copy-btn.copied { color: #6dba6d; border-color: #3a6a3a; }
+</style>
+</head>
+<body>
+
+<div id="controls">
+  <h1>Font Pairing Explorer</h1>
+
+  <div>
+    <div class="section-label">Pairing</div>
+    <div class="pairing-grid" id="pairing-grid"></div>
+  </div>
+
+  <div class="control-group">
+    <div class="section-label">Adjust</div>
+
+    <div class="control-row">
+      <label>Base size <span id="size-val">18px</span></label>
+      <input type="range" id="size-slider" min="14" max="22" value="18" step="1">
+    </div>
+
+    <div class="control-row">
+      <label>Line height <span id="lh-val">1.50</span></label>
+      <input type="range" id="lh-slider" min="130" max="180" value="150" step="5">
+    </div>
+  </div>
+</div>
+
+<div id="right">
+  <div id="preview-wrap">
+    <div id="preview">
+      <header>
+        <nav>
+          <a href="#" class="active">Anthony Maitz</a>
+          <a href="#">portfolio</a>
+          <a href="#">resume</a>
+        </nav>
+      </header>
+      <div class="content">
+
+        <p class="page-intro">Product Manager, Designer, Maker</p>
+        <p>I build products, games, and experiences — from indie titles to enterprise platforms. Currently open to senior product and game production roles.</p>
+
+        <h2 class="employer-h2">ForeVR Games</h2>
+        <h3 class="role-h3">Senior Producer <em style="font-weight:400">2025 – 2026</em></h3>
+        <p>Served as product and design lead, taking creative and strategic ownership across a portfolio of Meta Horizon VR titles: Fire & Rescue, r/Kaboom, and Social Poker.</p>
+        <p>Pitched a new "Firefighter Survivors" mode to Meta for Fire & Rescue, received approval, directed UI/UX systems, and served as final design authority — the feature doubled engagement at release.</p>
+
+        <h2 class="employer-h2">Jetpack Geography</h2>
+        <h3 class="role-h3">Game Designer <em style="font-weight:400">2025</em></h3>
+        <p>Answer geography questions as you fall towards a beautiful neon map, using your jetpack to land on the correct country. Race friends, collect landmarks, and complete your atlas!</p>
+        <ul>
+          <li>Judges Choice Award – Meta Horizon Creator Competition: Mobile Genre Showdown</li>
+          <li>Most Satisfying Progression – Meta Horizon Creator Competition: Elevate your mobile world</li>
+        </ul>
+
+        <h2 class="employer-h2">Checkr</h2>
+        <h3 class="role-h3">Senior Group Product Manager, Self-Service <em style="font-weight:400">2019 – 2022</em></h3>
+        <p>Led a program encompassing six teams to build the best experience in our industry for our partners, customers, and their developers — enabling them to do more, do it faster, and without human intervention.</p>
+        <h4 class="notable-h4">Notable Projects</h4>
+        <h5 class="project-h5"><a href="#">Self-Service Program</a> – Program Lead, Product Manager</h5>
+        <p>Built the best self-service experience in the background check industry, enabling customers to onboard without sales intervention and process checks end-to-end.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="prompt-area">
+    <div id="prompt-label">Prompt — copy this back to Claude to apply the pairing</div>
+    <div id="prompt-text"></div>
+    <button id="copy-btn">Copy Prompt</button>
+  </div>
+</div>
+
+<script>
+const PAIRINGS = [
+  {
+    id: 'current',
+    name: 'Current',
+    headingFont: '"Libre Caslon Text", serif',
+    bodyFont:    '"Libre Caslon Text", serif',
+    headingWeight: 700,
+    google: 'Libre+Caslon+Text:ital,wght@0,400;0,700;1,400',
+    headingSample: 'Libre Caslon Text',
+    bodySample: 'Libre Caslon Text — the existing typeface.',
+  },
+  {
+    id: 'modern-editorial',
+    name: 'Modern Editorial',
+    headingFont: '"Playfair Display", serif',
+    bodyFont:    '"Source Serif 4", serif',
+    headingWeight: 700,
+    google: 'Playfair+Display:wght@700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400',
+    headingSample: 'Playfair Display',
+    bodySample: 'Source Serif 4 — editorial warmth, all-serif.',
+  },
+  {
+    id: 'sharp-clean',
+    name: 'Sharp & Clean',
+    headingFont: '"DM Serif Display", serif',
+    bodyFont:    '"DM Sans", sans-serif',
+    headingWeight: 400,
+    google: 'DM+Serif+Display&family=DM+Sans:opsz,wght@9..40,400;9..40,700',
+    headingSample: 'DM Serif Display',
+    bodySample: 'DM Sans — serif/sans contrast, precise.',
+  },
+  {
+    id: 'elegant',
+    name: 'Elegant Literary',
+    headingFont: '"Cormorant Garamond", serif',
+    bodyFont:    '"Jost", sans-serif',
+    headingWeight: 600,
+    google: 'Cormorant+Garamond:wght@600&family=Jost:wght@400;700',
+    headingSample: 'Cormorant Garamond',
+    bodySample: 'Jost — refined, literary feel.',
+  },
+  {
+    id: 'creative',
+    name: 'Creative Pro',
+    headingFont: '"Fraunces", serif',
+    bodyFont:    '"Nunito Sans", sans-serif',
+    headingWeight: 700,
+    google: 'Fraunces:opsz,wght@9..144,700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700',
+    headingSample: 'Fraunces',
+    bodySample: 'Nunito Sans — expressive, approachable.',
+  },
+  {
+    id: 'classic-clean',
+    name: 'Classic Clean',
+    headingFont: '"Libre Baskerville", serif',
+    bodyFont:    '"IBM Plex Sans", sans-serif',
+    headingWeight: 700,
+    google: 'Libre+Baskerville:wght@700&family=IBM+Plex+Sans:wght@400;700',
+    headingSample: 'Libre Baskerville',
+    bodySample: 'IBM Plex Sans — trustworthy contrast.',
+  },
+];
+
+const state = { pairingId: 'current', size: 18, lineHeight: 1.50 };
+
+// Preload all Google Fonts
+PAIRINGS.forEach(p => {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = `https://fonts.googleapis.com/css2?family=${p.google}&display=swap`;
+  document.head.appendChild(link);
+});
+
+// Build pairing cards
+const grid = document.getElementById('pairing-grid');
+PAIRINGS.forEach(p => {
+  const card = document.createElement('div');
+  card.className = 'pairing-card';
+  card.dataset.id = p.id;
+  card.innerHTML = `
+    <div class="pair-name">${p.name}</div>
+    <div class="pair-heading" style="font-family:${p.headingFont};font-weight:${p.headingWeight}">${p.headingSample}</div>
+    <div class="pair-body" style="font-family:${p.bodyFont}">${p.bodySample}</div>
+  `;
+  card.addEventListener('click', () => { state.pairingId = p.id; updateAll(); });
+  grid.appendChild(card);
+});
+
+document.getElementById('size-slider').addEventListener('input', e => { state.size = +e.target.value; updateAll(); });
+document.getElementById('lh-slider').addEventListener('input', e => { state.lineHeight = (+e.target.value / 100).toFixed(2); updateAll(); });
+
+document.getElementById('copy-btn').addEventListener('click', () => {
+  navigator.clipboard.writeText(document.getElementById('prompt-text').textContent).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy Prompt'; btn.classList.remove('copied'); }, 1500);
+  });
+});
+
+function pairing() { return PAIRINGS.find(p => p.id === state.pairingId); }
+
+function renderPreview() {
+  const p = pairing();
+  const preview = document.getElementById('preview');
+  preview.style.fontFamily = p.bodyFont;
+  preview.style.fontSize   = state.size + 'px';
+  preview.style.lineHeight = state.lineHeight;
+  preview.querySelectorAll('h2, h3, h4, h5, .page-intro').forEach(el => {
+    el.style.fontFamily = p.headingFont;
+  });
+  preview.querySelectorAll('nav a').forEach(el => { el.style.fontFamily = p.bodyFont; });
+  document.querySelectorAll('.pairing-card').forEach(c => c.classList.toggle('selected', c.dataset.id === state.pairingId));
+  document.getElementById('size-val').textContent = state.size + 'px';
+  document.getElementById('lh-val').textContent   = (+state.lineHeight).toFixed(2);
+}
+
+function updatePrompt() {
+  const p = pairing();
+  let text;
+  if (p.id === 'current') {
+    text = 'Keep the current typeface (Libre Caslon Text) — no font changes needed.';
+  } else {
+    const bodyName = p.bodyFont.split(',')[0].replace(/"/g, '');
+    const headName = p.headingFont.split(',')[0].replace(/"/g, '');
+    if (p.headingFont === p.bodyFont) {
+      text = `Switch the site to ${headName} for all text. Load it from Google Fonts and replace the Libre Caslon Text import in index.html. Update the font-family in style.css body rule.`;
+    } else {
+      text = `Apply the "${p.name}" font pairing: use ${headName} for all headings (h2, h3, h4, h5) and nav links, and ${bodyName} for body text. Load both from Google Fonts, replacing the Libre Caslon Text import in index.html. Update the body font-family in style.css and add a heading font-family rule.`;
+    }
+  }
+  if (state.size !== 18) text += ` Set the base font-size to ${state.size}px (currently 18px).`;
+  if (+state.lineHeight !== 1.50) text += ` Set line-height to ${state.lineHeight}.`;
+  document.getElementById('prompt-text').textContent = text;
+}
+
+function updateAll() { renderPreview(); updatePrompt(); }
+updateAll();
+</script>
+</body>
+</html>

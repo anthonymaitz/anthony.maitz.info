@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>C1 refined</title>
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="https://brick.freetls.fastly.net/Libre+Caslon+Text:400,700,400i">
+<style>
+  :root {
+    --text:         #4b5866;
+    --text-heading: #4b5866;
+    --text-muted:   #8998a8;
+    --link:         #4779ae;
+    --border:       #e0e0e0;
+    --border-strong:#999999;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Libre Caslon Text', serif;
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--text);
+    background: #f5f0eb;
+    margin: 0;
+    padding: 2em 1.5em 4em;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page-title {
+    font-size: .75em;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--text-muted);
+    margin: 0 0 2em 0;
+  }
+  .preview {
+    max-width: 30em;
+    border-radius: 4px;
+    border: 2px solid var(--border);
+    background: white;
+    overflow: hidden;
+  }
+  .browser-chrome {
+    background: #f0ede8;
+    border-bottom: 1px solid #ddd;
+    padding: .45em .75em;
+    display: flex;
+    gap: .4em;
+  }
+  .dot { width: 9px; height: 9px; border-radius: 50%; }
+  .dot-r { background: #ff6057; }
+  .dot-y { background: #ffbd2e; }
+  .dot-g { background: #29c940; }
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    padding: .8em 1.5em;
+    display: flex;
+    gap: .75em;
+    align-items: center;
+    background: rgba(255,255,255,.95);
+  }
+  .site-header .name { font-size: 1.1em; font-weight: 700; color: var(--text); }
+  .site-header a { color: var(--link); text-decoration: none; font-size: .875em; }
+  .site-header .sel { color: var(--text); font-weight: 700; border-bottom: 2px solid var(--text); }
+  .content { padding: 1.25em 1.5em 2em; }
+  .intro {
+    font-size: .9375em;
+    line-height: 1.75;
+    margin: 0 0 1.5em 0;
+  }
+  .card-bordered {
+    border: 1px solid var(--border-strong);
+    padding: 1em 1.25em;
+    margin: 0 0 1.75em 0;
+  }
+  .card-bordered .cta {
+    font-size: .875em;
+    line-height: 1.6;
+    margin: 0 0 .85em 0;
+  }
+  .card-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0 0 .85em 0;
+  }
+  .card-bordered .email {
+    font-size: .875em;
+    color: var(--link);
+    text-decoration: none;
+    display: block;
+  }
+  .games-heading {
+    font-size: .875em;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin: 0 0 .6em 0;
+  }
+  .games {
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+    font-size: .875em;
+  }
+  .games a { color: var(--link); text-decoration: none; }
+  .games a::before { content: '→ '; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<p class="page-title">C1 · No rule above card</p>
+<div class="preview">
+  <div class="browser-chrome">
+    <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+  </div>
+  <div class="site-header">
+    <span class="name">Anthony Maitz</span>
+    <a class="sel" href="#">portfolio</a>
+    <a href="#">resume</a>
+  </div>
+  <div class="content">
+    <p class="intro">I build products and games, and I've found that the skills required for each transfer more than you'd expect. Some of those projects had a hundred people waiting on my decisions, and some of them had me doing the sound design at midnight. While there are different challenges at each scale, <em>the goal is always the same: understand the person on the other side; ship something they'll remember.</em></p>
+    <div class="card-bordered">
+      <p class="cta">If you're building something that requires both creative vision and operational discipline, let's talk.</p>
+      <hr class="card-divider" />
+      <a class="email" href="#">anthonymaitz@gmail.com</a>
+    </div>
+    <p class="games-heading">Play my games</p>
+    <div class="games">
+      <a href="#">Jetpack Geography</a>
+      <a href="#">Fire &amp; Rescue</a>
+      <a href="#">Kaboom!</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

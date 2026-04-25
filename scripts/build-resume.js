@@ -32,6 +32,11 @@ function buildProjectMap(dir) {
   return map
 }
 
+function renderBullets(bullets) {
+  if (!bullets || bullets.length === 0) return ''
+  return `<ul>\n${bullets.map(b => `<li>${b}</li>\n`).join('')}</ul>\n`
+}
+
 function renderProjectEntry(p) {
   const title = htmlEncode(p.resume_entry_title || p.title || '')
 
@@ -66,13 +71,7 @@ function renderProjectEntry(p) {
     html += `<p>${htmlEncode(p.resume_description)}</p>\n`
   }
 
-  if (p.resume_bullets && p.resume_bullets.length > 0) {
-    html += `<ul>\n`
-    for (const b of p.resume_bullets) {
-      html += `<li>${b}</li>\n`
-    }
-    html += `</ul>\n`
-  }
+  html += renderBullets(p.resume_bullets)
 
   return html
 }
@@ -99,13 +98,7 @@ function renderEmployer(employer, projectMap) {
     for (const desc of (role.descriptions || [])) {
       html += `<p>${desc}</p>\n`
     }
-    if (role.bullets && role.bullets.length > 0) {
-      html += `<ul>\n`
-      for (const b of role.bullets) {
-        html += `<li>${b}</li>\n`
-      }
-      html += `</ul>\n`
-    }
+    html += renderBullets(role.bullets)
     const projects = projectMap[role.id] || []
     if (projects.length > 0) {
       html += `<h4>Notable Projects</h4>\n`
@@ -128,8 +121,8 @@ export function generateResumeHTML(empPath, projDir) {
 
   let html = ''
   Object.entries(overviews).forEach(([key, ov], i) => {
-    const hidden = i > 0 ? ' style="display:none"' : ''
-    html += `<div class="resume-overview"${hidden} data-overview="${htmlEncode(key)}">\n`
+    if (key === 'all') return
+    html += `<div class="resume-overview" style="display:none" data-overview="${htmlEncode(key)}">\n`
     html += `<h2>${htmlEncode(ov.title || '')}</h2>\n`
     for (const para of (ov.paragraphs || [])) {
       html += `<p>${para.replace('{years}', String(years))}</p>\n`

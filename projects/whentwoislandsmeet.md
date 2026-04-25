@@ -3,6 +3,7 @@ slug: whentwoislandsmeet
 title: When Two Islands Meet
 disciplines: [production-design]
 order: 19
+portfolio_description: "A short film."
 media:
   - whentwoislandsmeet-0.jpg
   - whentwoislandsmeet-1.jpg

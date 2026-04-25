@@ -7,9 +7,10 @@ resume_section: production-design-freelance
 resume_order: 1
 resume_entry_title: "“You are a tourist”"
 resume_client: "Death Cab For Cutie"
-resume_description: "Production designer for the world's first live broadcast, scripted, multi-camera, one-take music video shoot. Nominated for Best Art Direction at 2011 MTV Video Music Awards."
+resume_description: "Production designer for the world's first live broadcast, scripted, multi-camera, one-take music video shoot. Nominated for Best Art Direction at the 2011 MTV Video Music Awards."
 resume_link_url: "https://youtu.be/qkk5wViJo-I"
 resume_link_trigger: youareatourist
+portfolio_description: "The world's first live broadcast one-take music video."
 media:
   - youareatourist-0.jpg
   - https://youtu.be/qkk5wViJo-I

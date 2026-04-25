@@ -9,15 +9,15 @@ overviews:
     title: "Product Manager"
     paragraphs:
       - "Product Manager with {years} years of experience delivering SaaS platforms, developer tools, and consumer products for Fortune 500 companies and mission-driven organizations."
-      - "Led cross-functional teams of up to 100 people with multi-million-dollar budgets, managing the full product lifecycle from strategy and roadmap through agile delivery. Consistent track record of stakeholder alignment, user-centered product thinking, and building high-performing teams."
+      - "Led cross-functional teams of up to 100 people with multi-million-dollar budgets, managing the full product lifecycle from strategy and roadmap through agile delivery."
   game-design:
     title: "Game Designer"
     paragraphs:
       - "Game designer and producer with shipped titles across VR, mobile, and PC — including award-winning Jetpack Geography and Playsets, which grew to tens of thousands of players across 100+ countries."
-      - "Served as design lead on Meta Horizon VR titles Star City Firefighters, r/Kaboom, and Social Poker at ForeVR Games — driving live service systems including game economy, achievements, and social features. Pitched and shipped a new game mode that doubled player engagement at release."
+      - "Experienced across the full spectrum of game development, from conceiving and shipping indie titles to leading creative and production teams at a VR and mobile game studio."
   combined:
     title: "Product Manager & Game Designer"
     paragraphs:
-      - "Product Manager and game designer with {years} years shipping digital products — from enterprise SaaS platforms to live service VR and mobile games. Proven in leading cross-functional product teams, driving game economy and live operations, and delivering measurable improvements to player engagement."
-      - "Applies enterprise product discipline — roadmap ownership, stakeholder alignment, multi-million-dollar program management — to game product leadership, with direct experience shipping titles across VR, PC, and mobile platforms."
+      - "Product Manager and game designer with {years} years' experience shipping digital products, from enterprise SaaS platforms to live service VR and mobile games."
+      - "Brings the discipline of enterprise product management to game development, and the creative problem-solving of game design to product work. Has led teams as large as 100 people and shipped titles independently."
 ---

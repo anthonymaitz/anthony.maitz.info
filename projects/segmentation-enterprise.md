@@ -7,5 +7,5 @@ resume_section: checkr-sgpm
 resume_order: 3
 resume_entry_title: "Segmentation and Enterprise"
 resume_role: "Program Lead, Product Manager"
-resume_description: "Designed a new object model for a fundamental capability, account hierarchy management, and led a team in its development and implementation and migration of customers. This unlocked millions in business for new enterprise customers and existing customers of all types and was implemented without impacting existing customers during migration."
+resume_description: "Led the product work to onboard Checkr's first large enterprise customers, meeting directly with both companies to define their requirements and directing development of all capabilities needed for them to switch. Unlocked millions in enterprise revenue and established Checkr's enterprise foundation."
 ---

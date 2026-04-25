@@ -5,6 +5,10 @@ disciplines: [game-design]
 order: 5
 featured: true
 featured_order: 3
+portfolio_description: "Digital maps and miniatures for remote tabletop role-playing."
+links:
+  - label: Play at playsets.app
+    url: https://playsets.app
 media:
   - playsets-0.jpg
   - "https://youtu.be/mNgjgNSpVGA&list=PL5AjSG-LQwc6m96V_t2jgG_08UElFIhmi"

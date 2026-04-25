@@ -6,81 +6,72 @@
 <link rel="shortcut icon" href="favicon.png" />
 <meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" href="https://brick.freetls.fastly.net/Libre+Caslon+Text:400,700,400i">
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 <link rel="stylesheet" href="styles/style.css" media="screen" />
 <link rel="stylesheet" href="styles/print.css" media="print" />
 </head>
 <body>
 <header>
 <nav style="display:none;">
-	<a href="#" class="contact" onclick="navctrl('contact');">Anthony Maitz</a>
-	<a href="#" class="portfolio" onclick="navctrl('portfolio');">portfolio</a>
-	<a href="#" class="resume" onclick="navctrl('resume');">resume</a>
+	<a href="/" class="contact" onclick="navctrl('contact'); return false;">Anthony Maitz</a>
+	<a href="/portfolio" class="portfolio" onclick="navctrl('portfolio'); return false;">portfolio</a>
+	<a href="/resume" class="resume" onclick="navctrl('resume'); return false;">resume</a>
+	<a id="resume-pdf-link" class="pdf-icon-link" href="/resume-product-manager-game-designer.pdf" download="Anthony Maitz - Product Manager &amp; Game Designer.pdf" aria-label="Download PDF"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.5 1v7M3.5 5.5l3 3 3-3M1 11.5h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </nav>
 </header>
 <section>
 <article id="contact">
-  <h2>Product Manager, Designer, Maker</h2>
-  <p>I build products, games, and experiences — from indie titles to enterprise platforms. Currently open to senior product and game production roles.</p>
-  <h3>Featured Work</h3>
-  <div id="featured-projects">
-    <a href="#" class="featured-card" onclick="navctrl('portfolio'); return false;">
-      <div class="featured-card-stub">Jetpack Geography!</div>
-      <div class="featured-card-title">Jetpack Geography!</div>
-      <div class="featured-card-meta">Game Production &middot; Interactive &amp; Game Design</div>
-    </a>
-    <a href="#shine" class="featured-card" onclick="navctrl('portfolio'); return true;">
-      <img src="../media/shine-0.jpg" alt="Shine">
-      <div class="featured-card-title">Shine</div>
-      <div class="featured-card-meta">Interactive &amp; Game Design</div>
-    </a>
-    <a href="#playsets" class="featured-card" onclick="navctrl('portfolio'); return true;">
-      <img src="../media/playsets-0.jpg" alt="Playsets">
-      <div class="featured-card-title">Playsets</div>
-      <div class="featured-card-meta">Interactive &amp; Game Design &middot; Product</div>
-    </a>
-  </div>
+  <!-- CONTACT_GENERATED_START -->
+<p>I build products and games, and I&rsquo;ve found that the skills required for each transfer more than you'd expect. Some of those projects had a hundred people waiting on my decisions, and some of them had me doing the sound design at midnight. While there are different challenges at each scale, the goal is always the same: <em>understand the person on the other side; ship something they&rsquo;ll remember.</em></p>
+<div class="contact-card">
+<p>If you&rsquo;re building something that requires both creative vision and operational discipline, let&rsquo;s talk.</p>
+<div class="contact-links">
+    <a href="mailto:anthonymaitz@gmail.com">anthonymaitz@gmail.com</a>
+</div>
+</div>
+<h3>Play my games</h3>
+<ul id="play-games">
+    <li><a href="https://horizon.meta.com/world/698550815967999/?locale=en_US" target="_blank">Jetpack Geography</a></li>
+    <li><a href="https://horizon.meta.com/world/10102941330447362/?locale=en_US" target="_blank">Fire &amp; Rescue</a></li>
+    <li><a href="https://www.reddit.com/r/kaboom_game/" target="_blank">Kaboom!</a></li>
+</ul>
+<!-- CONTACT_GENERATED_END -->
 </article>
 <article id="resume">
 <div id="resume-filters">
   <button class="filter-btn selected" data-filter="product-management" onclick="toggleResumeFilter('product-management')">Product Management</button>
   <button class="filter-btn selected" data-filter="game-design" onclick="toggleResumeFilter('game-design')">Game Design</button>
   <button class="filter-btn selected" data-filter="production-design" onclick="toggleResumeFilter('production-design')">Production Design</button>
-  <a id="resume-pdf-link" href="/resume-product-manager-game-designer.pdf" download="Anthony Maitz - Product Manager &amp; Game Designer.pdf">Download PDF</a>
 </div>
 <!-- RESUME_GENERATED_START -->
-<div class="resume-overview" data-overview="all">
-<h2>Product Manager &amp; Game Designer &amp; Maker</h2>
-<p>I focus on web and mobile development, interactive media, and innovative technologies to build experiences that impact users. Over 19 years in agile settings have shaped my approach: emphasizing teamwork, embracing iteration, fostering clear communication, and prioritizing the user's needs above all. I'm convinced that passion shines through in the products we create and that great products come from the collective dedication and collaboration of closely connected teams.</p>
-</div>
 <div class="resume-overview" style="display:none" data-overview="product-management">
 <h2>Product Manager</h2>
 <p>Product Manager with 19 years of experience delivering SaaS platforms, developer tools, and consumer products for Fortune 500 companies and mission-driven organizations.</p>
-<p>Led cross-functional teams of up to 100 people with multi-million-dollar budgets, managing the full product lifecycle from strategy and roadmap through agile delivery. Consistent track record of stakeholder alignment, user-centered product thinking, and building high-performing teams.</p>
+<p>Led cross-functional teams of up to 100 people with multi-million-dollar budgets, managing the full product lifecycle from strategy and roadmap through agile delivery.</p>
 </div>
 <div class="resume-overview" style="display:none" data-overview="game-design">
 <h2>Game Designer</h2>
 <p>Game designer and producer with shipped titles across VR, mobile, and PC — including award-winning Jetpack Geography and Playsets, which grew to tens of thousands of players across 100+ countries.</p>
-<p>Served as design lead on Meta Horizon VR titles Star City Firefighters, r/Kaboom, and Social Poker at ForeVR Games — driving live service systems including game economy, achievements, and social features. Pitched and shipped a new game mode that doubled player engagement at release.</p>
+<p>Experienced across the full spectrum of game development, from conceiving and shipping indie titles to leading creative and production teams at a VR and mobile game studio.</p>
 </div>
 <div class="resume-overview" style="display:none" data-overview="combined">
 <h2>Product Manager &amp; Game Designer</h2>
-<p>Product Manager and game designer with 19 years shipping digital products — from enterprise SaaS platforms to live service VR and mobile games. Proven in leading cross-functional product teams, driving game economy and live operations, and delivering measurable improvements to player engagement.</p>
-<p>Applies enterprise product discipline — roadmap ownership, stakeholder alignment, multi-million-dollar program management — to game product leadership, with direct experience shipping titles across VR, PC, and mobile platforms.</p>
+<p>Product Manager and game designer with 19 years' experience shipping digital products, from enterprise SaaS platforms to live service VR and mobile games.</p>
+<p>Brings the discipline of enterprise product management to game development, and the creative problem-solving of game design to product work. Has led teams as large as 100 people and shipped titles independently.</p>
 </div>
 
 <div class="resume-employer" data-disciplines="game-design">
-<h2>ForeVR Games</h2>
-<h3><em>2025 - 2026</em></h3>
-<p>Served as product and design lead, taking creative and strategic ownership across a portfolio of Meta Horizon VR titles: Star City Firefighters, r/Kaboom, and Social Poker.</p>
-<p>Pitched a new &ldquo;Firefighter Survivors&rdquo; mode to Meta for Star City Firefighters, received approval, directed UI/UX systems, and served as final design authority &mdash; the feature doubled engagement at release.</p>
-<p>Led product and design on r/Kaboom and Social Poker, driving achievements, flair, post frames, and game economy systems across the full portfolio.</p>
+<h2><a href="https://www.forevrgames.com">ForeVR Games</a></h2>
+<h3>Senior Producer <em>2025 - 2026</em></h3>
+<p>Served as creative lead and project manager for Fire &amp; Rescue (Meta Horizon, VR and mobile) and Kaboom! (Reddit), writing game design documents, owning feature prioritization, directing the team through daily development, and contributing as developer and artist where needed.</p>
+<p>Successfully pitched a new &ldquo;Firefighter Survivors&rdquo; mode to Meta for Fire &amp; Rescue, directed UI/UX systems, and served as final design authority. The feature doubled player engagement at release. Managed live operations post-launch, analyzing gameplay analytics to drive ongoing feature improvements.</p>
+<p>Contributed UX design, sound design, and front-end development to Social Poker, a popular Reddit game.</p>
 </div>
 
 <div class="resume-employer" data-disciplines="game-design">
-<h2>Jetpack Geography!</h2>
+<h2><a href="https://horizon.meta.com/world/698550815967999/?locale=en_US">Jetpack Geography</a></h2>
 <h3>Game Designer <em>2025</em></h3>
-<p>Answer geography questions as you fall towards a beautiful neon map, using your jetpack to land on the correct country. Race friends, collect landmarks, and complete your atlas!</p>
+<p>Conceived and led development of a multiplayer mobile game for Meta Horizon, responsible for game design, sound, UI programming, and content creation, working with a developer and artist to ship the title.</p>
 <ul>
 <li>Judges Choice Award – Meta Horizon Creator Competition: Mobile Genre Showdown</li>
 <li>Most Satisfying Progression – Meta Horizon Creator Competition: Elevate your mobile world</li>
@@ -88,66 +79,56 @@
 </div>
 
 <div class="resume-employer" data-disciplines="product-management">
-<h2>Insummary</h2>
+<h2><a href="https://insummary.com/?ref=aifindpro">Insummary</a></h2>
 <h3>Head of Product <em>2023 - 2024</em></h3>
-<p>Served as Head of Product for a generative AI start-up, shaping product strategy, leading design, and contributing front-end code across multiple product iterations.</p>
-<p>Helped position and pivot the product to meet the needs of stakeholders and thousands of users, landing the company&rsquo;s first enterprise customer.</p>
+<p>First product hire at a generative AI start-up building tools to help knowledge workers summarize their calendars, email, and Slack activity for performance reviews and status updates. Owned product strategy, design, and front-end development while working closely with co-founders across two iterations to find product-market fit.</p>
+<p>Collaborative positioning and product pivots grew the platform to several thousand users and landed the company&rsquo;s first enterprise customer.</p>
 </div>
 
 <div class="resume-employer" data-disciplines="product-management">
 <h2><a href="https://www.parivedasolutions.com">Pariveda</a></h2>
 <h3>Principal <em>2022 - 2023</em></h3>
-<p>Served as a principal consultant and member of the office leadership team, managing delivery teams to ensure client satisfaction and project success.</p>
-<p>Contributed to sales pursuits and proposals for government and financial sector clients.</p>
+<p>Principal consultant and member of the office leadership team, managing delivery teams for a technology and financial sector client.</p>
 </div>
 
 <div class="resume-employer" data-disciplines="product-management">
 <h2><a href="https://www.checkr.com">Checkr</a></h2>
 <h3>Senior Group Product Manager, Self-Service <em>2019 - 2022</em></h3>
-<p>Led a program encompassing six teams to build the best experience in our industry for our partners, customers, and their developers by enabling them to do more, do it faster, and without human intervention by Checkr.</p>
+<p>Led the Self-Service program, six capability teams of ~30 people, to enable customers and partners to onboard and run background checks without sales or operations involvement.</p>
+<p>Unlocked the organization&rsquo;s ability to land and grow large enterprise customers, a strategic expansion beyond Checkr&rsquo;s tech start-up roots.</p>
 <h4>Notable Projects</h4>
-<h5>Self-Service Program – Program Lead, Product Manager</h5>
-<p>Developer Experience, Partner Experience, self service sign-up, Admin tooling, Editable Packages, Password-less log-in for candidates.</p>
 <h5>Checkr Direct – Product Manager</h5>
-<p>Created a self-service sign-up flow for onboarding new customers without sales intervention. Onboarded over 250 new customers a week within two quarters.</p>
+<p>Led design and development of a self-service sign-up flow that unlocked an entirely new customer base, enabling companies to onboard without sales intervention. Reached over 250 new customers a week within two quarters of launch.</p>
 <h5>Segmentation and Enterprise – Program Lead, Product Manager</h5>
-<p>Designed a new object model for a fundamental capability, account hierarchy management, and led a team in its development and implementation and migration of customers. This unlocked millions in business for new enterprise customers and existing customers of all types and was implemented without impacting existing customers during migration.</p>
+<p>Led the product work to onboard Checkr's first large enterprise customers, meeting directly with both companies to define their requirements and directing development of all capabilities needed for them to switch. Unlocked millions in enterprise revenue and established Checkr's enterprise foundation.</p>
 <h5><a href="https://checkr.com/expungements">Expungements</a> – Product Strategist</h5>
-<p>Helped to create the cheapest expungement service in the US, providing hundreds of sponsored expungements.</p>
+<p>Led product development for the cheapest criminal record expungement service in the US, helping hundreds of people clear their records.</p>
 <ul>
 <li>Winner of a Schmidt Futures grant</li>
 <li>Winner of Checkr Hack Week</li>
 </ul>
 <h5>Federated Identity and SSO – Product Manager</h5>
-<p>Designed and directed the implementation of an Identity and Access Management solution. Negotiated deal with vendor and managed migration with zero downtime to existing users. Federated Identity was a critical component of unlocking enterprise customers.</p>
-<h5><a href="https://checkr.com/our-fairness-commitment">Fairness Framework</a> – Co-Author</h5>
-<p>Helped author a commitment which was adopted by our company and shared publicly to help us continue to be held accountable to our mission of fairness.</p>
+<p>Led implementation of an Identity and Access Management solution, negotiating the vendor deal and managing migration with zero downtime to existing users — a prerequisite for onboarding enterprise customers.</p>
 </div>
 
 <div class="resume-employer" data-disciplines="product-management">
 <h2><a href="https://www.thoughtworks.com/about-us">ThoughtWorks</a></h2>
 <h3>Lead Product Strategist, Emerging Technologies <em>2013 - 2019</em></h3>
-<p>Provided lead product management for clients of a mission-driven creative technology consultancy, helped leaders of start-ups and Fortune 500 companies around the world deliver products that matter to their users.</p>
-<p>Built and directed teams as large as 100 people with budgets ranging up to millions of dollars, leveraging exceptional interpersonal, organizational, and product management skills to lead with empathy, innovation, and passion.</p>
-<p>Managed the entire product life-cycle, from ideation and strategic development to producing rapidly iterated prototypes and shipping final products.</p>
+<p>Led product strategy and delivery for Fortune 500 companies in financial services and retail, and for start-ups worldwide, directing teams as large as 100 people with multi-million-dollar budgets across the full product lifecycle.</p>
+<p>Managed engagements from early-stage product definition through launch, including simultaneous international rollouts and rapid prototyping programs.</p>
 <h4>Notable Projects</h4>
-<h5>ThoughtWorks, Digital Platform Strategy Offering – Product Manager</h5>
-<p>Head of product for a new offering helping clients build platforms for development around their business capabilities.</p>
 <h5><a href="https://youtu.be/DEkq6Hr71OA" data-trigger="qcon" title="Qcon case study">C4 Media, Conference feedback platform</a> – Product Manager</h5>
-<p>Product Manager for the creation and execution of a platform of participant feedback wearables for the QCon international developer conference. Rapid prototyping, using custom hardware, with on-site testing in multiple cities. Custom FCC and CE certified hardware created with a manufacturer in Shenzhen. Created industrial design for wearable and directly oversaw its production.</p>
+<p>Designed and shipped badge-scanning wearables for the QCon international developer conference, improving speaker feedback without adding friction for attendees. Personally designed the hardware and worked on-site with a manufacturer in Shenzhen to produce certified devices used by thousands across all QCon conferences.</p>
 <h5><a href="https://youtu.be/hVk3VHgqY0w" data-trigger="qbo" target="_window">Tchibo, Connected coffee machine</a> – Product Strategist</h5>
-<p>Defined product strategy and led a development team for the embedded computer interface for the Q-bo connected coffee machine as well as the corresponding smartphone app and loyalty program. Rapid prototyping, with a 3D printed coffee machine and custom hardware, to enable user testing a year before production hardware was available. Hardware component selection for an embedded computer for a mass-produced consumer device.</p>
-<h5>GAP Inc, Validated learning process – Product Strategist</h5>
-<p>Worked with the VP of Engineering to institute a new method for innovation across the organization and to change the development process between Product and Engineering. Led an innovation team of stakeholders, developers, and designers. Trained client stakeholders and helped implement hypothesis-driven design and development across the IT organization. Evangelized and executed rapid prototyping and in-store testing of hypotheses to save development time and costs.</p>
-<h5><a href="https://youtu.be/yG28QGNVWkA" data-trigger="nmfg" target="_window">Natural Markets Food Group, Retail food at Eaton Center</a> – Lead Product Manager</h5>
-<p>Defined product differentiation for a retail food/restaurant concept at Toronto Eaton Center, conceptualizing and designing technologies for customer payment, customer experience, online ordering, and Point of Sales and Operations. Led product development teams in multiple cities and managed 13 vendors across two countries. Managed service design and technology for the launch of a multi-vendor food concept in Toronto Eaton Center with a six-month deadline.</p>
+<p>Led product strategy for the Q-bo connected coffee machine, including the on-device interface, smartphone app, and loyalty program. Built a full-scale 3D printed mock for user testing a year before production hardware existed, directly informing the bill of materials. Shipped in Germany.</p>
+<h5><a href="https://youtu.be/yG28QGNVWkA" data-trigger="nmfg" target="_window">Natural Markets Food Group, Retail food at Eaton Centre</a> – Lead Product Manager</h5>
+<p>Led product for a multi-vendor food hall at the Toronto Eaton Centre, shipping a fully integrated platform with video menus, a custom POS, scan-to-pay, online ordering, and inventory management across 13 vendors in two countries. Opened on time and extended the platform to a US organic grocery chain.</p>
 <h3>Social and Economic Justice Lead, San Francisco <em>2015 - 2018</em></h3>
-<p>Led and organized initiatives for activists, non-profits, and a few radical librarians to exponentially increase their impact and serve vulnerable communities.</p>
-<p>Created and maintained partner relationships and initiatives for the San Franciso ThoughtWorks office.</p>
-<p>Recognized for technology innovation in the healthcare space for UCSF Virtual Mentor, winner of a &ldquo;Saving Lives at Birth&rdquo; Seed Grant and a winner of Johnson &amp; Johnson&rsquo;s GenH Challenge.</p>
+<p>Led social impact technology initiatives for non-profits, community organizations, and activists across San Francisco.</p>
+<p>Recognized for healthcare technology innovation: UCSF Virtual Mentor was awarded a &ldquo;Saving Lives at Birth&rdquo; Seed Grant and Johnson &amp; Johnson&rsquo;s GenH Challenge.</p>
 <h4>Notable Projects</h4>
 <h5><a href="https://youtu.be/DA7rIcd8XNI" data-trigger="ucsf" target="_window">UCSF Virtual Mentor</a> – Product Manager</h5>
-<p>Led development for a voice-controlled, virtual assistant that guides birth attendants through complicated or emergency procedures, for University of California-San Francisco's Institute for Global Health Sciences. Rapid prototyping with on-site testing at UCSF and medical facility in Nairobi. Programmed an AI chatbot in the IBM Watson Ecosystem.</p>
+<p>Built a voice-controlled virtual assistant to guide birth attendants through complicated delivery procedures and postpartum emergencies, in collaboration with UCSF's Institute for Global Health Sciences. Wrote all IBM Watson integration code, field-tested at UCSF and a birthing center in Nairobi, and handed off to a Kenyan university for continued development.</p>
 <ul>
 <li>Winner of <a href="http://globalhealthsciences.ucsf.edu/news/star-trek-inspired-virtual-mentor-wins-saving-lives-birth-seed-grant" target="_window">Saving Lives at Birth Seed Grant</a></li>
 <li>Winner of <a href="https://www.jnj.com/innovation/6-healthcare-entrepreneurs-who-could-make-genh-the-healthiest-yet" target="_window">Johnson &amp; Johnson&rsquo;s GenH Challenge</a></li>
@@ -157,54 +138,33 @@
 </div>
 
 <div class="resume-employer" data-disciplines="game-design">
-<h2><a href="https://youtu.be/mNgjgNSpVGA&amp;list=PL5AjSG-LQwc6m96V_t2jgG_08UElFIhmi" target="_window" data-trigger="playsets">The Playsets Team, LLC</a></h2>
+<h2><a href="https://playsets.app" target="_window" data-trigger="playsets">Playsets</a></h2>
 <h3>Co-Founder &amp; Product Designer <em>2013 - 2018</em></h3>
-<p>Designed and brought to market &ldquo;Playsets&rdquo;, a collection of digital maps and miniatures for epic remote role-playing, resulting in tens of thousands of users in over 100 countries.</p>
-<p>Designed and executed product marketing strategies, including successful <a href="https://www.kickstarter.com/projects/985647565/playsets-the-future-of-social-storytelling" target="_window">Kickstarter</a> and <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=866256995" target="_window">Steam Greenlight</a> campaigns.</p>
-<p>Selected for <a href="http://indiemegabooth.com/event/pax-prime-2015/" target="_window">Indie Megabooth</a> at PAX Prime.</p>
-</div>
-
-<div class="resume-employer" data-disciplines="product-management">
-<h2><a href="https://www.discovery.com/" target="_window">Discovery Communications</a></h2>
-<h3>Director of Product and Engineering, MyDiscovery <em>2011 - 2013</em></h3>
-<p>Provided leadership for a team of developers and designers creating an online &ldquo;Social Knowledge&rdquo; platform, overseeing hiring, development, and mentorship for the team.</p>
-<p>Head of Product for &ldquo;Collagio,&rdquo; an app that let users easily create, share, and discover collections of curated and original content.</p>
-<p>Collaborated closely with developers and designers to prototype, validate, prepare product specs, and launch products.</p>
-</div>
-
-<div class="resume-employer" data-disciplines="product-management">
-<h2><a href="http://www.eyeboogie.com/">Eyeboogie Inc</a></h2>
-<h3>Chief Operating Officer, Eyeboogie Labs <em>2010 - 2011</em></h3>
-<p>Created and managed a profitable independent subsidiary, Eyeboogie Labs; oversaw operations, strategic vision, building partnerships, and securing and maintaining clients.</p>
-<p>Extended existing and new relationships into new opportunities in social media, interactive experiences, and application development.</p>
-<p>Directed digital product development, including websites, apps (web and iOS), and custom streaming video solutions.</p>
-<p>Designed &ldquo;Pop Tool&rdquo; a video workflow tool and knowledge base that allowed writers of &ldquo;Pop Up Video 2.0&rdquo; to work exponentially faster than previously possible.</p>
-<h3>Director of New Media <em>2007 - 2010</em></h3>
-<p>Integrated technology into multiple television projects allowing for new production capabilities including multi-channel integrations for live audience voting and live video streaming.</p>
-<p>Produced a documentary featured on &ldquo;Natural Born Killers&rdquo; Blu-Ray release.</p>
+<p>Designed and shipped a collection of digital maps and miniatures for remote tabletop role-playing across iOS, Android, web, and Steam, reaching tens of thousands of players in over 100 countries.</p>
+<p>Led product strategy, UI design, and front-end development across all platforms. Drove product marketing through a fully funded <a href="https://www.kickstarter.com/projects/985647565/playsets-the-future-of-social-storytelling" target="_window">Kickstarter</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=866256995" target="_window">Steam Greenlight</a>, and selection for <a href="http://indiemegabooth.com/event/pax-prime-2015/" target="_window">Indie Megabooth</a> at PAX Prime.</p>
 </div>
 
 <div class="resume-employer" data-disciplines="production-design">
 <h2>Production Design</h2>
-<p>Worked closely with directors, producers, and cinematographers to achieve the overall visual look of film projects. Responsible for execution including designing sets, drafting, budgeting, managing and participating in construction, and leading the art department during production.</p>
+<p>Freelance production designer for short films, music videos, and commercials, responsible for overall visual look including set design, art direction, drafting, budgeting, construction management, and art department leadership.</p>
 <h4>Notable Projects</h4>
 <h5><a href="https://youtu.be/qkk5wViJo-I" data-trigger="youareatourist">“You are a tourist”</a> <em>Death Cab For Cutie</em></h5>
-<p>Production designer for the world's first live broadcast, scripted, multi-camera, one-take music video shoot. Nominated for Best Art Direction at 2011 MTV Video Music Awards.</p>
+<p>Production designer for the world's first live broadcast, scripted, multi-camera, one-take music video shoot. Nominated for Best Art Direction at the 2011 MTV Video Music Awards.</p>
 <h5><a href="https://youtu.be/DCRihtIZZdM" data-trigger="adidasallin">“Adidas all in”</a> (Los Angeles) <em>Adidas</em></h5>
-<p>Production designer for Los Angeles locations for Adidas International ad campaign, the largest in the brand's history.</p>
+<p>Production designer for Los Angeles locations for the Adidas International ad campaign, the largest in the brand's history.</p>
 <h5><a href="https://vimeo.com/11219730" data-trigger="bornfree">“Born free”</a> <em>M.I.A.</em></h5>
-<p>Production designer for short film/ music video nominated for &quot;Best Dance Video&quot; at the 2010 UK Music Video Awards and ranked by NME as thirteenth on a list of the 100 Greatest Music Videos Ever Made.</p>
-<h5><a href="https://vimeo.com/3371232" data-trigger="thenaturebetweenus">“The nature between Us”</a> <em>William Campbell</em></h5>
+<p>Production designer for short film/music video nominated for &quot;Best Dance Video&quot; at the 2010 UK Music Video Awards and ranked by NME as thirteenth on its list of the 100 Greatest Music Videos Ever Made.</p>
+<h5><a href="https://vimeo.com/3371232" data-trigger="thenaturebetweenus">“”The Nature Between Us””</a> <em>William Campbell</em></h5>
 <p>Production designer for short film selected for SXSW 2009.</p>
-<h5><a href="http://vimeo.com/20337358" data-trigger="theexecutionofsolomonharris">“The execution of Solomon Harris”</a> <em>Wyatt Garfield + Ed Yonitis</em></h5>
+<h5><a href="http://vimeo.com/20337358" data-trigger="theexecutionofsolomonharris">“”The Execution of Solomon Harris””</a> <em>Wyatt Garfield + Ed Yonitis</em></h5>
 <p>Production designer for short film selected for SXSW 2008.</p>
 </div>
 <!-- RESUME_GENERATED_END -->
+<div class="resume-employer resume-education" data-disciplines="product-management game-design production-design">
 <h2>Education</h2>
-
 <h3>Savannah College of Art and Design</h3>
-
 <p>Bachelor of Arts in Film and Television Production</p>
+</div>
 
 </article>
 <article id="portfolio">
@@ -215,19 +175,34 @@
 </div>
 <!-- PORTFOLIO_GENERATED_START -->
 <div class="portfolio-item" id="jetpack-geography" data-discipline="game-design">
-<div class="portfolio-stub-card">Jetpack Geography!</div>
+<a href="#jetpack-geography" data-trigger="jetpack-geography" class="portfolio-thumb"><img src="../media/jetpack-geography-0.jpg" title="Jetpack Geography" alt="Jetpack Geography">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">Jetpack Geography</div>
+<div class="portfolio-overlay-desc">Land on the correct country before you hit the ground.</div>
+</div></a>
+<a href="../media/jetpack-geography-1.jpg" class="hidden" data-fancybox="jetpack-geography" alt=""></a>
 </div>
 
-<div class="portfolio-item" id="forevr" data-discipline="game-design">
-<div class="portfolio-stub-card">ForeVR Games</div>
+<div class="portfolio-item" id="fire-and-rescue" data-discipline="game-design">
+<a href="#fire-and-rescue" data-trigger="fire-and-rescue" class="portfolio-thumb"><img src="../media/fire-and-rescue-0.jpg" title="Fire &amp; Rescue" alt="Fire &amp; Rescue">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">Fire &amp; Rescue</div>
+<div class="portfolio-overlay-desc">Fight waves of Fire Baddies block by block to save Star City.</div>
+</div></a>
+<a href="../media/fire-and-rescue-1.jpg" class="hidden" data-fancybox="fire-and-rescue" alt=""></a>
 </div>
 
-<div class="portfolio-item" id="insummary" data-discipline="product-management">
-<div class="portfolio-stub-card">Insummary</div>
+<div class="portfolio-item" id="kaboom" data-discipline="game-design">
+<a href="#kaboom" data-trigger="kaboom" class="portfolio-thumb"><img src="../media/kaboom-0.jpg" title="Kaboom!" alt="Kaboom!">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">Kaboom!</div>
+<div class="portfolio-overlay-desc">Build devious levels and blast your way through others.</div>
+</div></a>
+<a href="../media/kaboom-1.png" class="hidden" data-fancybox="kaboom" alt=""></a>
 </div>
 
 <div class="portfolio-item" id="ucsf" data-discipline="product-management">
-<a href="#ucsf" data-trigger="ucsf"><img src="../media/ucsf-0.jpg" title="UCSF Virtual Mentor" alt="UCSF Virtual Mentor"></a>
+<a href="#ucsf" data-trigger="ucsf" class="portfolio-thumb"><img src="../media/ucsf-0.jpg" title="UCSF Virtual Mentor" alt="UCSF Virtual Mentor">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">UCSF Virtual Mentor</div>
+<div class="portfolio-overlay-desc">Voice-controlled AI assistant guiding birth attendants through emergency delivery procedures.</div>
+</div></a>
 <a href="https://youtu.be/DA7rIcd8XNI" class="hidden" data-fancybox="ucsf" alt="">
 We tested with medical workers in Kenya.
 </a>
@@ -237,7 +212,10 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </div>
 
 <div class="portfolio-item" id="playsets" data-discipline="game-design">
-<a href="#playsets" data-trigger="playsets"><img src="../media/playsets-0.jpg" title="Playsets" alt="Playsets"></a>
+<a href="#playsets" data-trigger="playsets" class="portfolio-thumb"><img src="../media/playsets-0.jpg" title="Playsets" alt="Playsets">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">Playsets</div>
+<div class="portfolio-overlay-desc">Digital maps and miniatures for remote tabletop role-playing.</div>
+</div></a>
 <a href="https://youtu.be/mNgjgNSpVGA&amp;list=PL5AjSG-LQwc6m96V_t2jgG_08UElFIhmi" class="hidden" data-fancybox="playsets" alt=""></a>
 <a href="../media/playsets-1.jpg" class="hidden" data-fancybox="playsets" alt=""></a>
 <a href="../media/playsets-2.jpg" class="hidden" data-fancybox="playsets" alt=""></a>
@@ -255,12 +233,18 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </div>
 
 <div class="portfolio-item" id="shine" data-discipline="game-design">
-<a href="#shine" data-trigger="shine"><img src="../media/shine-0.jpg" title="Shine" alt="Shine"></a>
+<a href="#shine" data-trigger="shine" class="portfolio-thumb"><img src="../media/shine-0.jpg" title="Shine" alt="Shine">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">Shine</div>
+<div class="portfolio-overlay-desc">Guide a ball of light through a bioluminescent cave.</div>
+</div></a>
 <a href="../media/shine-1.jpg" class="hidden" data-fancybox="shine" alt=""></a>
 </div>
 
 <div class="portfolio-item" id="qcon" data-discipline="product-management">
-<a href="#qcon" data-trigger="qcon"><img src="../media/qcon-0.jpg" title="QCon Conference Wearables" alt="QCon Conference Wearables"></a>
+<a href="#qcon" data-trigger="qcon" class="portfolio-thumb"><img src="../media/qcon-0.jpg" title="QCon Conference Wearables" alt="QCon Conference Wearables">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">QCon Conference Wearables</div>
+<div class="portfolio-overlay-desc">Badge-scanning wearables that improved speaker feedback at QCon conferences worldwide.</div>
+</div></a>
 <a href="https://youtu.be/DEkq6Hr71OA" class="hidden" data-fancybox="qcon" alt=""></a>
 <a href="https://youtu.be/Mpgg2dFjg5A" class="hidden" data-fancybox="qcon" alt=""></a>
 <a href="https://youtu.be/xZFSkbJ-aJ0" class="hidden" data-fancybox="qcon" alt=""></a>
@@ -273,7 +257,10 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </div>
 
 <div class="portfolio-item" id="qbo" data-discipline="product-management">
-<a href="#qbo" data-trigger="qbo"><img src="../media/qbo-0.jpg" title="Q-bo Connected Coffee Machine" alt="Q-bo Connected Coffee Machine"></a>
+<a href="#qbo" data-trigger="qbo" class="portfolio-thumb"><img src="../media/qbo-0.jpg" title="Q-bo Connected Coffee Machine" alt="Q-bo Connected Coffee Machine">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">Q-bo Connected Coffee Machine</div>
+<div class="portfolio-overlay-desc">Connected coffee machine with on-device interface, app, and loyalty program.</div>
+</div></a>
 <a href="https://youtu.be/hVk3VHgqY0w" class="hidden" data-fancybox="qbo" alt=""></a>
 <a href="../media/qbo-1.jpg" class="hidden" data-fancybox="qbo" alt=""></a>
 <a href="../media/qbo-2.jpg" class="hidden" data-fancybox="qbo" alt=""></a>
@@ -284,7 +271,10 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </div>
 
 <div class="portfolio-item" id="nmfg" data-discipline="product-management">
-<a href="#nmfg" data-trigger="nmfg"><img src="../media/nmfg-0.jpg" title="Natural Markets Food Group" alt="Natural Markets Food Group"></a>
+<a href="#nmfg" data-trigger="nmfg" class="portfolio-thumb"><img src="../media/nmfg-0.jpg" title="Natural Markets Food Group" alt="Natural Markets Food Group">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">Natural Markets Food Group</div>
+<div class="portfolio-overlay-desc">Integrated food hall platform serving 13 vendors at Toronto Eaton Center.</div>
+</div></a>
 <a href="https://youtu.be/yG28QGNVWkA" class="hidden" data-fancybox="nmfg" alt=""></a>
 <a href="../media/nmfg-1.jpg" class="hidden" data-fancybox="nmfg" alt=""></a>
 <a href="../media/nmfg-2.jpg" class="hidden" data-fancybox="nmfg" alt=""></a>
@@ -295,18 +285,11 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 <a href="../media/nmfg-7.jpg" class="hidden" data-fancybox="nmfg" alt=""></a>
 </div>
 
-<div class="portfolio-item" id="collagio" data-discipline="product-management">
-<a href="#collagio" data-trigger="collagio"><img src="../media/collagio-0.jpg" title="Collagio" alt="Collagio"></a>
-<a href="../media/collagio-2.jpg" class="hidden" data-fancybox="collagio" alt=""></a>
-<a href="../media/collagio-3.jpg" class="hidden" data-fancybox="collagio" alt=""></a>
-<a href="../media/collagio-4.jpg" class="hidden" data-fancybox="collagio" alt=""></a>
-<a href="../media/collagio-5.jpg" class="hidden" data-fancybox="collagio" alt=""></a>
-<a href="../media/collagio-6.jpg" class="hidden" data-fancybox="collagio" alt=""></a>
-<a href="../media/collagio-7.jpg" class="hidden" data-fancybox="collagio" alt=""></a>
-</div>
-
 <div class="portfolio-item" id="youareatourist" data-discipline="production-design">
-<a href="#youareatourist" data-trigger="youareatourist"><img src="../media/youareatourist-0.jpg" title="You Are a Tourist" alt="You Are a Tourist"></a>
+<a href="#youareatourist" data-trigger="youareatourist" class="portfolio-thumb"><img src="../media/youareatourist-0.jpg" title="You Are a Tourist" alt="You Are a Tourist">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">You Are a Tourist</div>
+<div class="portfolio-overlay-desc">The world's first live broadcast one-take music video.</div>
+</div></a>
 <a href="https://youtu.be/qkk5wViJo-I" class="hidden" data-fancybox="youareatourist" alt=""></a>
 <a href="../media/youareatourist-1.jpg" class="hidden" data-fancybox="youareatourist" alt=""></a>
 <a href="../media/youareatourist-2.jpg" class="hidden" data-fancybox="youareatourist" alt=""></a>
@@ -323,7 +306,10 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </div>
 
 <div class="portfolio-item" id="adidasallin" data-discipline="production-design">
-<a href="#adidasallin" data-trigger="adidasallin"><img src="../media/adidasallin-0.jpg" title="Adidas All In" alt="Adidas All In"></a>
+<a href="#adidasallin" data-trigger="adidasallin" class="portfolio-thumb"><img src="../media/adidasallin-0.jpg" title="Adidas All In" alt="Adidas All In">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">Adidas All In</div>
+<div class="portfolio-overlay-desc">Adidas's largest international advertising campaign.</div>
+</div></a>
 <a href="https://youtu.be/DCRihtIZZdM" class="hidden" data-fancybox="adidasallin" alt=""></a>
 <a href="../media/adidasallin-1.jpg" class="hidden" data-fancybox="adidasallin" alt=""></a>
 <a href="../media/adidasallin-2.jpg" class="hidden" data-fancybox="adidasallin" alt=""></a>
@@ -338,7 +324,10 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </div>
 
 <div class="portfolio-item" id="bornfree" data-discipline="production-design">
-<a href="#bornfree" data-trigger="bornfree"><img src="../media/bornfree-0.jpg" title="Born Free" alt="Born Free"></a>
+<a href="#bornfree" data-trigger="bornfree" class="portfolio-thumb"><img src="../media/bornfree-0.jpg" title="Born Free" alt="Born Free">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">Born Free</div>
+<div class="portfolio-overlay-desc">M.I.A.'s Born Free music video.</div>
+</div></a>
 <a href="https://vimeo.com/11219730" class="hidden" data-fancybox="bornfree" alt=""></a>
 <a href="../media/bornfree-1.jpg" class="hidden" data-fancybox="bornfree" alt=""></a>
 <a href="../media/bornfree-2.jpg" class="hidden" data-fancybox="bornfree" alt=""></a>
@@ -349,7 +338,10 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </div>
 
 <div class="portfolio-item" id="startraders" data-discipline="game-design">
-<a href="#startraders" data-trigger="startraders"><img src="../media/startraders-0.jpg" title="Star Traders" alt="Star Traders"></a>
+<a href="#startraders" data-trigger="startraders" class="portfolio-thumb"><img src="../media/startraders-0.jpg" title="Star Traders" alt="Star Traders">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">Star Traders</div>
+<div class="portfolio-overlay-desc">Build fleets, trade across the galaxy, and battle pirates.</div>
+</div></a>
 <a href="../media/startraders-1.jpg" class="hidden" data-fancybox="startraders" alt=""></a>
 <a href="../media/startraders-3.jpg" class="hidden" data-fancybox="startraders" alt=""></a>
 <a href="../media/startraders-4.jpg" class="hidden" data-fancybox="startraders" alt=""></a>
@@ -360,7 +352,10 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </div>
 
 <div class="portfolio-item" id="igotalot" data-discipline="production-design">
-<a href="#igotalot" data-trigger="igotalot"><img src="../media/igotalot-0.jpg" title="I Got a Lot" alt="I Got a Lot"></a>
+<a href="#igotalot" data-trigger="igotalot" class="portfolio-thumb"><img src="../media/igotalot-0.jpg" title="I Got a Lot" alt="I Got a Lot">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">I Got a Lot</div>
+<div class="portfolio-overlay-desc">Mika Miko's &quot;I Got a Lot (New New New)&quot; music video.</div>
+</div></a>
 <a href="https://youtu.be/z9bzjhnGrCQ" class="hidden" data-fancybox="igotalot" alt=""></a>
 <a href="../media/igotalot-2.jpg" class="hidden" data-fancybox="igotalot" alt=""></a>
 <a href="../media/igotalot-3.jpg" class="hidden" data-fancybox="igotalot" alt=""></a>
@@ -370,7 +365,10 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </div>
 
 <div class="portfolio-item" id="ayyo" data-discipline="production-design">
-<a href="#ayyo" data-trigger="ayyo"><img src="../media/ayyo-0.jpg" title="Ayyo" alt="Ayyo"></a>
+<a href="#ayyo" data-trigger="ayyo" class="portfolio-thumb"><img src="../media/ayyo-0.jpg" title="Ayyo" alt="Ayyo">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">Ayyo</div>
+<div class="portfolio-overlay-desc">Melanie Fiona's &quot;Ay Yo&quot; music video.</div>
+</div></a>
 <a href="https://youtu.be/td6CnGR36Eo" class="hidden" data-fancybox="ayyo" alt=""></a>
 <a href="../media/ayyo-1.jpg" class="hidden" data-fancybox="ayyo" alt=""></a>
 <a href="../media/ayyo-2.jpg" class="hidden" data-fancybox="ayyo" alt=""></a>
@@ -384,7 +382,10 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </div>
 
 <div class="portfolio-item" id="thenaturebetweenus" data-discipline="production-design">
-<a href="#thenaturebetweenus" data-trigger="thenaturebetweenus"><img src="../media/thenaturebetweenus-0.jpg" title="The Nature Between Us" alt="The Nature Between Us"></a>
+<a href="#thenaturebetweenus" data-trigger="thenaturebetweenus" class="portfolio-thumb"><img src="../media/thenaturebetweenus-0.jpg" title="The Nature Between Us" alt="The Nature Between Us">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">The Nature Between Us</div>
+<div class="portfolio-overlay-desc">A short film.</div>
+</div></a>
 <a href="https://vimeo.com/3371232" class="hidden" data-fancybox="thenaturebetweenus" alt=""></a>
 <a href="../media/thenaturebetweenus-1.jpg" class="hidden" data-fancybox="thenaturebetweenus" alt=""></a>
 <a href="../media/thenaturebetweenus-2.jpg" class="hidden" data-fancybox="thenaturebetweenus" alt=""></a>
@@ -397,7 +398,10 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </div>
 
 <div class="portfolio-item" id="theexecutionofsolomonharris" data-discipline="production-design">
-<a href="#theexecutionofsolomonharris" data-trigger="theexecutionofsolomonharris"><img src="../media/theexecutionofsolomonharris-0.jpg" title="The Execution of Solomon Harris" alt="The Execution of Solomon Harris"></a>
+<a href="#theexecutionofsolomonharris" data-trigger="theexecutionofsolomonharris" class="portfolio-thumb"><img src="../media/theexecutionofsolomonharris-0.jpg" title="The Execution of Solomon Harris" alt="The Execution of Solomon Harris">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">The Execution of Solomon Harris</div>
+<div class="portfolio-overlay-desc">A short film.</div>
+</div></a>
 <a href="http://vimeo.com/20337358" class="hidden" data-fancybox="theexecutionofsolomonharris" alt=""></a>
 <a href="../media/theexecutionofsolomonharris-1.jpg" class="hidden" data-fancybox="theexecutionofsolomonharris" alt=""></a>
 <a href="../media/theexecutionofsolomonharris-2.jpg" class="hidden" data-fancybox="theexecutionofsolomonharris" alt=""></a>
@@ -406,7 +410,10 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </div>
 
 <div class="portfolio-item" id="whentwoislandsmeet" data-discipline="production-design">
-<a href="#whentwoislandsmeet" data-trigger="whentwoislandsmeet"><img src="../media/whentwoislandsmeet-0.jpg" title="When Two Islands Meet" alt="When Two Islands Meet"></a>
+<a href="#whentwoislandsmeet" data-trigger="whentwoislandsmeet" class="portfolio-thumb"><img src="../media/whentwoislandsmeet-0.jpg" title="When Two Islands Meet" alt="When Two Islands Meet">
+<div class="portfolio-overlay"><div class="portfolio-overlay-title">When Two Islands Meet</div>
+<div class="portfolio-overlay-desc">A short film.</div>
+</div></a>
 <a href="../media/whentwoislandsmeet-1.jpg" class="hidden" data-fancybox="whentwoislandsmeet" alt=""></a>
 <a href="../media/whentwoislandsmeet-2.jpg" class="hidden" data-fancybox="whentwoislandsmeet" alt=""></a>
 <a href="../media/whentwoislandsmeet-3.jpg" class="hidden" data-fancybox="whentwoislandsmeet" alt=""></a>
@@ -425,8 +432,52 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 </article>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 <script>
+		history.scrollRestoration = 'manual';
+
+		// Fancybox: tap empty slide area to dismiss
+		$.fancybox.defaults.clickSlide = 'close';
+
+		// Open portfolio gallery from any [data-trigger] link
+		$(document).on('click', '[data-trigger]', function(e) {
+			var id = $(this).data('trigger');
+			var items = $('[data-fancybox="' + id + '"]');
+			if (!items.length) return;
+			e.preventDefault();
+			$.fancybox.open(items);
+		});
+
+		// Auto-advance to next visible portfolio project at end of gallery
+		function visiblePortfolioIds() {
+			return $('#portfolio .portfolio-item:visible').map(function() { return this.id; }).get();
+		}
+
+		$(document).on('afterShow.fb', function(e, instance) {
+			if (instance._nextPatched) return;
+			instance._nextPatched = true;
+			var orig = instance.next.bind(instance);
+			instance.next = function() {
+				var cur = instance.current;
+				if (cur && cur.index === instance.group.length - 1) {
+					var gid = cur.opts && cur.opts.$orig ? cur.opts.$orig.data('fancybox') : null;
+					if (gid) {
+						var ids = visiblePortfolioIds();
+						var i = ids.indexOf(gid);
+						if (i >= 0 && i < ids.length - 1) {
+							var nextId = ids[i + 1];
+							instance.close();
+							setTimeout(function() {
+								$.fancybox.open($('[data-fancybox="' + nextId + '"]'));
+							}, 350);
+							return;
+						}
+					}
+				}
+				orig();
+			};
+		});
+
 		window.onload = function init(){
 			$('nav').show();
 			$('a.hidden').each(function(){$(this).data('caption', $(this).text());});
@@ -444,23 +495,43 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 				return;
 			}
 			if (pathname === '/resume') {
-				navctrl('resume');
+				navctrl('resume', { push: false, scroll: (history.state || {}).scroll || 0 });
 				if (disciplines.length > 0) setFiltersByDisciplines('resume', disciplines);
 				return;
 			}
 			if (pathname === '/portfolio') {
-				navctrl('portfolio');
+				navctrl('portfolio', { push: false, scroll: (history.state || {}).scroll || 0 });
 				if (disciplines.length > 0) setFiltersByDisciplines('portfolio', disciplines);
 				return;
 			}
-			navctrl('contact');
+			navctrl('contact', { push: false });
 		}
 
-		function navctrl(test){
+		window.addEventListener('popstate', function(e) {
+			if (!e.state || !e.state.section) return;
+			navctrl(e.state.section, { push: false, scroll: e.state.scroll || 0 });
+		});
+
+		// Save scroll position before following an external link in the same tab
+		document.addEventListener('click', function(e) {
+			var link = e.target.closest('a');
+			if (!link || !link.href) return;
+			var isExternal = link.hostname && link.hostname !== location.hostname;
+			var isNewTab = link.target === '_blank' || link.target === '_window';
+			if (isExternal && !isNewTab) {
+				history.replaceState(Object.assign({}, history.state, { scroll: window.scrollY }), '');
+			}
+		});
+
+		function navctrl(section, opts) {
+			opts = opts || {};
+			var push = opts.push !== false;
+			var scroll = opts.scroll || 0;
+
 			$('article').hide();
 			$('nav a').removeClass('selected');
 
-			switch (test) {
+			switch (section) {
 				case 'contact':
 					$('#contact').show();
 					$('a.contact').addClass('selected');
@@ -476,7 +547,17 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 					applyResumeFilter();
 					break;
 			}
-		};
+
+			var path = section === 'contact' ? '/' : '/' + section;
+			var state = { section: section };
+			if (push) {
+				history.pushState(state, '', path);
+			} else {
+				history.replaceState(state, '', path);
+			}
+
+			window.scrollTo(0, scroll);
+		}
 
 		function activeDisc(prefix) {
 			var active = [];
@@ -542,14 +623,13 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 		function updateOverview(active) {
 			var hasPM   = active.indexOf('product-management') !== -1;
 			var hasGame = active.indexOf('game-design') !== -1;
-			var hasProd = active.indexOf('production-design') !== -1;
 			var key;
-			if (hasProd || (!hasPM && !hasGame)) key = 'all';
-			else if (hasPM && hasGame)            key = 'combined';
-			else if (hasPM)                       key = 'product-management';
-			else                                  key = 'game-design';
+			if (hasPM && hasGame)  key = 'combined';
+			else if (hasPM)        key = 'product-management';
+			else if (hasGame)      key = 'game-design';
+			else                   key = null;
 			$('.resume-overview').hide();
-			$('.resume-overview[data-overview="' + key + '"]').show();
+			if (key) $('.resume-overview[data-overview="' + key + '"]').show();
 		}
 
 		var _printPrevSection = null;

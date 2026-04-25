@@ -128,15 +128,11 @@ async function main() {
   })
 
   try {
-    let defaultPath = null
-    for (const config of PDF_CONFIGS) {
-      const outputPath = await generatePdf(browser, port, config)
-      if (config.isDefault) defaultPath = outputPath
-    }
-
-    if (defaultPath) {
-      fs.copyFileSync(defaultPath, path.join(distDir, 'resume.pdf'))
-      fs.copyFileSync(defaultPath, path.join(publicDir, 'resume.pdf'))
+    const results = await Promise.all(PDF_CONFIGS.map(config => generatePdf(browser, port, config).then(p => ({ config, path: p }))))
+    const defaultResult = results.find(r => r.config.isDefault)
+    if (defaultResult) {
+      fs.copyFileSync(defaultResult.path, path.join(distDir, 'resume.pdf'))
+      fs.copyFileSync(defaultResult.path, path.join(publicDir, 'resume.pdf'))
       console.log('Copied default to resume.pdf')
     }
   } finally {

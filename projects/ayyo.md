@@ -3,6 +3,7 @@ slug: ayyo
 title: Ayyo
 disciplines: [production-design]
 order: 16
+portfolio_description: "Melanie Fiona's \"Ay Yo\" music video."
 media:
   - ayyo-0.jpg
   - https://youtu.be/td6CnGR36Eo

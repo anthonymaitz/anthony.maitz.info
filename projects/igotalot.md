@@ -3,6 +3,7 @@ slug: igotalot
 title: I Got a Lot
 disciplines: [production-design]
 order: 15
+portfolio_description: "Mika Miko's \"I Got a Lot (New New New)\" music video."
 media:
   - igotalot-0.jpg
   - https://youtu.be/z9bzjhnGrCQ

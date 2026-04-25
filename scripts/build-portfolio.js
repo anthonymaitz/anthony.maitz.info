@@ -23,7 +23,7 @@ function mediaHref(src) {
 }
 
 function renderProject(project) {
-  const { slug, title, disciplines, stub, no_trigger, media = [] } = project
+  const { slug, title, disciplines, stub, no_trigger, media = [], portfolio_description = '' } = project
   const disciplineAttr = (disciplines ?? []).join(' ')
 
   if (stub) {
@@ -43,7 +43,11 @@ function renderProject(project) {
     const first = allItems[0]
     const href = htmlEncode(mediaHref(first.src))
     const alt = htmlEncode(title)
-    trigger = `<a href="#${slug}" data-trigger="${slug}"><img src="${href}" title="${alt}" alt="${alt}"></a>\n`
+    const descHTML = portfolio_description
+      ? `\n<div class="portfolio-overlay-desc">${htmlEncode(portfolio_description)}</div>`
+      : ''
+    const overlay = `\n<div class="portfolio-overlay"><div class="portfolio-overlay-title">${htmlEncode(title)}</div>${descHTML}\n</div>`
+    trigger = `<a href="#${slug}" data-trigger="${slug}" class="portfolio-thumb"><img src="${href}" title="${alt}" alt="${alt}">${overlay}</a>\n`
     galleryItems = allItems.slice(1)
   }
 

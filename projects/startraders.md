@@ -3,6 +3,7 @@ slug: startraders
 title: Star Traders
 disciplines: [game-design]
 order: 14
+portfolio_description: "Build fleets, trade across the galaxy, and battle pirates."
 media:
   - startraders-0.jpg
   - startraders-1.jpg

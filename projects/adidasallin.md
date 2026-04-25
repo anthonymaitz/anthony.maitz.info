@@ -8,9 +8,10 @@ resume_order: 2
 resume_entry_title: "“Adidas all in”"
 resume_subtitle: "(Los Angeles)"
 resume_client: "Adidas"
-resume_description: "Production designer for Los Angeles locations for Adidas International ad campaign, the largest in the brand's history."
+resume_description: "Production designer for Los Angeles locations for the Adidas International ad campaign, the largest in the brand's history."
 resume_link_url: "https://youtu.be/DCRihtIZZdM"
 resume_link_trigger: adidasallin
+portfolio_description: "Adidas's largest international advertising campaign."
 media:
   - adidasallin-0.jpg
   - https://youtu.be/DCRihtIZZdM
