@@ -20,7 +20,7 @@
 </nav>
 </header>
 <section>
-<article id="contact">
+<article id="contact" style="display:none">
   <!-- CONTACT_GENERATED_START -->
 <p>I build products and games, and I&rsquo;ve found that the skills required for each transfer more than you'd expect. Some of those projects had a hundred people waiting on my decisions, and some of them had me doing the sound design at midnight. While there are different challenges at each scale, the goal is always the same: <em>understand the person on the other side; ship something they&rsquo;ll remember.</em></p>
 <div class="contact-card">
@@ -37,7 +37,7 @@
 </ul>
 <!-- CONTACT_GENERATED_END -->
 </article>
-<article id="resume">
+<article id="resume" style="display:none">
 <div id="resume-filters">
   <button class="filter-btn selected" data-filter="product-management" onclick="toggleResumeFilter('product-management')">Product Management</button>
   <button class="filter-btn selected" data-filter="game-design" onclick="toggleResumeFilter('game-design')">Game Design</button>
@@ -167,7 +167,7 @@
 </div>
 
 </article>
-<article id="portfolio">
+<article id="portfolio" style="display:none">
 <div id="portfolio-filters">
   <button class="filter-btn selected" data-filter="product-management" onclick="togglePortfolioFilter('product-management')">Product Management</button>
   <button class="filter-btn selected" data-filter="game-design" onclick="togglePortfolioFilter('game-design')">Game Design</button>
@@ -478,7 +478,7 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 			};
 		});
 
-		window.onload = function init(){
+		function init(){
 			// Restore path after GitHub Pages 404 redirect
 			var ghRedirect = sessionStorage.getItem('gh-pages-redirect');
 			if (ghRedirect) {
@@ -665,6 +665,8 @@ This is a poster made to explain how the virtual mentor works for the SL@B judge
 			if (section === 'portfolio') applyPortfolioFilter();
 			else applyResumeFilter();
 		}
+
+		init();
 	</script>
 </body>
 </html>
