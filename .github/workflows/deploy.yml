@@ -3,6 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [master]
+  repository_dispatch:
+    types: [game-updated]
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -13,17 +18,96 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # ── Check out game repos ──────────────────────────────────────────────
+      - uses: actions/checkout@v4
+        with:
+          repository: anthonymaitz/shine
+          path: _games/shine
+
+      - uses: actions/checkout@v4
+        with:
+          repository: anthonymaitz/jetpack-geography
+          path: _games/jetpack-geography
+
+      - uses: actions/checkout@v4
+        with:
+          repository: anthonymaitz/simplequest
+          path: _games/simplequest
+
+      - uses: actions/checkout@v4
+        with:
+          repository: anthonymaitz/playsets
+          path: _games/playsets
+
+      - uses: actions/checkout@v4
+        with:
+          repository: anthonymaitz/space-is-listening
+          path: _games/space-is-listening
+
+      - uses: actions/checkout@v4
+        with:
+          repository: anthonymaitz/click-comic
+          path: _games/click-comic
+
+      # ── Node + pnpm setup ─────────────────────────────────────────────────
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
-      - run: npm ci
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      # ── Build games ───────────────────────────────────────────────────────
+      - name: Build shine
+        run: npm ci && npx vite build --base /shine/
+        working-directory: _games/shine
+
+      - name: Build jetpack-geography
+        run: npm ci
+        working-directory: _games/jetpack-geography
+      - name: Build jetpack-geography client
+        run: npx vite build --base /jetpack-geography/
+        working-directory: _games/jetpack-geography/packages/client
+
+      - name: Build simplequest
+        run: npm ci && npx vite build --config vite.app.config.ts --base /simplequest/
+        working-directory: _games/simplequest
+
+      - name: Build playsets
+        run: pnpm install
+        working-directory: _games/playsets
+      - name: Build playsets client
+        run: npx vite build --base /playsets/
+        working-directory: _games/playsets/apps/client
+
+      - name: Build space-is-listening
+        run: npm ci && npx vite build --base /space-is-listening/
+        working-directory: _games/space-is-listening
+
+      - name: Build click-comic
+        run: npm ci && npx vite build --base /click-comic/
+        working-directory: _games/click-comic
+
+      # ── Build portal ──────────────────────────────────────────────────────
+      - name: Install portal deps
+        run: npm ci
 
       - name: Install Chromium for Puppeteer
         run: npx puppeteer browsers install chrome
 
-      - run: npm run build
+      - name: Build portal
+        run: npm run build
+
+      # ── Merge game builds into portal dist ────────────────────────────────
+      - name: Copy game builds
+        run: |
+          cp -r _games/shine/dist                          dist/shine
+          cp -r _games/jetpack-geography/packages/client/dist  dist/jetpack-geography
+          cp -r _games/simplequest/dist                    dist/simplequest
+          cp -r _games/playsets/apps/client/dist           dist/playsets
+          cp -r _games/space-is-listening/dist             dist/space-is-listening
+          cp -r _games/click-comic/dist                    dist/click-comic
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
