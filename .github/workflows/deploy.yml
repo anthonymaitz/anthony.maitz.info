@@ -83,16 +83,30 @@ jobs:
         run: npx vite build --base /jetpack-geography/
         working-directory: _games/jetpack-geography/packages/client
 
-      - name: Build simplequest
+      - name: Build simplequest (app)
         run: npm ci && npx vite build --config vite.app.config.ts --base /simplequest/
+        working-directory: _games/simplequest
+      # Stash app output before lib build overwrites dist/
+      - name: Stash simplequest app dist
+        run: cp -r _games/simplequest/dist _games/simplequest/dist-app
+      # Build lib so tactical-rpg can resolve "simple-quest" workspace dep
+      - name: Build simplequest lib
+        run: npm run build
         working-directory: _games/simplequest
 
       - name: Build playsets
         run: pnpm install
         working-directory: _games/playsets
-      - name: Build playsets client
+      - name: Build playsets client (app)
         run: npx vite build --base /playsets/
         working-directory: _games/playsets/apps/client
+      # Stash app output before lib build overwrites dist/
+      - name: Stash playsets app dist
+        run: cp -r _games/playsets/apps/client/dist _games/playsets/apps/client/dist-app
+      # Build lib so tactical-rpg can resolve "playsets-board" workspace dep
+      - name: Build playsets lib
+        run: pnpm --filter client build:lib
+        working-directory: _games/playsets
 
       - name: Build space-is-listening
         run: npm ci && npx vite build --base /space-is-listening/
@@ -124,8 +138,8 @@ jobs:
         run: |
           cp -r _games/shine/dist                          dist/shine
           cp -r _games/jetpack-geography/packages/client/dist  dist/jetpack-geography
-          cp -r _games/simplequest/dist                    dist/simplequest
-          cp -r _games/playsets/apps/client/dist           dist/playsets
+          cp -r _games/simplequest/dist-app                dist/simplequest
+          cp -r _games/playsets/apps/client/dist-app      dist/playsets
           cp -r _games/space-is-listening/dist             dist/space-is-listening
           cp -r _games/click-comic/dist                    dist/click-comic
           cp -r _games/tactical-rpg/apps/game/dist         dist/tactical-rpg
