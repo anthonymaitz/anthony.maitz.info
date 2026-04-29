@@ -105,8 +105,8 @@ jobs:
         run: cp -r _games/playsets/apps/client/dist _games/playsets/apps/client/dist-app
       # Build lib so tactical-rpg can resolve "playsets-board" workspace dep
       - name: Build playsets lib
-        run: pnpm --filter client build:lib
-        working-directory: _games/playsets
+        run: npx vite build --config vite.lib.config.ts
+        working-directory: _games/playsets/apps/client
 
       - name: Build space-is-listening
         run: npm ci && npx vite build --base /space-is-listening/
