@@ -82,6 +82,8 @@ jobs:
       - name: Build jetpack-geography client
         run: npx vite build --base /jetpack-geography/
         working-directory: _games/jetpack-geography/packages/client
+        env:
+          VITE_SERVER_URL: ${{ secrets.VITE_JETPACK_SERVER_URL }}
 
       - name: Build simplequest (app)
         run: npm ci && npx vite build --config vite.app.config.ts --base /simplequest/
@@ -100,6 +102,8 @@ jobs:
       - name: Build playsets client (app)
         run: npx vite build --base /playsets/
         working-directory: _games/playsets/apps/client
+        env:
+          VITE_SIGNALING_URL: ${{ secrets.VITE_SIGNALING_URL }}
       # Stash app output before lib build overwrites dist/
       - name: Stash playsets app dist
         run: cp -r _games/playsets/apps/client/dist _games/playsets/apps/client/dist-app
@@ -125,6 +129,8 @@ jobs:
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_SERVER_URL: ${{ secrets.VITE_TACTICAL_SERVER_URL }}
+          VITE_API_URL: ${{ secrets.VITE_TACTICAL_API_URL }}
 
       # ── Build portal ──────────────────────────────────────────────────────
       - name: Install portal deps
