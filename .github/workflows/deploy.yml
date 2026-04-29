@@ -49,6 +49,19 @@ jobs:
           repository: anthonymaitz/click-comic
           path: _games/click-comic
 
+      - uses: actions/checkout@v4
+        with:
+          repository: anthonymaitz/tactical-rpg
+          ref: feature/biome-entry
+          path: _games/tactical-rpg
+
+      # tactical-rpg pnpm workspace references ../simplequest (= _games/simplequest ✓)
+      # and ../playsets experiments/apps/client — create a symlink to satisfy it
+      - name: Symlink playsets workspace for tactical-rpg
+        run: |
+          mkdir -p "_games/playsets experiments/apps"
+          ln -s "$(pwd)/_games/playsets/apps/client" "_games/playsets experiments/apps/client"
+
       # ── Node + pnpm setup ─────────────────────────────────────────────────
       - uses: actions/setup-node@v4
         with:
@@ -89,6 +102,13 @@ jobs:
         run: npm ci && npx vite build --base /click-comic/
         working-directory: _games/click-comic
 
+      - name: Build tactical-rpg
+        run: pnpm install
+        working-directory: _games/tactical-rpg
+      - name: Build tactical-rpg client
+        run: pnpm --filter game exec vite build --base /tactical-rpg/
+        working-directory: _games/tactical-rpg
+
       # ── Build portal ──────────────────────────────────────────────────────
       - name: Install portal deps
         run: npm ci
@@ -108,6 +128,7 @@ jobs:
           cp -r _games/playsets/apps/client/dist           dist/playsets
           cp -r _games/space-is-listening/dist             dist/space-is-listening
           cp -r _games/click-comic/dist                    dist/click-comic
+          cp -r _games/tactical-rpg/apps/game/dist         dist/tactical-rpg
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
