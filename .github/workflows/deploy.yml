@@ -122,6 +122,9 @@ jobs:
       - name: Build tactical-rpg client
         run: pnpm --filter game exec vite build --base /tactical-rpg/
         working-directory: _games/tactical-rpg
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       # ── Build portal ──────────────────────────────────────────────────────
       - name: Install portal deps
