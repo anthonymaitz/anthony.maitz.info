@@ -20,6 +20,7 @@ jobs:
 
       # ── Check out game repos ──────────────────────────────────────────────
       - uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: anthonymaitz/shine
           path: _games/shine
@@ -73,6 +74,7 @@ jobs:
 
       # ── Build games ───────────────────────────────────────────────────────
       - name: Build shine
+        continue-on-error: true
         run: npm ci && npx vite build --base /shine/
         working-directory: _games/shine
 
@@ -145,7 +147,7 @@ jobs:
       # ── Merge game builds into portal dist ────────────────────────────────
       - name: Copy game builds
         run: |
-          cp -r _games/shine/dist                          dist/shine
+          [ -d _games/shine/dist ] && cp -r _games/shine/dist dist/shine || true
           cp -r _games/jetpack-geography/packages/client/dist  dist/jetpack-geography
           cp -r _games/simplequest/dist-app                dist/simplequest
           cp -r _games/playsets/apps/client/dist-app      dist/playsets
