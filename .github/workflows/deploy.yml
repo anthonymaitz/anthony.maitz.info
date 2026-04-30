@@ -26,6 +26,7 @@ jobs:
           path: _games/shine
 
       - uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: anthonymaitz/jetpack-geography
           path: _games/jetpack-geography
@@ -79,9 +80,11 @@ jobs:
         working-directory: _games/shine
 
       - name: Build jetpack-geography
+        continue-on-error: true
         run: npm ci
         working-directory: _games/jetpack-geography
       - name: Build jetpack-geography client
+        continue-on-error: true
         run: npx vite build --base /jetpack-geography/
         working-directory: _games/jetpack-geography/packages/client
         env:
@@ -148,7 +151,7 @@ jobs:
       - name: Copy game builds
         run: |
           [ -d _games/shine/dist ] && cp -r _games/shine/dist dist/shine || true
-          cp -r _games/jetpack-geography/packages/client/dist  dist/jetpack-geography
+          [ -d _games/jetpack-geography/packages/client/dist ] && cp -r _games/jetpack-geography/packages/client/dist dist/jetpack-geography || true
           cp -r _games/simplequest/dist-app                dist/simplequest
           cp -r _games/playsets/apps/client/dist-app      dist/playsets
           cp -r _games/space-is-listening/dist             dist/space-is-listening
