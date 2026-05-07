@@ -74,8 +74,8 @@ body {
   margin: 0;
   word-wrap: break-word;
   color: #4b5866;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.5)), color-stop(2em, rgba(255, 255, 255, 0.9)), color-stop(37.5em, rgba(255, 255, 255, 0.9)), color-stop(45em, rgba(255, 255, 255, 0.8))), url("images/seamless_paper_texture.png");
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9) 2em, rgba(255, 255, 255, 0.9) 37.5em, rgba(255, 255, 255, 0.8) 45em), url("images/seamless_paper_texture.png");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.5)), color-stop(2em, rgba(255, 255, 255, 0.9)), color-stop(37.5em, rgba(255, 255, 255, 0.9)), color-stop(45em, rgba(255, 255, 255, 0.8))), url("/images/seamless_paper_texture.png");
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9) 2em, rgba(255, 255, 255, 0.9) 37.5em, rgba(255, 255, 255, 0.8) 45em), url("/images/seamless_paper_texture.png");
   -webkit-font-smoothing: antialiased;
   font-display: optional;
   text-rendering: optimizeLegibility;
