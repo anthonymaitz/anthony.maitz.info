@@ -22,6 +22,14 @@ function mediaHref(src) {
   return isExternalUrl(src) ? src : `../media/${src}`
 }
 
+function webpHref(src) {
+  if (isExternalUrl(src)) return null
+  const webp = src.replace(/\.(jpe?g|png)$/i, '.webp')
+  if (webp === src) return null // wasn't a jpg/png
+  const exists = fs.existsSync(path.resolve(__dirname, '../media', webp))
+  return exists ? `../media/${webp}` : null
+}
+
 function renderProject(project) {
   const { slug, title, disciplines, stub, no_trigger, media = [], portfolio_description = '' } = project
   const disciplineAttr = (disciplines ?? []).join(' ')
@@ -42,19 +50,25 @@ function renderProject(project) {
   if (!no_trigger && allItems.length > 0) {
     const first = allItems[0]
     const href = htmlEncode(mediaHref(first.src))
+    const webp = webpHref(first.src)
     const alt = htmlEncode(title)
     const descHTML = portfolio_description
       ? `\n<div class="portfolio-overlay-desc">${htmlEncode(portfolio_description)}</div>`
       : ''
     const overlay = `\n<div class="portfolio-overlay"><div class="portfolio-overlay-title">${htmlEncode(title)}</div>${descHTML}\n</div>`
-    trigger = `<a href="#${slug}" data-trigger="${slug}" class="portfolio-thumb"><img src="${href}" title="${alt}" alt="${alt}">${overlay}</a>\n`
+    const imgTag = webp
+      ? `<picture><source srcset="${htmlEncode(webp)}" type="image/webp"><img src="${href}" title="${alt}" alt="${alt}"></picture>`
+      : `<img src="${href}" title="${alt}" alt="${alt}">`
+    trigger = `<a href="#${slug}" data-trigger="${slug}" class="portfolio-thumb">${imgTag}${overlay}</a>\n`
     galleryItems = allItems.slice(1)
   }
 
-  const galleryHTML = galleryItems.map(item => {
-    const href = htmlEncode(mediaHref(item.src))
-    const inner = item.caption ? `\n${htmlEncode(item.caption)}\n` : ''
-    return `<a href="${href}" class="hidden" data-fancybox="${slug}" alt="">${inner}</a>\n`
+  const galleryHTML = galleryItems.map((item, i) => {
+    const webp = webpHref(item.src)
+    const href = htmlEncode(webp || mediaHref(item.src))
+    const desc = item.caption ? ` data-description="${htmlEncode(item.caption)}"` : ''
+    const label = htmlEncode(item.caption || `${title} — image ${i + 1}`)
+    return `<a href="${href}" class="hidden glightbox" data-gallery="${slug}" aria-label="${label}"${desc}></a>\n`
   }).join('')
 
   return `<div class="portfolio-item" id="${slug}" data-discipline="${disciplineAttr}">\n${trigger}${galleryHTML}</div>\n`
