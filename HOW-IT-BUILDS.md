@@ -25,12 +25,14 @@ The resume, portfolio, and contact sections are **generated** — they're writte
 | Resume overview/summary variants | `resume-data/overview.md` |
 | Portfolio + resume project entries | `projects/*.md` |
 | Contact page intro, links, game list | `contact-data/contact.md` |
+| Manifesto (HTML comments in page source) | `manifesto.md` |
 
 **After editing, regenerate `index.html`:**
 ```sh
 node scripts/build-resume.js      # updates <!-- RESUME_GENERATED_START/END --> section
 node scripts/build-portfolio.js   # updates <!-- PORTFOLIO_GENERATED_START/END --> section
 node scripts/build-contact.js     # updates <!-- CONTACT_GENERATED_START/END --> section
+node scripts/build-manifesto.js   # updates <!-- MANIFESTO_START/END --> section
 ```
 
 Or run all three at once with `npm run build` (which also runs Vite build + PDF generation).

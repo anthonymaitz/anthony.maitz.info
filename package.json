@@ -7,7 +7,8 @@
     "build-portfolio": "node scripts/build-portfolio.js",
     "build-resume": "node scripts/build-resume.js",
     "build-contact": "node scripts/build-contact.js",
-    "prebuild": "node scripts/build-portfolio.js && node scripts/build-resume.js && node scripts/build-contact.js",
+    "build-manifesto": "node scripts/build-manifesto.js",
+    "prebuild": "node scripts/build-portfolio.js && node scripts/build-resume.js && node scripts/build-contact.js && node scripts/build-manifesto.js",
     "build": "vite build && cp -r media dist/ && cp favicon.ico dist/ && node scripts/generate-pdf.js || true",
     "preview": "vite preview"
   },
