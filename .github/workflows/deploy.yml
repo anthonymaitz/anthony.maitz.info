@@ -19,6 +19,8 @@ jobs:
       - uses: actions/checkout@v4
 
       # ── Check out game repos ──────────────────────────────────────────────
+      # All game checkouts use continue-on-error so a missing/private/broken
+      # repo never fails the whole deploy. Build steps mirror this.
       - uses: actions/checkout@v4
         continue-on-error: true
         with:
@@ -32,26 +34,31 @@ jobs:
           path: _games/jetpack-geography
 
       - uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: anthonymaitz/simplequest
           path: _games/simplequest
 
       - uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: anthonymaitz/playsets
           path: _games/playsets
 
       - uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: anthonymaitz/space-is-listening
           path: _games/space-is-listening
 
       - uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: anthonymaitz/click-comic
           path: _games/click-comic
 
       - uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: anthonymaitz/tactical-rpg
           ref: feature/biome-entry
@@ -60,6 +67,7 @@ jobs:
       # tactical-rpg pnpm workspace references ../simplequest (= _games/simplequest ✓)
       # and ../playsets experiments/apps/client — create a symlink to satisfy it
       - name: Symlink playsets workspace for tactical-rpg
+        continue-on-error: true
         run: |
           mkdir -p "_games/playsets experiments/apps"
           ln -s "$(pwd)/_games/playsets/apps/client" "_games/playsets experiments/apps/client"
@@ -91,44 +99,51 @@ jobs:
           VITE_SERVER_URL: ${{ secrets.VITE_JETPACK_SERVER_URL }}
 
       - name: Build simplequest (app)
+        continue-on-error: true
         run: npm ci && npx vite build --config vite.app.config.ts --base /simplequest/
         working-directory: _games/simplequest
-      # Stash app output before lib build overwrites dist/
       - name: Stash simplequest app dist
+        continue-on-error: true
         run: cp -r _games/simplequest/dist _games/simplequest/dist-app
-      # Build lib so tactical-rpg can resolve "simple-quest" workspace dep
       - name: Build simplequest lib
+        continue-on-error: true
         run: npm run build
         working-directory: _games/simplequest
 
       - name: Build playsets
+        continue-on-error: true
         run: pnpm install
         working-directory: _games/playsets
       - name: Build playsets client (app)
+        continue-on-error: true
         run: npx vite build --base /playsets/
         working-directory: _games/playsets/apps/client
         env:
           VITE_SIGNALING_URL: ${{ secrets.VITE_SIGNALING_URL }}
-      # Stash app output before lib build overwrites dist/
       - name: Stash playsets app dist
+        continue-on-error: true
         run: cp -r _games/playsets/apps/client/dist _games/playsets/apps/client/dist-app
-      # Build lib so tactical-rpg can resolve "playsets-board" workspace dep
       - name: Build playsets lib
+        continue-on-error: true
         run: npx vite build --config vite.lib.config.ts
         working-directory: _games/playsets/apps/client
 
       - name: Build space-is-listening
+        continue-on-error: true
         run: npm ci && npx vite build --base /space-is-listening/
         working-directory: _games/space-is-listening
 
       - name: Build click-comic
+        continue-on-error: true
         run: npm ci && npx vite build --base /click-comic/
         working-directory: _games/click-comic
 
       - name: Build tactical-rpg
+        continue-on-error: true
         run: pnpm install
         working-directory: _games/tactical-rpg
       - name: Build tactical-rpg client
+        continue-on-error: true
         run: pnpm --filter game exec vite build --base /tactical-rpg/
         working-directory: _games/tactical-rpg
         env:
@@ -148,15 +163,16 @@ jobs:
         run: npm run build
 
       # ── Merge game builds into portal dist ────────────────────────────────
+      # All copies are guarded so a missing game dist never fails the deploy.
       - name: Copy game builds
         run: |
-          [ -d _games/shine/dist ] && cp -r _games/shine/dist dist/shine || true
-          [ -d _games/jetpack-geography/packages/client/dist ] && cp -r _games/jetpack-geography/packages/client/dist dist/jetpack-geography || true
-          cp -r _games/simplequest/dist-app                dist/simplequest
-          cp -r _games/playsets/apps/client/dist-app      dist/playsets
-          cp -r _games/space-is-listening/dist             dist/space-is-listening
-          cp -r _games/click-comic/dist                    dist/click-comic
-          cp -r _games/tactical-rpg/apps/game/dist         dist/tactical-rpg
+          [ -d _games/shine/dist ]                              && cp -r _games/shine/dist dist/shine || true
+          [ -d _games/jetpack-geography/packages/client/dist ]  && cp -r _games/jetpack-geography/packages/client/dist dist/jetpack-geography || true
+          [ -d _games/simplequest/dist-app ]                    && cp -r _games/simplequest/dist-app dist/simplequest || true
+          [ -d _games/playsets/apps/client/dist-app ]           && cp -r _games/playsets/apps/client/dist-app dist/playsets || true
+          [ -d _games/space-is-listening/dist ]                 && cp -r _games/space-is-listening/dist dist/space-is-listening || true
+          [ -d _games/click-comic/dist ]                        && cp -r _games/click-comic/dist dist/click-comic || true
+          [ -d _games/tactical-rpg/apps/game/dist ]             && cp -r _games/tactical-rpg/apps/game/dist dist/tactical-rpg || true
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
