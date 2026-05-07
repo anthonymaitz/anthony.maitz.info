@@ -472,7 +472,7 @@
 		e.preventDefault();
 		var allItems = Array.from(document.querySelectorAll('.glightbox'));
 		var idx = allItems.indexOf(items[0]);
-		if (idx >= 0) lightbox.openAt(idx);
+		if (idx >= 0) { trigger.blur(); lightbox.openAt(idx); }
 	});
 
 	function init() {
