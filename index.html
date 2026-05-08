@@ -504,7 +504,9 @@
 			if (disciplines.length) setFiltersByDisciplines('portfolio', disciplines);
 			return;
 		}
-		navctrl('contact', { push: false });
+		// Unknown path (e.g. /shine, /simplequest) — show default view without
+		// overwriting the URL, so the browser can serve the real path if it exists.
+		navctrl('contact', { push: false, keepUrl: true });
 	}
 
 	window.addEventListener('popstate', function(e) {
@@ -547,10 +549,12 @@
 				break;
 		}
 
-		var path = section === 'contact' ? '/' : '/' + section;
-		var state = { section: section };
-		if (push) history.pushState(state, '', path);
-		else history.replaceState(state, '', path);
+		if (!opts.keepUrl) {
+			var path = section === 'contact' ? '/' : '/' + section;
+			var state = { section: section };
+			if (push) history.pushState(state, '', path);
+			else history.replaceState(state, '', path);
+		}
 		window.scrollTo(0, scroll);
 	}
 
