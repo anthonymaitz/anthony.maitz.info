@@ -27,3 +27,7 @@ For a full production build:
 ```
 npm run build   # runs prebuild (both scripts) + vite build + PDF generation
 ```
+
+## Deployment
+
+Before making any changes to `.github/workflows/deploy.yml`, read `HOW-IT-BUILDS.md` — the deployment has non-obvious constraints (private repo token, pnpm version pin, keep_files, game independence model).

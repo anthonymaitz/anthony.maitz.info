@@ -66,39 +66,61 @@ This runs in sequence:
 **File:** `.github/workflows/deploy.yml`
 
 **Triggers:**
-- Push to `master`
-- `repository_dispatch` event of type `game-updated` (game repos can ping this)
-- Daily cron at 3 AM UTC (picks up any game repo changes)
-- Manual via GitHub UI (`workflow_dispatch`)
 
-### What it does
+- Push to `master` — rebuilds **portal only** (games are skipped)
+- `repository_dispatch` event of type `game-updated` — rebuilds all games + portal
+- Manual via GitHub UI (`workflow_dispatch`) — rebuilds all games + portal
+
+### Game independence
+
+Games and the portal deploy independently. **Portal pushes do not rebuild games.**
+All game checkout and build steps have `if: github.event_name != 'push'`, so a
+`git push` to this repo only updates the portal content.
+
+This is intentional: game repos have their own release cycles. Pushing a resume
+update shouldn't trigger 7 game builds.
+
+**`keep_files: true`** on `peaceiris/actions-gh-pages` is what makes this safe.
+Without it, every portal deploy would wipe the entire gh-pages branch — including
+game builds from previous runs. With it, portal deploys only overwrite portal
+files and leave game subdirectories untouched.
+
+### What it does (on a full build — `repository_dispatch` or `workflow_dispatch`)
 
 1. **Checks out this repo** into the runner workspace root.
 
 2. **Checks out each game repo** into `_games/<name>/`:
-   - `anthonymaitz/shine` → `_games/shine`
-   - `anthonymaitz/jetpack-geography` → `_games/jetpack-geography`
+   - `anthonymaitz/shine` → `_games/shine` *(private — requires `GH_PAT`)*
+   - `anthonymaitz/jetpack-geography` → `_games/jetpack-geography` *(private — requires `GH_PAT`)*
    - `anthonymaitz/simplequest` → `_games/simplequest`
    - `anthonymaitz/playsets` → `_games/playsets`
    - `anthonymaitz/space-is-listening` → `_games/space-is-listening`
    - `anthonymaitz/click-comic` → `_games/click-comic`
    - `anthonymaitz/tactical-rpg` (branch: `feature/biome-entry`) → `_games/tactical-rpg`
 
-   > `shine` and `jetpack-geography` have `continue-on-error: true` because they are private repos. The default `GITHUB_TOKEN` can't read private repos, so the build keeps going even if they fail to check out.
+   All checkouts use `continue-on-error: true` so a single failure doesn't abort the deploy.
 
-3. **Sets up Node 20 and pnpm.**
+3. **Sets up Node 22 and pnpm v9.**
+   - pnpm is pinned to **v9** — do not change to `latest`. pnpm v10+ introduced
+     `ERR_PNPM_IGNORED_BUILDS`, which blocks esbuild and msgpackr-extract install
+     scripts unless explicitly approved. That breaks playsets and tactical-rpg without
+     changes to those repos. Both game lockfiles use `lockfileVersion: '9.0'`.
 
-4. **Builds each game** with Vite using its subpath as the base (e.g., `--base /shine/`). Some games use pnpm workspaces and need special handling:
-   - `playsets` is built twice: once as an app (app output stashed to `dist-app/`), then as a library so `tactical-rpg` can resolve its dependency.
-   - A symlink is created so `tactical-rpg`'s pnpm workspace can resolve `playsets experiments/apps/client`.
+4. **Builds each game** with Vite using its subpath as the base (e.g., `--base /shine/`).
+   - `playsets` is built twice: once as an app (output stashed to `dist-app/`), then
+     as a library so `tactical-rpg` can resolve its workspace dependency.
+   - A symlink is created so `tactical-rpg`'s pnpm workspace can resolve
+     `playsets experiments/apps/client`.
 
 5. **Builds this portal** (`npm run build`), which outputs to `dist/`.
 
 6. **Copies each game's build** into `dist/<name>/`:
+
    ```
    dist/
    ├── (portal files)
    ├── shine/
+   ├── jetpack-geography/
    ├── simplequest/
    ├── playsets/
    ├── space-is-listening/
@@ -106,23 +128,43 @@ This runs in sequence:
    └── tactical-rpg/
    ```
 
-7. **Deploys `dist/` to GitHub Pages** using `peaceiris/actions-gh-pages`, with the CNAME `anthony.maitz.work`.
+7. **Deploys `dist/` to GitHub Pages** using `peaceiris/actions-gh-pages` with
+   `keep_files: true` and the CNAME `anthony.maitz.work`.
 
 ### Secrets required
 
 | Secret | Used by |
 |--------|---------|
-| `VITE_SIGNALING_URL` | playsets (multiplayer WebRTC signaling server URL) |
+| `GH_PAT` | Checkout of private repos `shine` and `jetpack-geography` |
+| `VITE_JETPACK_SERVER_URL` | jetpack-geography (game server URL) |
+| `VITE_SIGNALING_URL` | playsets (WebRTC signaling server URL) |
 | `VITE_SUPABASE_URL` | tactical-rpg |
 | `VITE_SUPABASE_ANON_KEY` | tactical-rpg |
 | `VITE_TACTICAL_SERVER_URL` | tactical-rpg (game server WebSocket URL) |
 | `VITE_TACTICAL_API_URL` | tactical-rpg (REST API URL) |
 
-These are set in this repo's GitHub Settings → Secrets → Actions.
+Set in this repo's **GitHub Settings → Secrets and variables → Actions**.
+
+`GH_PAT` must be a fine-grained personal access token with **Contents: Read-only**
+on `anthonymaitz/shine` and `anthonymaitz/jetpack-geography`. The standard
+`GITHUB_TOKEN` is scoped to this repo only and returns 404 for any other repo.
 
 ### How game repos trigger a rebuild
 
-A game repo can send a `repository_dispatch` event to this repo to trigger a deploy after the game ships a new build. This requires a PAT with `repo` scope stored as a secret in the game repo.
+Each game repo has a `.github/workflows/notify-portal.yml` that fires a
+`repository_dispatch` event to this repo when the game's `master` branch is pushed:
+
+```yaml
+- uses: peter-evans/repository-dispatch@v3
+  with:
+    token: ${{ secrets.PORTAL_DISPATCH_TOKEN }}
+    repository: anthonymaitz/anthony.maitz.info
+    event-type: game-updated
+```
+
+`PORTAL_DISPATCH_TOKEN` is a secret in each **game** repo — not this one. It needs
+write access to fire dispatches on this repo (but does not need read access to the
+game repos themselves).
 
 ---
 
