@@ -163,7 +163,7 @@ jobs:
         if: github.event_name != 'push'
         continue-on-error: true
         run: |
-          printf '\nonlyBuiltDependencies[]=esbuild\nonlyBuiltDependencies[]=msgpackr-extract\n' >> .npmrc
+          printf '\nonlyBuiltDependencies:\n  - esbuild\n  - msgpackr-extract\n' >> pnpm-workspace.yaml
         working-directory: _games/tactical-rpg
 
       - name: Build tactical-rpg
