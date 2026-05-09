@@ -159,6 +159,13 @@ jobs:
         run: npm ci && npx vite build --base /click-comic/
         working-directory: _games/click-comic
 
+      - name: Configure tactical-rpg pnpm build approvals
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: |
+          printf '\nonlyBuiltDependencies[]=esbuild\nonlyBuiltDependencies[]=msgpackr-extract\n' >> .npmrc
+        working-directory: _games/tactical-rpg
+
       - name: Build tactical-rpg
         if: github.event_name != 'push'
         continue-on-error: true
