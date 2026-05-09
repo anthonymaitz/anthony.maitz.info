@@ -5,8 +5,6 @@ on:
     branches: [master]
   repository_dispatch:
     types: [game-updated]
-  schedule:
-    - cron: '0 3 * * *'
   workflow_dispatch:
 
 permissions:
@@ -19,45 +17,55 @@ jobs:
       - uses: actions/checkout@v4
 
       # ── Check out game repos ──────────────────────────────────────────────
-      # All game checkouts use continue-on-error so a missing/private/broken
-      # repo never fails the whole deploy. Build steps mirror this.
+      # Games are skipped on portal pushes — they deploy independently via
+      # repository_dispatch from each game repo. Rebuild all games on
+      # repository_dispatch (game push) and workflow_dispatch (manual).
       - uses: actions/checkout@v4
+        if: github.event_name != 'push'
         continue-on-error: true
         with:
           repository: anthonymaitz/shine
           path: _games/shine
+          token: ${{ secrets.GH_PAT }}
 
       - uses: actions/checkout@v4
+        if: github.event_name != 'push'
         continue-on-error: true
         with:
           repository: anthonymaitz/jetpack-geography
           path: _games/jetpack-geography
+          token: ${{ secrets.GH_PAT }}
 
       - uses: actions/checkout@v4
+        if: github.event_name != 'push'
         continue-on-error: true
         with:
           repository: anthonymaitz/simplequest
           path: _games/simplequest
 
       - uses: actions/checkout@v4
+        if: github.event_name != 'push'
         continue-on-error: true
         with:
           repository: anthonymaitz/playsets
           path: _games/playsets
 
       - uses: actions/checkout@v4
+        if: github.event_name != 'push'
         continue-on-error: true
         with:
           repository: anthonymaitz/space-is-listening
           path: _games/space-is-listening
 
       - uses: actions/checkout@v4
+        if: github.event_name != 'push'
         continue-on-error: true
         with:
           repository: anthonymaitz/click-comic
           path: _games/click-comic
 
       - uses: actions/checkout@v4
+        if: github.event_name != 'push'
         continue-on-error: true
         with:
           repository: anthonymaitz/tactical-rpg
@@ -67,6 +75,7 @@ jobs:
       # tactical-rpg pnpm workspace references ../simplequest (= _games/simplequest ✓)
       # and ../playsets experiments/apps/client — create a symlink to satisfy it
       - name: Symlink playsets workspace for tactical-rpg
+        if: github.event_name != 'push'
         continue-on-error: true
         run: |
           mkdir -p "_games/playsets experiments/apps"
@@ -75,23 +84,26 @@ jobs:
       # ── Node + pnpm setup ─────────────────────────────────────────────────
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - uses: pnpm/action-setup@v4
         with:
           version: latest
 
-      # ── Build games ───────────────────────────────────────────────────────
+      # ── Build games (skipped on portal push) ──────────────────────────────
       - name: Build shine
+        if: github.event_name != 'push'
         continue-on-error: true
         run: npm ci && npx vite build --base /shine/
         working-directory: _games/shine
 
       - name: Build jetpack-geography
+        if: github.event_name != 'push'
         continue-on-error: true
         run: npm ci
         working-directory: _games/jetpack-geography
       - name: Build jetpack-geography client
+        if: github.event_name != 'push'
         continue-on-error: true
         run: npx vite build --base /jetpack-geography/
         working-directory: _games/jetpack-geography/packages/client
@@ -99,50 +111,61 @@ jobs:
           VITE_SERVER_URL: ${{ secrets.VITE_JETPACK_SERVER_URL }}
 
       - name: Build simplequest (app)
+        if: github.event_name != 'push'
         continue-on-error: true
         run: npm ci && npx vite build --config vite.app.config.ts --base /simplequest/
         working-directory: _games/simplequest
       - name: Stash simplequest app dist
+        if: github.event_name != 'push'
         continue-on-error: true
         run: cp -r _games/simplequest/dist _games/simplequest/dist-app
       - name: Build simplequest lib
+        if: github.event_name != 'push'
         continue-on-error: true
         run: npm run build
         working-directory: _games/simplequest
 
       - name: Build playsets
+        if: github.event_name != 'push'
         continue-on-error: true
         run: pnpm install
         working-directory: _games/playsets
       - name: Build playsets client (app)
+        if: github.event_name != 'push'
         continue-on-error: true
         run: npx vite build --base /playsets/
         working-directory: _games/playsets/apps/client
         env:
           VITE_SIGNALING_URL: ${{ secrets.VITE_SIGNALING_URL }}
       - name: Stash playsets app dist
+        if: github.event_name != 'push'
         continue-on-error: true
         run: cp -r _games/playsets/apps/client/dist _games/playsets/apps/client/dist-app
       - name: Build playsets lib
+        if: github.event_name != 'push'
         continue-on-error: true
         run: npx vite build --config vite.lib.config.ts
         working-directory: _games/playsets/apps/client
 
       - name: Build space-is-listening
+        if: github.event_name != 'push'
         continue-on-error: true
         run: npm ci && npx vite build --base /space-is-listening/
         working-directory: _games/space-is-listening
 
       - name: Build click-comic
+        if: github.event_name != 'push'
         continue-on-error: true
         run: npm ci && npx vite build --base /click-comic/
         working-directory: _games/click-comic
 
       - name: Build tactical-rpg
+        if: github.event_name != 'push'
         continue-on-error: true
         run: pnpm install
         working-directory: _games/tactical-rpg
       - name: Build tactical-rpg client
+        if: github.event_name != 'push'
         continue-on-error: true
         run: pnpm --filter game exec vite build --base /tactical-rpg/
         working-directory: _games/tactical-rpg
@@ -163,8 +186,8 @@ jobs:
         run: npm run build
 
       # ── Merge game builds into portal dist ────────────────────────────────
-      # All copies are guarded so a missing game dist never fails the deploy.
       - name: Copy game builds
+        if: github.event_name != 'push'
         run: |
           [ -d _games/shine/dist ]                              && cp -r _games/shine/dist dist/shine || true
           [ -d _games/jetpack-geography/packages/client/dist ]  && cp -r _games/jetpack-geography/packages/client/dist dist/jetpack-geography || true
@@ -178,4 +201,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          keep_files: true
           cname: anthony.maitz.work
