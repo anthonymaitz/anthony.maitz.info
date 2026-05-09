@@ -1,0 +1,35 @@
+{
+  "themes": [
+    {
+      "id": "structures",
+      "label": "Structures",
+      "props": [
+        { "id": "door-wood", "label": "Wooden Door", "theme": "structures", "category": "punch-through" },
+        { "id": "window-wood", "label": "Wooden Window", "theme": "structures", "category": "wall-decor" }
+      ]
+    },
+    {
+      "id": "decor",
+      "label": "Decor",
+      "props": [
+        { "id": "painting", "label": "Painting", "theme": "decor", "category": "wall-decor" }
+      ]
+    },
+    {
+      "id": "furniture",
+      "label": "Furniture",
+      "props": [
+        { "id": "rug", "label": "Rug", "theme": "furniture", "category": "floor-decor" },
+        { "id": "bartop", "label": "Bar Top", "theme": "furniture", "category": "floor-object" }
+      ]
+    },
+    {
+      "id": "navigation",
+      "label": "Navigation",
+      "props": [
+        { "id": "stair-up", "label": "Stair Up", "theme": "navigation", "category": "floor-object" },
+        { "id": "stair-down", "label": "Stair Down", "theme": "navigation", "category": "floor-object" }
+      ]
+    }
+  ]
+}
