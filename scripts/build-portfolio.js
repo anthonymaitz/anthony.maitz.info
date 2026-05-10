@@ -68,7 +68,8 @@ function renderProject(project) {
     const href = htmlEncode(webp || mediaHref(item.src))
     const desc = item.caption ? ` data-description="${htmlEncode(item.caption)}"` : ''
     const label = htmlEncode(item.caption || `${title} — image ${i + 1}`)
-    return `<a href="${href}" class="hidden glightbox" data-gallery="${slug}" aria-label="${label}"${desc}></a>\n`
+    const videoType = item.src.match(/\.mp4(\?|$)/i) ? ' data-type="video"' : ''
+    return `<a href="${href}" class="hidden glightbox" data-gallery="${slug}" aria-label="${label}"${desc}${videoType}></a>\n`
   }).join('')
 
   return `<div class="portfolio-item" id="${slug}" data-discipline="${disciplineAttr}">\n${trigger}${galleryHTML}</div>\n`

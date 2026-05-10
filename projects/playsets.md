@@ -11,7 +11,7 @@ links:
     url: https://playsets.app
 media:
   - playsets-0.jpg
-  - "https://youtu.be/mNgjgNSpVGA&list=PL5AjSG-LQwc6m96V_t2jgG_08UElFIhmi"
+  - https://github.com/anthonymaitz/anthony.maitz.info/releases/download/media/playsets.mp4
   - playsets-1.jpg
   - playsets-2.jpg
   - playsets-3.jpg

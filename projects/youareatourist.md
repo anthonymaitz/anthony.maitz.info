@@ -13,7 +13,7 @@ resume_link_trigger: youareatourist
 portfolio_description: "The world's first live broadcast one-take music video."
 media:
   - youareatourist-0.jpg
-  - https://youtu.be/qkk5wViJo-I
+  - https://github.com/anthonymaitz/anthony.maitz.info/releases/download/media/you-are-a-tourist.mp4
   - youareatourist-1.jpg
   - youareatourist-2.jpg
   - youareatourist-3.jpg

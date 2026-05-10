@@ -13,7 +13,7 @@ resume_link_trigger: theexecutionofsolomonharris
 portfolio_description: "A short film."
 media:
   - theexecutionofsolomonharris-0.jpg
-  - http://vimeo.com/20337358
+  - https://github.com/anthonymaitz/anthony.maitz.info/releases/download/media/solomon-harris.mp4
   - theexecutionofsolomonharris-1.jpg
   - theexecutionofsolomonharris-2.jpg
   - theexecutionofsolomonharris-3.jpg
