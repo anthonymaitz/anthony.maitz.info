@@ -228,6 +228,8 @@ section {
     letter-spacing: 0;
     color: var(--text-heading);
     border-bottom: solid 1px var(--border-strong); }
+    #resume h2:not(:has(a)) {
+      color: var(--text); }
     @media only screen and (max-width: 45em) {
       #resume h2 {
         font-size: 1.125em; } }
