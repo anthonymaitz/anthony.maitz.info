@@ -1,5 +1,5 @@
 ---
-intro: "I build products and games, and I&rsquo;ve found that the skills required for each transfer more than you'd expect. Some of those projects had a hundred people waiting on my decisions, and some of them had me doing the sound design at midnight. While there are different challenges at each scale, the goal is always the same: <em>understand the person on the other side; ship something they&rsquo;ll remember.</em>"
+intro: "I build products and games, and doing both makes me better at each. Some projects had a hundred people waiting on my decisions, and some of them had me doing sound design in a closet at midnight. While there are unique challenges for every project, the goal is always the same: <em>understand the person on the other side; ship something they&rsquo;ll remember.</em>"
 currently: "If you&rsquo;re building something that requires both creative vision and operational discipline, let&rsquo;s talk."
 links:
   - label: "anthonymaitz@gmail.com"

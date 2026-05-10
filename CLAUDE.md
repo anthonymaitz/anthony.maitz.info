@@ -1,19 +1,16 @@
 # anthony.maitz.info
+This is my resume and portfolio.
+I also host games and experiments at this domain.
+I am particular with voice and style, do not make changes to the content or aesthetics unless told to do so.
 
 ## Resume content — source of truth
-
-The resume is **generated** from these files. Always edit these, never `resume.md`:
-
 - `resume-data/employers.md` — employer blocks, role titles, dates, and role-level descriptions
 - `resume-data/overview.md` — summary/overview variants
 - `projects/*.md` — individual project entries; only files with `resume_section` in frontmatter appear on the resume
 
 The build script (`scripts/build-resume.js`) reads those sources and writes the generated HTML into `index.html` between `<!-- RESUME_GENERATED_START -->` and `<!-- RESUME_GENERATED_END -->` markers.
 
-`resume.md` does not exist and is not used. It was a legacy file.
-
 ## Build workflow
-
 After **every** content change, run the build scripts so the dev server picks up the update:
 
 ```

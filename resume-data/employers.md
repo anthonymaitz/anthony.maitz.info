@@ -24,8 +24,8 @@ employers:
         descriptions:
           - "Conceived and led development of a multiplayer mobile game for Meta Horizon, responsible for game design, sound, UI programming, and content creation, working with a developer and artist to ship the title."
         bullets:
-          - "Judges Choice Award – Meta Horizon Creator Competition: Mobile Genre Showdown"
-          - "Most Satisfying Progression – Meta Horizon Creator Competition: Elevate your mobile world"
+          - "Judges Choice Award – Meta Horizon Creator Competition"
+          - "Most Satisfying Progression – Meta Horizon Creator Competition"
 
   - id: insummary
     name: Insummary
@@ -92,7 +92,7 @@ employers:
         dates: "2013 - 2018"
         descriptions:
           - 'Designed and shipped a collection of digital maps and miniatures for remote tabletop role-playing across iOS, Android, web, and Steam, reaching tens of thousands of players in over 100 countries.'
-          - 'Led product strategy, UI design, and front-end development across all platforms. Drove product marketing through a fully funded <a href="https://www.kickstarter.com/projects/985647565/playsets-the-future-of-social-storytelling" target="_window">Kickstarter</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=866256995" target="_window">Steam Greenlight</a>, and selection for <a href="http://indiemegabooth.com/event/pax-prime-2015/" target="_window">Indie Megabooth</a> at PAX Prime.'
+          - 'Led product strategy, UI design, and front-end development across all platforms. Drove product marketing through a fully funded <a href="https://www.kickstarter.com/projects/985647565/playsets-the-future-of-social-storytelling" target="_window">Kickstarter</a>, <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=866256995" target="_window">Steam Greenlight</a>, and selection for <a href="http://indiemegabooth.com" target="_window">Indie Megabooth</a> at PAX Prime.'
 
   # - id: discovery
   #   name: Discovery Communications
