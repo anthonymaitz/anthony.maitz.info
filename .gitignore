@@ -5,3 +5,4 @@ node-compile-cache/
 .superpowers/
 .claudelens
 media/videos/
+.wrangler/
