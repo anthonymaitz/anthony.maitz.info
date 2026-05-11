@@ -13,7 +13,7 @@ resume_link_trigger: theexecutionofsolomonharris
 portfolio_description: "A short film."
 media:
   - theexecutionofsolomonharris-0.jpg
-  - https://vimeo.com/20337358
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/solomon-harris.mp4
   - theexecutionofsolomonharris-1.jpg
   - theexecutionofsolomonharris-2.jpg
   - theexecutionofsolomonharris-3.jpg

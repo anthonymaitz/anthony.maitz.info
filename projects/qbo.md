@@ -14,7 +14,7 @@ resume_link_target: "_window"
 portfolio_description: "Connected coffee machine with on-device interface, app, and loyalty program."
 media:
   - qbo-0.jpg
-  - https://youtu.be/hVk3VHgqY0w
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/qbo.mp4
   - qbo-1.jpg
   - qbo-2.jpg
   - qbo-3.jpg

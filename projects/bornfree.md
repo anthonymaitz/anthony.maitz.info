@@ -13,7 +13,7 @@ resume_link_trigger: bornfree
 portfolio_description: "M.I.A.'s Born Free music video."
 media:
   - bornfree-0.jpg
-  - https://vimeo.com/11219730
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/born-free.mp4
   - bornfree-1.jpg
   - bornfree-2.jpg
   - bornfree-3.jpg

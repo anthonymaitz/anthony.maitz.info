@@ -11,7 +11,7 @@ links:
     url: https://playsets.app
 media:
   - playsets-0.jpg
-  - https://youtu.be/mNgjgNSpVGA
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/playsets.mp4
   - playsets-1.jpg
   - playsets-2.jpg
   - playsets-3.jpg

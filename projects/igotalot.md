@@ -6,7 +6,7 @@ order: 15
 portfolio_description: "Mika Miko's \"I Got a Lot (New New New)\" music video."
 media:
   - igotalot-0.jpg
-  - https://youtu.be/z9bzjhnGrCQ
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/igotalot.mp4
   - igotalot-2.jpg
   - igotalot-3.jpg
   - igotalot-4.jpg

@@ -14,7 +14,7 @@ resume_link_trigger: adidasallin
 portfolio_description: "Adidas's largest international advertising campaign."
 media:
   - adidasallin-0.jpg
-  - https://youtu.be/RfNM2njQ8A4
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/adidas-all-in.mp4
   - adidasallin-1.jpg
   - adidasallin-2.jpg
   - adidasallin-3.jpg

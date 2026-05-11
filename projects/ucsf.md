@@ -17,7 +17,7 @@ resume_link_target: "_window"
 portfolio_description: "Voice-controlled AI assistant guiding birth attendants through emergency delivery procedures."
 media:
   - ucsf-0.jpg
-  - src: https://youtu.be/DA7rIcd8XNI
+  - src: https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/ucsf.mp4
     caption: "We tested with medical workers in Kenya."
   - src: ucsf-1.jpg
     caption: "This is a poster made to explain how the virtual mentor works for the SL@B judges."

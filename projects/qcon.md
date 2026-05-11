@@ -14,10 +14,10 @@ resume_link_title: "Qcon case study"
 portfolio_description: "Badge-scanning wearables that improved speaker feedback at QCon conferences worldwide."
 media:
   - qcon-0.jpg
-  - https://youtu.be/DEkq6Hr71OA
-  - https://youtu.be/Mpgg2dFjg5A
-  - https://youtu.be/xZFSkbJ-aJ0
-  - https://youtu.be/W0xyrc0oGZo
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/qcon-feedback.mp4
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/qcon-wearables-2.mp4
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/qcon-wearables-3.mp4
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/qcon-wearables-4.mp4
   - qcon-1.jpg
   - qcon-2.jpg
   - qcon-3.jpg
