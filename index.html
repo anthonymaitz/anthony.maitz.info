@@ -466,7 +466,19 @@
 <script>
 	history.scrollRestoration = 'manual';
 
-	const lightbox = GLightbox({ touchNavigation: true, closeOnOutsideClick: true });
+	const lightbox = GLightbox({
+		touchNavigation: true,
+		closeOnOutsideClick: true,
+		autoplayVideos: true,
+		plyr: { config: { autoplay: true, playsinline: true } }
+	});
+
+	// After each slide loads, explicitly play any video — needed for iOS Safari
+	// which blocks autoplay from async contexts unless play() is called close to slide render
+	lightbox.on('slide_after_load', function(data) {
+		var video = data.slideEl.querySelector('video');
+		if (video) { video.setAttribute('playsinline', ''); video.play().catch(function() {}); }
+	});
 
 	// Open portfolio gallery from any [data-trigger] link
 	document.addEventListener('click', function(e) {
