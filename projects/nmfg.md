@@ -14,7 +14,7 @@ resume_link_target: "_window"
 portfolio_description: "Integrated food hall platform serving 13 vendors at Toronto Eaton Center."
 media:
   - nmfg-0.jpg
-  - https://github.com/anthonymaitz/anthony.maitz.info/releases/download/media/nmfg.mp4
+  - https://youtu.be/yG28QGNVWkA
   - nmfg-1.jpg
   - nmfg-2.jpg
   - nmfg-3.jpg

@@ -14,7 +14,7 @@ resume_link_trigger: adidasallin
 portfolio_description: "Adidas's largest international advertising campaign."
 media:
   - adidasallin-0.jpg
-  - https://github.com/anthonymaitz/anthony.maitz.info/releases/download/media/adidas-all-in.mp4
+  - https://youtu.be/RfNM2njQ8A4
   - adidasallin-1.jpg
   - adidasallin-2.jpg
   - adidasallin-3.jpg

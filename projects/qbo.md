@@ -14,7 +14,7 @@ resume_link_target: "_window"
 portfolio_description: "Connected coffee machine with on-device interface, app, and loyalty program."
 media:
   - qbo-0.jpg
-  - https://github.com/anthonymaitz/anthony.maitz.info/releases/download/media/qbo.mp4
+  - https://youtu.be/hVk3VHgqY0w
   - qbo-1.jpg
   - qbo-2.jpg
   - qbo-3.jpg

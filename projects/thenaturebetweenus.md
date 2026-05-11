@@ -13,7 +13,7 @@ resume_link_trigger: thenaturebetweenus
 portfolio_description: "A short film."
 media:
   - thenaturebetweenus-0.jpg
-  - https://github.com/anthonymaitz/anthony.maitz.info/releases/download/media/nature-between-us.mp4
+  - https://vimeo.com/3371232
   - thenaturebetweenus-1.jpg
   - thenaturebetweenus-2.jpg
   - thenaturebetweenus-3.jpg

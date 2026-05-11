@@ -13,7 +13,7 @@ resume_link_trigger: bornfree
 portfolio_description: "M.I.A.'s Born Free music video."
 media:
   - bornfree-0.jpg
-  - https://github.com/anthonymaitz/anthony.maitz.info/releases/download/media/born-free.mp4
+  - https://vimeo.com/11219730
   - bornfree-1.jpg
   - bornfree-2.jpg
   - bornfree-3.jpg
