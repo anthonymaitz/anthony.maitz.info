@@ -35,7 +35,7 @@ node scripts/build-contact.js     # updates <!-- CONTACT_GENERATED_START/END -->
 node scripts/build-manifesto.js   # updates <!-- MANIFESTO_START/END --> section
 ```
 
-Or run all three at once with `npm run build` (which also runs Vite build + PDF generation).
+Or run all four at once with `npm run build` (which also runs Vite build + PDF generation).
 
 ### Dev server
 
@@ -189,6 +189,7 @@ anthony.maitz.info/
 ├── contact-data/
 │   └── contact.md          # Contact page content
 ├── media/                  # Project images (committed to git, copied into dist/)
+│   └── videos/             # Local video archive (gitignored — videos live on Cloudflare R2, not git)
 ├── public/
 │   ├── 404.html            # GitHub Pages SPA redirect hack (redirects 404s → / with path saved in sessionStorage)
 │   └── resume.pdf          # Pre-generated PDF for local dev (replaced by Puppeteer on prod build)
@@ -217,3 +218,62 @@ anthony.maitz.info/
 ## How to add a new resume discipline
 
 Disciplines control which resume entries are shown. They are defined in `resume-data/overview.md` and `resume-data/employers.md`. Project entries in `projects/*.md` list their disciplines in the `disciplines` frontmatter field. The JavaScript in `index.html` reads the `?discipline=` query param and shows/hides entries accordingly.
+
+## How to add a new video
+
+Portfolio videos are served from **Cloudflare R2** — they are not committed to git.
+
+- Bucket: `anthony-maitz-media`
+- Public base URL: `https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/` (R2 public domain)
+- Local archive (gitignored): `media/videos/`
+
+### Step 1 — Download the source video
+
+```sh
+yt-dlp -f "bestvideo[ext=mp4][height<=1080]+bestaudio[ext=m4a]/best[ext=mp4][height<=1080]" \
+  --merge-output-format mp4 -o "media/videos/FILENAME.mp4" "SOURCE_URL"
+```
+
+### Step 2 — Upload to R2
+
+**Files under ~300 MB** — use wrangler. **Always pass `--remote`** — without it wrangler silently uploads to a local simulator and the public URL returns 404 with no error:
+
+```sh
+CLOUDFLARE_API_TOKEN=<token> npx wrangler r2 object put anthony-maitz-media/FILENAME.mp4 \
+  --file media/videos/FILENAME.mp4 --content-type video/mp4 --remote
+```
+
+**Files over ~300 MB** — wrangler has a hard 300 MB limit; use AWS CLI with R2's S3-compatible endpoint:
+
+```sh
+AWS_ACCESS_KEY_ID=<r2-access-key-id> AWS_SECRET_ACCESS_KEY=<r2-secret> \
+  aws s3 cp media/videos/FILENAME.mp4 s3://anthony-maitz-media/FILENAME.mp4 \
+  --endpoint-url https://e7be26fd81ec151f0e78722a9cdb6f2f.r2.cloudflarestorage.com \
+  --content-type video/mp4
+```
+
+**Credentials:** Create a temporary API token in the Cloudflare dashboard → R2 → Manage API tokens. The R2 Access Key ID / Secret used by AWS CLI are separate from the Cloudflare API token — generate them under R2 → Manage API tokens → Create API token. Revoke both after uploading.
+
+### Step 3 — Reference the video in the project file
+
+Add the full R2 URL to the `media:` array in `projects/<slug>.md`. `build-portfolio.js` auto-detects `.mp4` URLs and wires up `data-type="video"` for the lightbox — no extra config needed:
+
+```yaml
+media:
+  - project-0.jpg
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/FILENAME.mp4
+  - project-1.jpg
+```
+
+### Step 4 — Rebuild and commit
+
+```sh
+node scripts/build-portfolio.js
+git add projects/SLUG.md index.html
+git commit -m "feat: add video for SLUG"
+git push
+```
+
+### iOS Safari note
+
+Videos autoplay on desktop but require a manual tap on iOS Safari. This is an intentional browser restriction — do not attempt further autoplay workarounds. The workarounds have been tried and confirmed insufficient; tap-to-play is the accepted UX on mobile.

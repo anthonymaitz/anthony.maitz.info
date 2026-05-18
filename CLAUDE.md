@@ -22,8 +22,12 @@ The Vite dev server (`npm run dev`, port 5300) watches `index.html` and hot-relo
 
 For a full production build:
 ```
-npm run build   # runs prebuild (both scripts) + vite build + PDF generation
+npm run build   # runs prebuild (all build scripts) + vite build + PDF generation
 ```
+
+## Videos
+
+Portfolio videos are hosted on **Cloudflare R2** (not committed to git). See `HOW-IT-BUILDS.md` → "How to add a new video" for the full upload workflow, R2 bucket details, and credential handling.
 
 ## Deployment
 
