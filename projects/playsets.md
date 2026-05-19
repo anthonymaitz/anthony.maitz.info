@@ -12,6 +12,10 @@ links:
 media:
   - playsets-0.jpg
   - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/playsets.mp4
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/playsets-goblins.mp4
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/playsets-token-builder.mp4
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/playsets-ice.mp4
+  - https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/playsets-fire.mp4
   - playsets-1.jpg
   - playsets-2.jpg
   - playsets-3.jpg
@@ -23,6 +27,4 @@ media:
   - playsets-9.gif
   - playsets-10.gif
   - playsets-11.gif
-  - playsets-12.jpg
-  - playsets-13.jpg
 ---
