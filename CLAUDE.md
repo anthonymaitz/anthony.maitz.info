@@ -29,6 +29,8 @@ npm run build   # runs prebuild (all build scripts) + vite build + PDF generatio
 
 Portfolio videos are hosted on **Cloudflare R2** (not committed to git). See `HOW-IT-BUILDS.md` → "How to add a new video" for the full upload workflow, R2 bucket details, and credential handling.
 
+**Never stage or commit `.mp4` files.** Local video files belong in `media/videos/`, which is gitignored. If a video ends up staged, unstage it (`git restore --staged <file>`) and move it to `media/videos/`. Reference videos in project markdown files via their R2 public URL (`https://pub-3f46834975934832b6bf5b078116c7ee.r2.dev/<filename>.mp4`).
+
 ## Deployment
 
 Before making any changes to `.github/workflows/deploy.yml`, read `HOW-IT-BUILDS.md` — the deployment has non-obvious constraints (private repo token, pnpm version pin, keep_files, game independence model).
